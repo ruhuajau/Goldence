@@ -1,0 +1,12 @@
+excluded: # 执行 linting 时忽略的路径。 优先级比 `included` 更高。
+  - Pods
+type_body_length:
+  - 300 # 当超过300行的时候飚黄
+  - 400 # 当超过400行的时候飚红
+
+line_length: 300
+
+identifier_name:
+  min_length: 2
+  max_length: 40
+
