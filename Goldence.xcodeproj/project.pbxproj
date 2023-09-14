@@ -14,6 +14,16 @@
 		0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C0792AB1B51A003B205C /* Assets.xcassets */; };
 		0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */; };
 		0EE8C0852AB1B6AC003B205C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C0842AB1B6AC003B205C /* GoogleService-Info.plist */; };
+		0EE8C08C2AB2D883003B205C /* AddShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08B2AB2D883003B205C /* AddShelfViewController.swift */; };
+		0EE8C08E2AB2D981003B205C /* AddShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08D2AB2D981003B205C /* AddShelfTableViewCell.swift */; };
+		0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */; };
+		0EE8C0952AB2DE14003B205C /* AddCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0942AB2DE14003B205C /* AddCategoryTableViewCell.swift */; };
+		0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */; };
+		0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0992AB2F313003B205C /* APIManager.swift */; };
+		0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09B2AB2F32E003B205C /* BookStruct.swift */; };
+		0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */; };
+		0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A12AB30264003B205C /* TypeViewController.swift */; };
+		0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A32AB3026D003B205C /* ScanViewController.swift */; };
 		5E810ABDE14966EFA2269261 /* Pods_Goldence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +38,16 @@
 		0EE8C07C2AB1B51A003B205C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EE8C07E2AB1B51A003B205C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE8C0842AB1B6AC003B205C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0EE8C08B2AB2D883003B205C /* AddShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShelfViewController.swift; sourceTree = "<group>"; };
+		0EE8C08D2AB2D981003B205C /* AddShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShelfTableViewCell.swift; sourceTree = "<group>"; };
+		0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		0EE8C0942AB2DE14003B205C /* AddCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		0EE8C0992AB2F313003B205C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0EE8C09B2AB2F32E003B205C /* BookStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStruct.swift; sourceTree = "<group>"; };
+		0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddByISBNViewController.swift; sourceTree = "<group>"; };
+		0EE8C0A12AB30264003B205C /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
+		0EE8C0A32AB3026D003B205C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goldence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6CF90D0CD60947FAA68381 /* Pods-Goldence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.debug.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,16 +85,98 @@
 		0EE8C06F2AB1B518003B205C /* Goldence */ = {
 			isa = PBXGroup;
 			children = (
+				0EE8C0872AB2D7C6003B205C /* Ｍodel */,
+				0EE8C0892AB2D7F4003B205C /* View */,
+				0EE8C08A2AB2D7FA003B205C /* Controller */,
 				0EE8C0702AB1B518003B205C /* AppDelegate.swift */,
 				0EE8C0722AB1B518003B205C /* SceneDelegate.swift */,
-				0EE8C0742AB1B518003B205C /* ViewController.swift */,
-				0EE8C0762AB1B518003B205C /* Main.storyboard */,
 				0EE8C0792AB1B51A003B205C /* Assets.xcassets */,
 				0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */,
 				0EE8C07E2AB1B51A003B205C /* Info.plist */,
 				0EE8C0842AB1B6AC003B205C /* GoogleService-Info.plist */,
 			);
 			path = Goldence;
+			sourceTree = "<group>";
+		};
+		0EE8C0872AB2D7C6003B205C /* Ｍodel */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0992AB2F313003B205C /* APIManager.swift */,
+				0EE8C09B2AB2F32E003B205C /* BookStruct.swift */,
+			);
+			path = "Ｍodel";
+			sourceTree = "<group>";
+		};
+		0EE8C0892AB2D7F4003B205C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0762AB1B518003B205C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EE8C08A2AB2D7FA003B205C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C08F2AB2D98D003B205C /* AddPage */,
+				0EE8C0742AB1B518003B205C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0EE8C08F2AB2D98D003B205C /* AddPage */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0912AB2DDC0003B205C /* AddShelf */,
+				0EE8C0902AB2DD95003B205C /* AddCategory */,
+				0EE8C0962AB2E5FA003B205C /* AddBook */,
+			);
+			path = AddPage;
+			sourceTree = "<group>";
+		};
+		0EE8C0902AB2DD95003B205C /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */,
+				0EE8C0942AB2DE14003B205C /* AddCategoryTableViewCell.swift */,
+			);
+			path = AddCategory;
+			sourceTree = "<group>";
+		};
+		0EE8C0912AB2DDC0003B205C /* AddShelf */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C08B2AB2D883003B205C /* AddShelfViewController.swift */,
+				0EE8C08D2AB2D981003B205C /* AddShelfTableViewCell.swift */,
+			);
+			path = AddShelf;
+			sourceTree = "<group>";
+		};
+		0EE8C0962AB2E5FA003B205C /* AddBook */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */,
+				0EE8C09F2AB30216003B205C /* AddByISBN */,
+			);
+			path = AddBook;
+			sourceTree = "<group>";
+		};
+		0EE8C09F2AB30216003B205C /* AddByISBN */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */,
+				0EE8C0A02AB30233003B205C /* Segments */,
+			);
+			path = AddByISBN;
+			sourceTree = "<group>";
+		};
+		0EE8C0A02AB30233003B205C /* Segments */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0A12AB30264003B205C /* TypeViewController.swift */,
+				0EE8C0A32AB3026D003B205C /* ScanViewController.swift */,
+			);
+			path = Segments;
 			sourceTree = "<group>";
 		};
 		2F05EB3B05F09F340EB59188 /* Frameworks */ = {
@@ -91,7 +193,6 @@
 				4C6CF90D0CD60947FAA68381 /* Pods-Goldence.debug.xcconfig */,
 				0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +208,7 @@
 				0EE8C06A2AB1B518003B205C /* Frameworks */,
 				0EE8C06B2AB1B518003B205C /* Resources */,
 				2D967D84FAC8A27C96D2442D /* [CP] Embed Pods Frameworks */,
+				0EE8C0862AB2B10D003B205C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -165,6 +267,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0EE8C0862AB2B10D003B205C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		2D967D84FAC8A27C96D2442D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,9 +330,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */,
 				0EE8C0752AB1B518003B205C /* ViewController.swift in Sources */,
+				0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */,
+				0EE8C08E2AB2D981003B205C /* AddShelfTableViewCell.swift in Sources */,
+				0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */,
+				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
+				0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */,
+				0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */,
+				0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */,
+				0EE8C0952AB2DE14003B205C /* AddCategoryTableViewCell.swift in Sources */,
 				0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */,
 				0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */,
+				0EE8C08C2AB2D883003B205C /* AddShelfViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
