@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TypeViewController: UIViewController {
 
@@ -13,7 +14,8 @@ class TypeViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-
+    @IBOutlet weak var bookImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +39,7 @@ class TypeViewController: UIViewController {
                         let authors = bookItem.volumeInfo.authors
                         self.titleLabel.text = title
                         self.authorLabel.text = authors.joined(separator: ", ")
+                        self.bookImage
                     }
                 }
             case .failure(let error):
