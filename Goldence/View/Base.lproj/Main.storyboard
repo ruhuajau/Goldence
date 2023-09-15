@@ -246,6 +246,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eDr-zW-4Ps" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kW2-F2-M4l">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -304,14 +305,14 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dxi-Xw-GwC">
-                                <rect key="frame" x="16" y="193" width="361" height="576"/>
+                                <rect key="frame" x="15" y="192" width="362" height="577"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="6qh-dF-NMs" kind="embed" id="oLB-V5-DHz"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfn-m5-Gx5">
-                                <rect key="frame" x="16" y="193" width="361" height="576"/>
+                                <rect key="frame" x="15" y="192" width="362" height="577"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="o5O-tf-R97" kind="embed" id="6Er-ca-LWj"/>
@@ -337,7 +338,7 @@
             <objects>
                 <viewController id="6qh-dF-NMs" customClass="TypeViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3l-nk-YBp">
-                        <rect key="frame" x="0.0" y="0.0" width="361" height="576"/>
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="577"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c8-Z7-jJp">
@@ -374,10 +375,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bTW-st-t5q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="VAT-ce-xsM" id="435-Jw-Unh"/>
+                        <outlet property="bookImage" destination="fOh-0a-5ML" id="FfN-mT-DSe"/>
                         <outlet property="isbnTextField" destination="7c8-Z7-jJp" id="k43-6A-0Dz"/>
                         <outlet property="searchButton" destination="04z-Ch-w5r" id="ObX-zG-gm8"/>
                         <outlet property="titleLabel" destination="5vf-bE-XMJ" id="RAQ-To-n3F"/>
@@ -387,13 +390,14 @@
             </objects>
             <point key="canvasLocation" x="5249.6183206106871" y="542.25352112676057"/>
         </scene>
-        <!--View Controller-->
+        <!--Scan View Controller-->
         <scene sceneID="81r-j0-IeW">
             <objects>
-                <viewController id="o5O-tf-R97" sceneMemberID="viewController">
+                <viewController id="o5O-tf-R97" customClass="ScanViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="03E-I2-C0S">
-                        <rect key="frame" x="0.0" y="0.0" width="361" height="576"/>
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="577"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BsI-KT-NDS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
