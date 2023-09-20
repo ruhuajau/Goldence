@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EA64B612ABAE61B00C2D18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA64B602ABAE61B00C2D18C /* GoogleService-Info.plist */; };
+		0EA64B632ABAEA1C00C2D18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA64B622ABAEA1C00C2D18C /* GoogleService-Info.plist */; };
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
 		0EE8C0752AB1B518003B205C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0742AB1B518003B205C /* ViewController.swift */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
-		0EA64B602ABAE61B00C2D18C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0EA64B622ABAEA1C00C2D18C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				0EE8C0792AB1B51A003B205C /* Assets.xcassets */,
 				0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */,
 				0EE8C07E2AB1B51A003B205C /* Info.plist */,
-				0EA64B602ABAE61B00C2D18C /* GoogleService-Info.plist */,
+				0EA64B622ABAEA1C00C2D18C /* GoogleService-Info.plist */,
 			);
 			path = Goldence;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */,
-				0EA64B612ABAE61B00C2D18C /* GoogleService-Info.plist in Resources */,
+				0EA64B632ABAEA1C00C2D18C /* GoogleService-Info.plist in Resources */,
 				0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */,
 				0EE8C0782AB1B518003B205C /* Main.storyboard in Resources */,
 			);
