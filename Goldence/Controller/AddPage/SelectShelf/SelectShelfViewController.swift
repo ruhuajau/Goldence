@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddShelfViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {

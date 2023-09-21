@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, BookResultViewControllerDelegate {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var barView: UIView!
     var isScanning = true
@@ -71,9 +71,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                     barCodeFrameView?.frame = barCodeObject!.bounds
                     if metadataObj?.stringValue != nil {
                         let barcodeNumber = metadataObj?.stringValue
-                        textLabel.text = barcodeNumber
                         // Assuming you have an instance of BookResultViewController
                         let bookResultViewController = BookResultViewController()
+                        bookResultViewController.delegate = self
                         bookResultViewController.barcodeNumber = barcodeNumber
                         DispatchQueue.main.async { // Ensure UI updates on the main thread
                             bookResultViewController.modalPresentationStyle = .fullScreen
@@ -85,5 +85,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             }
         }
     }
-
+    func didDismissBookResultViewController() {
+        isScanning = true
+    }
 }

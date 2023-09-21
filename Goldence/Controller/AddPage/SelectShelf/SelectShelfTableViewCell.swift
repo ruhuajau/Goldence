@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddShelfTableViewCell: UITableViewCell {
+class SelectShelfTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
