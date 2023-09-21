@@ -10,6 +10,7 @@ import UIKit
 class SelectShelfTableViewCell: UITableViewCell {
     @IBOutlet weak var bookShelfImage: UIImageView!
     @IBOutlet weak var bookShelfName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

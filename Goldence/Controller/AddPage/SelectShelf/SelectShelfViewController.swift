@@ -6,17 +6,21 @@
 //
 
 import UIKit
+import Firebase
+import Kingfisher
 
 class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
+    var bookshelves: [Bookshelf] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
+        loadBookshelves()
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
@@ -25,7 +29,15 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
         return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            // Number of rows in section 0
+            return 1
+        } else if section == 1 {
+            // Number of bookshelves in section 1
+            return bookshelves.count
+        }
+        // Return 0 for other sections, or handle additional sections as needed
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
@@ -35,11 +47,40 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
             cell = tableView.dequeueReusableCell(withIdentifier: "NewShelfTableViewCell", for: indexPath)
             // Customize this cell for the first section
         } else {
-            // Configure the cell for the second section
-            cell = tableView.dequeueReusableCell(withIdentifier: "AddPageTableViewCell", for: indexPath)
-            // Customize this cell for the second section
+            if let customCell = tableView.dequeueReusableCell(withIdentifier: "SelectShelfTableViewCell", for: indexPath) as? SelectShelfTableViewCell {
+                // Cell is successfully casted to SelectShelfTableViewCell
+                let bookShelf = bookshelves[indexPath.row]
+                customCell.bookShelfName.text = bookShelf.title
+                if let imageUrl = URL(string: bookShelf.imageURL ?? "") {
+                    customCell.bookShelfImage.kf.setImage(with: imageUrl)
+                }
+                return customCell // Return the custom cell
+            } else {
+                // Handle the case where casting fails
+                return UITableViewCell()
+            }
         }
-        
-        return cell
+        return cell // Return the default cell outside of the if conditions
+    }
+    func loadBookshelves() {
+        let db = Firestore.firestore()
+        let bookshelvesCollection = db.collection("bookshelves")
+        bookshelvesCollection.addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching bookshelves: \(error.localizedDescription)")
+                return
+            }
+            self.bookshelves.removeAll()
+            for document in querySnapshot!.documents {
+                let data = document.data()
+                if let title = data["name"] as? String, let imageURL = data["imageURL"] as? String {
+                    let bookshelf = Bookshelf(title: title, imageURL: imageURL)
+                    self.bookshelves.append(bookshelf)
+                }
+            }
+            // Reload the table view with the updated data
+            self.tableView.reloadData()
+            print(self.bookshelves)
+        }
     }
 }
