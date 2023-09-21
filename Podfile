@@ -9,4 +9,5 @@ target 'Goldence' do
   pod 'Firebase/Firestore'
   pod 'SwiftLint'
   pod 'Alamofire'
+  pod 'Kingfisher'
 end

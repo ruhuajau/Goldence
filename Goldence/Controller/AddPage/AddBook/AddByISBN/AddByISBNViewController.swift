@@ -13,7 +13,6 @@ class AddByISBNViewController: UIViewController {
     @IBOutlet weak var typeSegmentView: UIView!
     @IBOutlet weak var scanSegmentView: UIView!
     @IBOutlet weak var bookImageView: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
