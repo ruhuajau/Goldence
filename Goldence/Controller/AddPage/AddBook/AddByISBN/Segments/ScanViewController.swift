@@ -11,6 +11,7 @@ import AVFoundation
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var barView: UIView!
+    var isScanning = true
     var captureSession: AVCaptureSession?
     var inputLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
@@ -56,27 +57,33 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         }
     }
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        if metadataObjects.count == 0 {
-            barCodeFrameView?.frame = CGRect.zero
-            textLabel.text = "No barcode is found"
-        } else {
-            // found some code
-            let metadataObj = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
-            if metadataObj?.type == AVMetadataObject.ObjectType.ean13 {
-                // found ISBN barcode
-                let barCodeObject = inputLayer?.transformedMetadataObject(for: metadataObj!)
-                barCodeFrameView?.frame = barCodeObject!.bounds
-                if metadataObj?.stringValue != nil {
-                    let barcodeNumber = metadataObj?.stringValue
-                    textLabel.text = barcodeNumber
-                    // Assuming you have an instance of ResultViewController
-                    let bookResultViewController = BookResultViewController()
-                    bookResultViewController.barcodeNumber = barcodeNumber
-                    self.present(bookResultViewController, animated: true, completion: nil)
-                    bookResultViewController.modalPresentationStyle = .fullScreen
-                    print(metadataObj?.stringValue! as Any)
+        if isScanning {
+            isScanning = false // Stop scanning after the first code is detected
+            if metadataObjects.count == 0 {
+                barCodeFrameView?.frame = CGRect.zero
+                textLabel.text = "No barcode is found"
+            } else {
+                // found some code
+                let metadataObj = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
+                if metadataObj?.type == AVMetadataObject.ObjectType.ean13 {
+                    // found ISBN barcode
+                    let barCodeObject = inputLayer?.transformedMetadataObject(for: metadataObj!)
+                    barCodeFrameView?.frame = barCodeObject!.bounds
+                    if metadataObj?.stringValue != nil {
+                        let barcodeNumber = metadataObj?.stringValue
+                        textLabel.text = barcodeNumber
+                        // Assuming you have an instance of BookResultViewController
+                        let bookResultViewController = BookResultViewController()
+                        bookResultViewController.barcodeNumber = barcodeNumber
+                        DispatchQueue.main.async { // Ensure UI updates on the main thread
+                            bookResultViewController.modalPresentationStyle = .fullScreen
+                            self.present(bookResultViewController, animated: true, completion: nil)
+                        }
+                        print(metadataObj?.stringValue! as Any)
+                    }
                 }
             }
         }
     }
+
 }
