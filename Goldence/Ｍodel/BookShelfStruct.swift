@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct BookShelf {
+struct Bookshelf {
     let title: String
-    var image: UIImage?
+    let imageURL: String?
 }
