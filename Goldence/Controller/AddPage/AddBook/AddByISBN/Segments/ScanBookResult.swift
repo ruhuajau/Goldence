@@ -8,6 +8,7 @@ import UIKit
 
 class BookResultViewController: UIViewController {
     var barcodeNumber: String?
+    weak var delegate: BookResultViewControllerDelegate?
     // Properties for UI elements
         let bookCoverImageView: UIImageView = {
             let imageView = UIImageView()
@@ -23,7 +24,6 @@ class BookResultViewController: UIViewController {
             label.textColor = UIColor.black
             label.textAlignment = .center
             label.layer.borderColor = UIColor.black.cgColor
-            label.text = "title"
             return label
         }()
         let authorLabel: UILabel = {
@@ -32,8 +32,16 @@ class BookResultViewController: UIViewController {
             label.font = UIFont.systemFont(ofSize: 16) // Adjust font size as needed
             label.textColor = UIColor.gray // Adjust text color as needed
             label.textAlignment = .center
-            label.text = "author"
             return label
+        }()
+        // Create a dismiss button
+        let saveButton: UIButton = {
+            let button = UIButton(type: .system)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setTitle("Save", for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 16) // Adjust font size as needed
+            button.setTitleColor(UIColor.gray, for: .normal) // Adjust text color as needed
+            return button
         }()
         // Create a dismiss button
         let dismissButton: UIButton = {
@@ -42,7 +50,6 @@ class BookResultViewController: UIViewController {
             button.setTitle("Dismiss", for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 16) // Adjust font size as needed
             button.setTitleColor(UIColor.gray, for: .normal) // Adjust text color as needed
-            button.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
             return button
         }()
         override func viewDidLoad() {
@@ -54,14 +61,20 @@ class BookResultViewController: UIViewController {
         }
     func setupUI() {
         // Create a vertical stack view
-            let stackView = UIStackView(arrangedSubviews: [bookCoverImageView, titleLabel, authorLabel])
-            stackView.axis = .vertical
-            stackView.spacing = 40
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-            // Add the stack view to the view
-            view.addSubview(stackView)
+        let stackView = UIStackView(arrangedSubviews: [bookCoverImageView, titleLabel, authorLabel])
+        stackView.axis = .vertical
+        stackView.spacing = 40
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        // Add the stack view to the view
+        view.addSubview(stackView)
+        // dismissButton
         view.addSubview(dismissButton)
-            // Set constraints for the stack view (adjust these constraints as needed)
+        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+        
+        // saveButton
+        view.addSubview(saveButton)
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        
         // Set constraints for the stack view (adjust these constraints as needed)
         let centerXConstraint = stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         let centerYConstraint = stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
@@ -113,6 +126,12 @@ class BookResultViewController: UIViewController {
                 }
     }
     @objc func dismissButtonTapped() {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            // Call the delegate method when the view controller is dismissed
+            self.delegate?.didDismissBookResultViewController()
+        }
+    }
+    @objc func saveButtonTapped() {
+        
     }
 }
