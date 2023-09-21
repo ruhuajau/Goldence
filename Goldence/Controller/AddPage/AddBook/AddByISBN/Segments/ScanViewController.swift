@@ -67,7 +67,13 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 let barCodeObject = inputLayer?.transformedMetadataObject(for: metadataObj!)
                 barCodeFrameView?.frame = barCodeObject!.bounds
                 if metadataObj?.stringValue != nil {
-                    textLabel.text = metadataObj?.stringValue
+                    let barcodeNumber = metadataObj?.stringValue
+                    textLabel.text = barcodeNumber
+                    // Assuming you have an instance of ResultViewController
+                    let bookResultViewController = BookResultViewController()
+                    bookResultViewController.barcodeNumber = barcodeNumber
+                    self.present(bookResultViewController, animated: true, completion: nil)
+                    bookResultViewController.modalPresentationStyle = .fullScreen
                     print(metadataObj?.stringValue! as Any)
                 }
             }

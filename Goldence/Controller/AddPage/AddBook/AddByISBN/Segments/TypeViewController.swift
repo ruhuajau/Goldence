@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class TypeViewController: UIViewController {
 
@@ -15,7 +16,6 @@ class TypeViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +39,12 @@ class TypeViewController: UIViewController {
                         let authors = bookItem.volumeInfo.authors
                         self.titleLabel.text = title
                         self.authorLabel.text = authors.joined(separator: ", ")
-                        self.bookImage
+                        if let imageUrlString = book.items.first?.volumeInfo.imageLinks.smallThumbnail {
+                            print(imageUrlString)
+                            if let imageUrl = URL(string: imageUrlString) {
+                                self.bookImage.kf.setImage(with: imageUrl)
+                            }
+                        }
                     }
                 }
             case .failure(let error):
