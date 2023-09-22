@@ -399,6 +399,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="儲存書籍"/>
+                                <connections>
+                                    <action selector="saveBookButtonTapped:" destination="fnx-lf-Xl0" eventType="touchUpInside" id="YGE-WK-chv"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTC-DP-JZ8">
                                 <rect key="frame" x="8" y="163" width="376" height="1"/>
@@ -418,6 +421,7 @@
                                     <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="updateImage:" destination="fnx-lf-Xl0" eventType="touchUpInside" id="BvZ-xG-Ydo"/>
                                     <action selector="updateImage:" destination="Uta-Vq-6iT" eventType="touchUpInside" id="XQg-cN-k1A"/>
                                 </connections>
                             </button>
@@ -438,6 +442,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="新增藏書" id="Z6N-Ng-Yqm"/>
+                    <connections>
+                        <outlet property="ISBNButton" destination="MNb-Za-BYf" id="6kO-Hh-gt0"/>
+                        <outlet property="addPhotoButton" destination="nF3-GN-6F5" id="YqD-zr-QIV"/>
+                        <outlet property="authorTextField" destination="LVz-zN-HFb" id="xty-7P-xhx"/>
+                        <outlet property="bookImageView" destination="NBG-TX-Egw" id="HLV-Jv-egR"/>
+                        <outlet property="titleTextField" destination="96o-d5-xos" id="fNE-gm-9Oc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyH-Te-nDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
