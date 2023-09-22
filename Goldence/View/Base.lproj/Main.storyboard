@@ -51,7 +51,7 @@
                                         <connections>
                                             <outlet property="bookshelfImage" destination="5jF-1V-atC" id="jHT-b9-CfG"/>
                                             <outlet property="bookshelfTitle" destination="QEr-CZ-Tvl" id="1Ba-TQ-cOY"/>
-                                            <segue destination="nzd-le-rbp" kind="show" id="BuZ-Bm-HMK"/>
+                                            <segue destination="nzd-le-rbp" kind="show" identifier="booksInShelf" id="BuZ-Bm-HMK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="1940" y="-427"/>
         </scene>
-        <!--View Controller-->
+        <!--Book List View Controller-->
         <scene sceneID="3zf-Hk-iT9">
             <objects>
-                <viewController id="nzd-le-rbp" sceneMemberID="viewController">
+                <viewController id="nzd-le-rbp" customClass="BookListViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="10v-fW-lDr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,19 +85,38 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="144" id="fGp-zF-JUz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookListTableViewCell" rowHeight="144" id="fGp-zF-JUz" customClass="BookListTableViewCell" customModule="Goldence" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGp-zF-JUz" id="Zep-6C-6Yl">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-Ec-l09">
-                                                    <rect key="frame" x="20" y="8" width="103" height="128"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="書名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFl-Tk-4mn">
+                                                    <rect key="frame" x="149" y="11" width="233" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="作者名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcY-9E-165">
+                                                    <rect key="frame" x="149" y="40" width="233" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-Ec-l09">
+                                                    <rect key="frame" x="20" y="12" width="85" height="120.00000000000136"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorNameLabel" destination="RcY-9E-165" id="ZW6-Ig-APG"/>
+                                            <outlet property="bookImageView" destination="QdH-Ec-l09" id="3Ty-m4-sSZ"/>
+                                            <outlet property="bookNameLabel" destination="TFl-Tk-4mn" id="owz-5p-qIq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -106,6 +125,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="lCX-Jv-e7f"/>
+                    <connections>
+                        <outlet property="tableView" destination="N4P-77-1go" id="Ycz-eK-kqB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di3-rq-kG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -391,7 +413,7 @@
                                     <color key="baseForegroundColor" systemColor="systemGray2Color"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="G1I-ja-Op3" kind="show" id="Dcc-bV-6Nh"/>
+                                    <segue destination="G1I-ja-Op3" kind="show" identifier="byISBN" id="Dcc-bV-6Nh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="260-tR-Pqe">
@@ -682,9 +704,13 @@
     </scenes>
     <resources>
         <image name="a.book.closed.hi" catalog="system" width="115" height="128"/>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="book.circle" catalog="system" width="128" height="123"/>
         <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="doc.richtext" catalog="system" width="115" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

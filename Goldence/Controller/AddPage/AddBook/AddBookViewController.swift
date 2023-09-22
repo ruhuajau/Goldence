@@ -27,6 +27,7 @@ class AddBookViewController: UIViewController {
         titleTextField.delegate = self
         authorTextField.delegate = self
         print(bookshelfName)
+        print(bookshelfID)
     }
 
     @IBAction func updateImage(_ sender: Any) {
@@ -126,7 +127,6 @@ class AddBookViewController: UIViewController {
                 completion(nil)
                 return
             }
-            
             // Check if any documents were found
             if let document = querySnapshot?.documents.first {
                 // Retrieve the documentID of the found bookshelf
@@ -135,6 +135,13 @@ class AddBookViewController: UIViewController {
             } else {
                 // No matching document found
                 completion(nil)
+            }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "byISBN" {
+            if let destinationVC = segue.destination as? AddByISBNViewController {
+                destinationVC.bookshelfID = self.bookshelfID
             }
         }
     }

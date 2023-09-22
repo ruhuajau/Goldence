@@ -9,6 +9,7 @@ import UIKit
 
 class AddByISBNViewController: UIViewController {
 
+    var bookshelfID: String?
     @IBOutlet weak var segmentoutlet: UISegmentedControl!
     @IBOutlet weak var typeSegmentView: UIView!
     @IBOutlet weak var scanSegmentView: UIView!
@@ -18,6 +19,7 @@ class AddByISBNViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.bringSubviewToFront(typeSegmentView)
+        print(bookshelfID)
     }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

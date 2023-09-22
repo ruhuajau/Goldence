@@ -57,7 +57,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             // Reload the table view with the updated data
             self.tableView.reloadData()
-            //print(self.bookshelves)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "booksInShelf" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let bookshelfName = bookshelves[indexPath.row].title
+                if let destinationVC = segue.destination as? BookListViewController {
+                    destinationVC.bookshelfName = bookshelfName
+                }
+            }
         }
     }
 }
