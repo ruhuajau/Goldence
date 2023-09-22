@@ -79,7 +79,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                             bookResultViewController.modalPresentationStyle = .fullScreen
                             self.present(bookResultViewController, animated: true, completion: nil)
                         }
-                        print(metadataObj?.stringValue! as Any)
+                        //print(metadataObj?.stringValue! as Any)
                     }
                 }
             }

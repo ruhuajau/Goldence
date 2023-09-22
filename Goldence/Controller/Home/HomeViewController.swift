@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             // Reload the table view with the updated data
             self.tableView.reloadData()
-            print(self.bookshelves)
+            //print(self.bookshelves)
         }
     }
 }
