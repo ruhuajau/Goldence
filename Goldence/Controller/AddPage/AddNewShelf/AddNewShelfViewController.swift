@@ -54,7 +54,7 @@ class AddNewShelfViewController: UIViewController {
     func addData() {
         guard let bookShelfName = titleTextField.text,
               let bookShelfImage = newBookImage else {
-            showAlert(message: "Invalid data")
+            showAlert(message: "資訊有誤")
             return
         }
 
