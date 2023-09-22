@@ -26,8 +26,16 @@ class AddBookViewController: UIViewController {
         // Do any additional setup after loading the view.
         titleTextField.delegate = self
         authorTextField.delegate = self
-        print(bookshelfName)
-        print(bookshelfID)
+        // Retrieve the bookshelfID in viewDidLoad
+            if let bookshelfName = self.bookshelfName {
+                findBookshelfID(byName: bookshelfName) { (bookshelfID) in
+                    if let bookshelfID = bookshelfID {
+                        self.bookshelfID = bookshelfID
+                    } else {
+                        print("Bookshelf not found.")
+                    }
+                }
+            }
     }
 
     @IBAction func updateImage(_ sender: Any) {
@@ -49,20 +57,14 @@ class AddBookViewController: UIViewController {
     }
     @IBAction func saveBookButtonTapped(_ sender: Any) {
         if let bookName = titleTextField.text,
-           let authorName = authorTextField.text,
-           !bookName.isEmpty,
-           !authorName.isEmpty,
-           let bookshelfName = self.bookshelfName { // Check if bookshelfName is available
-            findBookshelfID(byName: bookshelfName) { (bookshelfID) in
-                if let bookshelfID = bookshelfID {
-                    self.addData(bookshelfId: bookshelfID)
+                    let authorName = authorTextField.text,
+                    !bookName.isEmpty,
+                    !authorName.isEmpty,
+                    let bookshelfID = self.bookshelfID { // Use the stored bookshelfID
+                    addData(bookshelfId: bookshelfID)
                 } else {
-                    self.showAlert(message: "Bookshelf not found.")
-                }
+                    showAlert(message: "請填入完整資訊！")
             }
-        } else {
-            showAlert(message: "請填入完整資訊！")
-        }
     }
     func addData(bookshelfId: String) {
             guard let bookName = titleTextField.text,
@@ -75,7 +77,6 @@ class AddBookViewController: UIViewController {
             // Reference to the parent bookshelf document
             let bookshelfRef = db.collection("bookshelves").document(bookshelfId)
 
-            // Create a new book document within the specified bookshelf
             let bookRef = bookshelfRef.collection("books").document()
 
             // Upload the image to Firebase Storage
