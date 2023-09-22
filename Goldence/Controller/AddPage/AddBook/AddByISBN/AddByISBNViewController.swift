@@ -19,16 +19,27 @@ class AddByISBNViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.bringSubviewToFront(typeSegmentView)
-        print(bookshelfID)
     }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0:
-            self.view.bringSubviewToFront(typeSegmentView)
-        case 1:
-            self.view.bringSubviewToFront(scanSegmentView)
-        default:
-            break
+            case 0:
+                self.view.bringSubviewToFront(typeSegmentView)
+            case 1:
+                self.view.bringSubviewToFront(scanSegmentView)
+            default:
+                break
+            }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ISBNType" {
+            if let destinationVC = segue.destination as? TypeViewController {
+                destinationVC.bookshelfID = self.bookshelfID
+            }
         }
-    }    
+        if segue.identifier == "ISBNScan" {
+            if let destinationVC = segue.destination as? ScanViewController {
+                destinationVC.bookshelfID = self.bookshelfID
+            }
+        }
+    }
 }

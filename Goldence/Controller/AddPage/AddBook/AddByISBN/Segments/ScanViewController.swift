@@ -9,6 +9,8 @@ import UIKit
 import AVFoundation
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, BookResultViewControllerDelegate {
+    
+    var bookshelfID: String?
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var barView: UIView!
     var isScanning = true
@@ -17,6 +19,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     var barCodeFrameView: UIView?
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(bookshelfID)
         // try to find back camera
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
         guard let captureDevice = deviceDiscoverySession.devices.first else {
@@ -79,7 +82,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                             bookResultViewController.modalPresentationStyle = .fullScreen
                             self.present(bookResultViewController, animated: true, completion: nil)
                         }
-                        //print(metadataObj?.stringValue! as Any)
                     }
                 }
             }
