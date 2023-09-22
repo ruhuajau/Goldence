@@ -76,7 +76,6 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
             }
             // Reload the table view with the updated data
             self.tableView.reloadData()
-            //print(self.bookshelves)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

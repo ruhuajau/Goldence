@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct Books {
+    let title: String
+    let author: String
+    let imageURL: URL
+}
+
 struct Book: Codable {
     let kind: String
     let totalItems: Int
