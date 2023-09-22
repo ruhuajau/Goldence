@@ -12,6 +12,7 @@
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
 		0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */; };
 		0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */; };
+		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
 		0EA64B632ABAEA1C00C2D18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA64B622ABAEA1C00C2D18C /* GoogleService-Info.plist */; };
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewShelfViewController.swift; sourceTree = "<group>"; };
 		0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfStruct.swift; sourceTree = "<group>"; };
+		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		0EA64B622ABAEA1C00C2D18C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,15 @@
 				0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */,
 			);
 			path = AddNewShelf;
+			sourceTree = "<group>";
+		};
+		0E82970A2ABD1944001B5EA0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0742AB1B518003B205C /* HomeViewController.swift */,
+				0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		0EE8C0642AB1B518003B205C = {
@@ -139,7 +150,7 @@
 		0EE8C08A2AB2D7FA003B205C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0EE8C0742AB1B518003B205C /* HomeViewController.swift */,
+				0E82970A2ABD1944001B5EA0 /* Home */,
 				0EE8C08F2AB2D98D003B205C /* AddPage */,
 			);
 			path = Controller;
@@ -353,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */,
 				0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */,
 				0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */,
 				0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */,

@@ -10,21 +10,17 @@ import Firebase
 import Kingfisher
 
 class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     @IBOutlet weak var tableView: UITableView!
     var bookshelves: [Bookshelf] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         loadBookshelves()
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -41,7 +37,6 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
-        
         if indexPath.section == 0 {
             // Configure the cell for the first section
             cell = tableView.dequeueReusableCell(withIdentifier: "NewShelfTableViewCell", for: indexPath)
