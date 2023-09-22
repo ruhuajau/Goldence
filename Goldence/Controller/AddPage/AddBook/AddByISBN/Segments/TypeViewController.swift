@@ -32,7 +32,7 @@ class TypeViewController: UIViewController {
             case .success(let book):
                 // Update the UI on the main thread
                 DispatchQueue.main.async {
-                    print(book)
+                    //print(book)
                     let bookItem = book.items.first
                     if let bookItem = bookItem {
                         let title = bookItem.volumeInfo.title
@@ -40,7 +40,7 @@ class TypeViewController: UIViewController {
                         self.titleLabel.text = title
                         self.authorLabel.text = authors.joined(separator: ", ")
                         if let imageUrlString = book.items.first?.volumeInfo.imageLinks.smallThumbnail {
-                            print(imageUrlString)
+                            //print(imageUrlString)
                             if let imageUrl = URL(string: imageUrlString) {
                                 self.bookImage.kf.setImage(with: imageUrl)
                             }

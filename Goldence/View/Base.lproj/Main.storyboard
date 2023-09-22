@@ -184,7 +184,7 @@
                                         <connections>
                                             <outlet property="bookShelfImage" destination="aMn-hK-vRV" id="vDL-Yh-Haa"/>
                                             <outlet property="bookShelfName" destination="aIg-yd-25l" id="Qpt-LR-Lbd"/>
-                                            <segue destination="bwZ-4C-brT" kind="show" id="6Ji-Ib-nS1"/>
+                                            <segue destination="bwZ-4C-brT" kind="show" identifier="chooseCategory" id="6Ji-Ib-nS1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -265,7 +265,7 @@
         <!--新增類別-->
         <scene sceneID="kCl-LC-fDc">
             <objects>
-                <viewController id="bwZ-4C-brT" customClass="AddCategoryViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCategoryViewController" id="bwZ-4C-brT" customClass="AddCategoryViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JIw-ik-Gql">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +288,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddCategoryTableViewCell" rowHeight="130" id="QNz-86-XRP" customClass="AddCategoryTableViewCell" customModule="Goldence" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddCategoryTableViewCell" rowHeight="130" id="QNz-86-XRP">
                                         <rect key="frame" x="0.0" y="50" width="393" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QNz-86-XRP" id="ijz-Wc-dr8">
@@ -309,8 +309,29 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="fnx-lf-Xl0" kind="show" id="sRa-MY-QuS"/>
+                                            <segue destination="fnx-lf-Xl0" kind="show" identifier="addNewBook" id="sRa-MY-QuS"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddArticleTableViewCell" rowHeight="130" id="ko1-OE-xIm">
+                                        <rect key="frame" x="0.0" y="180" width="393" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ko1-OE-xIm" id="WQa-ml-vhM">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="a.book.closed.hi" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MuH-fb-G1d">
+                                                    <rect key="frame" x="0.0" y="3.3333333333333712" width="129" height="123"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="文章" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0w-PD-L1M">
+                                                    <rect key="frame" x="161" y="54" width="35" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -379,6 +400,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="儲存書籍"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTC-DP-JZ8">
+                                <rect key="frame" x="8" y="163" width="376" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WKB-s0-9zB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -387,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyH-Te-nDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3717" y="1001"/>
+            <point key="canvasLocation" x="3716.7938931297708" y="1000.7042253521128"/>
         </scene>
         <!--Books-->
         <scene sceneID="GDk-hv-E8r">
@@ -628,6 +654,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -12,6 +12,7 @@ import Kingfisher
 class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var bookshelves: [Bookshelf] = []
+    var selectedBookshelfName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -75,7 +76,17 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
             }
             // Reload the table view with the updated data
             self.tableView.reloadData()
-            print(self.bookshelves)
+            //print(self.bookshelves)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chooseCategory" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let bookshelfName = bookshelves[indexPath.row].title
+                if let destinationVC = segue.destination as? AddCategoryViewController {
+                    destinationVC.bookshelfName = bookshelfName
+                }
+            }
         }
     }
 }

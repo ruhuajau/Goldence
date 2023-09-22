@@ -8,10 +8,12 @@
 import UIKit
 
 class AddBookViewController: UIViewController {
+    var bookshelfName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(bookshelfName)
     }
 
 }
