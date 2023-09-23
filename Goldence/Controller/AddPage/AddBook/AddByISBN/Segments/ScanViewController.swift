@@ -9,7 +9,6 @@ import UIKit
 import AVFoundation
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, BookResultViewControllerDelegate {
-    
     var bookshelfID: String?
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var barView: UIView!
@@ -76,6 +75,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                         let barcodeNumber = metadataObj?.stringValue
                         // Assuming you have an instance of BookResultViewController
                         let bookResultViewController = BookResultViewController()
+                        bookResultViewController.bookshelfID = self.bookshelfID
                         bookResultViewController.delegate = self
                         bookResultViewController.barcodeNumber = barcodeNumber
                         DispatchQueue.main.async { // Ensure UI updates on the main thread
