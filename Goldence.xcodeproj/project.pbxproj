@@ -91,10 +91,18 @@
 			children = (
 				0EE8C0742AB1B518003B205C /* HomeViewController.swift */,
 				0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */,
+				0E8297132ABEE8CA001B5EA0 /* BookList */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0E8297132ABEE8CA001B5EA0 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
 				0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */,
 				0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */,
 			);
-			path = Home;
+			path = BookList;
 			sourceTree = "<group>";
 		};
 		0EE8C0642AB1B518003B205C = {
