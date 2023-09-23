@@ -5,9 +5,16 @@
 //  Created by 趙如華 on 2023/9/21.
 //
 import UIKit
+import Kingfisher
+import Firebase
+import FirebaseStorage
 
 class BookResultViewController: UIViewController {
     var barcodeNumber: String?
+    var bookshelfID: String?
+    var bookName: String?
+    var authorName: String?
+    var imageURLString: String?
     weak var delegate: BookResultViewControllerDelegate?
     // Properties for UI elements
         let bookCoverImageView: UIImageView = {
@@ -59,7 +66,7 @@ class BookResultViewController: UIViewController {
         }
     func setupUI() {
         // Create a vertical stack view
-        let stackView = UIStackView(arrangedSubviews: [bookCoverImageView, titleLabel, authorLabel])
+        let stackView = UIStackView(arrangedSubviews: [bookCoverImageView, titleLabel, authorLabel, saveButton])
         stackView.axis = .vertical
         stackView.spacing = 40
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -68,11 +75,7 @@ class BookResultViewController: UIViewController {
         // dismissButton
         view.addSubview(dismissButton)
         dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
-        
-        // saveButton
-        view.addSubview(saveButton)
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        
         // Set constraints for the stack view (adjust these constraints as needed)
         let centerXConstraint = stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         let centerYConstraint = stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
@@ -111,6 +114,10 @@ class BookResultViewController: UIViewController {
                         if let imageUrlString = book.items.first?.volumeInfo.imageLinks.smallThumbnail {
                         if let imageUrl = URL(string: imageUrlString) {
                                 self.bookCoverImageView.kf.setImage(with: imageUrl)
+                            // Update the properties for saving
+                            self.bookName = title
+                            self.authorName = authors.joined(separator: ", ")
+                            self.imageURLString = imageUrlString
                             }
                         }
                     }
@@ -128,6 +135,37 @@ class BookResultViewController: UIViewController {
         }
     }
     @objc func saveButtonTapped() {
-        
+        guard let bookshelfID = bookshelfID,
+                      let bookName = bookName,
+                      let authorName = authorName,
+                      let imageURL = imageURLString.flatMap({ URL(string: $0) }) else {
+                    showAlert(message: "Book information is missing.")
+                    return
+                }
+
+                // Reference to the parent bookshelf document
+                let bookshelfRef = Firestore.firestore().collection("bookshelves").document(bookshelfID)
+
+                // Create a new book document within the specified bookshelf
+                let bookRef = bookshelfRef.collection("books").document()
+
+                // Create a Book instance
+                let book = Books(title: bookName, author: authorName, imageURL: imageURL)
+
+                // Save the book data to Firestore
+                bookRef.setData(book.dictionaryRepresentation) { error in
+                    if let error = error {
+                        self.showAlert(message: "Error saving book data: \(error.localizedDescription)")
+                    } else {
+                        self.showAlert(message: "Book data saved successfully!")
+                    }
+                }
     }
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }

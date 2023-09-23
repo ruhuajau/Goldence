@@ -10,7 +10,20 @@ import Foundation
 struct Books {
     let title: String
     let author: String
-    let imageURL: URL
+    let imageURL: URL?
+
+    var dictionaryRepresentation: [String: Any] {
+        var dictionary: [String: Any] = [
+            "title": title,
+            "author": author
+        ]
+
+        if let imageURL = imageURL {
+            dictionary["imageURL"] = imageURL.absoluteString
+        }
+
+        return dictionary
+    }
 }
 
 struct Book: Codable {
