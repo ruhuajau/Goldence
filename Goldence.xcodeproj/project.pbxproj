@@ -15,6 +15,7 @@
 		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
 		0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */; };
 		0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */; };
+		0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */; };
 		0EA64B632ABAEA1C00C2D18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA64B622ABAEA1C00C2D18C /* GoogleService-Info.plist */; };
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
+		0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenCardListViewController.swift; sourceTree = "<group>"; };
 		0EA64B622ABAEA1C00C2D18C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				0EE8C0742AB1B518003B205C /* HomeViewController.swift */,
 				0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */,
 				0E8297132ABEE8CA001B5EA0 /* BookList */,
+				0E8297142ABEE905001B5EA0 /* GoldenCardList */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -103,6 +106,14 @@
 				0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */,
 			);
 			path = BookList;
+			sourceTree = "<group>";
+		};
+		0E8297142ABEE905001B5EA0 /* GoldenCardList */ = {
+			isa = PBXGroup;
+			children = (
+				0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */,
+			);
+			path = GoldenCardList;
 			sourceTree = "<group>";
 		};
 		0EE8C0642AB1B518003B205C = {
@@ -378,6 +389,7 @@
 				0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */,
 				0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */,
 				0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */,
+				0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */,
 				0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */,
 				0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */,
 				0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */,
