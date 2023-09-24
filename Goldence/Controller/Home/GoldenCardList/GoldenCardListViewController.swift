@@ -10,7 +10,8 @@ import UIKit
 class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var bookTitle: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -34,5 +35,14 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
             cell = tableView.dequeueReusableCell(withIdentifier: "GoldenCardCell", for: indexPath)
         }
         return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addNewGoldence" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                if let destinationVC = segue.destination as? NewGoldenceViewController {
+                    destinationVC.bookTitle = bookTitle
+                }
+            }
+        }
     }
 }
