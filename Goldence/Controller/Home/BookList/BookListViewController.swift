@@ -95,5 +95,14 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bookToGoldence" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let bookTitle = books[indexPath.row].title
+                if let destinationVC = segue.destination as? GoldenCardListViewController {
+                    destinationVC.bookTitle = bookTitle
+                }
+            }
+        }
+    }
 }
