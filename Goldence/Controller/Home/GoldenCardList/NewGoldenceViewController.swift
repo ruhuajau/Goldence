@@ -54,6 +54,7 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
                         self.showAlert(message: "Note saved successfully!")
                     }
                 }
+        navigationController?.popViewController(animated: true)
     }
     func showAlert(message: String) {
             let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -73,3 +74,4 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
         cardContentTextView.text = text
     }
 }
+
