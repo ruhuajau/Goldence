@@ -14,6 +14,7 @@ class SelectShelfTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        contentView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

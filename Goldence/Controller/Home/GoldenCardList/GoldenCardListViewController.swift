@@ -15,6 +15,15 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
     var notes: [GoldenNote] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
+        // Create a custom back button with the image
+        let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
+        customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
+
+        // Set the custom back button as the left bar button item
+        navigationItem.leftBarButtonItem = customBackButton
+        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
         tableView.delegate = self
         tableView.dataSource = self
         loadNotesForBook()
@@ -39,6 +48,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GoldenCardTableViewCell", for: indexPath) as? GoldenCardTableViewCell {
                 let note = notes[indexPath.row]
+                cell.selectionStyle = .none
                 cell.goldenceTitle.text = note.title
                 cell.goldenceContent.text = note.cardContent
                 cell.noteId = note.id
@@ -114,7 +124,12 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
     }
+    @objc func customBackAction() {
 
+        self.navigationController?.popViewController(animated: true)
     }
+
+    
+}
 
 

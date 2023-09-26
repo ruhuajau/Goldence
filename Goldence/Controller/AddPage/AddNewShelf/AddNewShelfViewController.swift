@@ -17,7 +17,6 @@ class AddNewShelfViewController: UIViewController {
     let storage = Storage.storage()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         titleTextField.delegate = self
     }
     @IBAction func updateImage(_ sender: Any) {

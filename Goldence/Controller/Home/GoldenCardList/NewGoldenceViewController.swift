@@ -11,9 +11,7 @@ import FirebaseStorage
 
 class NewGoldenceViewController: UIViewController, UIKeyInput {
     func deleteBackward() {
-        
     }
-    
     var hasText: Bool = false
     @IBOutlet weak var cardTitleTextField: UITextField!
     @IBOutlet weak var cardContentTextView: UITextView!
@@ -22,6 +20,12 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
     var bookTitle: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
+        // Create a custom back button with the image
+        let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
+        customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
+        navigationItem.leftBarButtonItem = customBackButton
         setupUI()
         let button = UIButton.init(frame: CGRect(x: 270, y: 170, width: 100, height: 40))
                 if #available(iOS 15.0, *), self.canPerformAction(#selector(UIResponder.captureTextFromCamera(_:)), withSender: self) {
@@ -74,5 +78,10 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
         print("OCR 扫描到的文字是: \(text)")
         cardContentTextView.text = text
     }
+    @objc func customBackAction() {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }
 

@@ -15,6 +15,8 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedBookshelfName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
+        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
         tableView.delegate = self
         tableView.dataSource = self
         loadBookshelves()

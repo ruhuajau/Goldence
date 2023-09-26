@@ -251,8 +251,8 @@
 		0EE8C08F2AB2D98D003B205C /* AddPage */ = {
 			isa = PBXGroup;
 			children = (
-				0E7155762ABC186C00982A6C /* AddNewShelf */,
 				0EE8C0912AB2DDC0003B205C /* SelectShelf */,
+				0E7155762ABC186C00982A6C /* AddNewShelf */,
 				0EE8C0902AB2DD95003B205C /* AddCategory */,
 				0EE8C0962AB2E5FA003B205C /* AddBook */,
 			);
