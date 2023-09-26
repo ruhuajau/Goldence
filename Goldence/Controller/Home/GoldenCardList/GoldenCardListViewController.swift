@@ -45,6 +45,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         let cell: UITableViewCell
         if indexPath.section == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: "AddGoldenCardCell", for: indexPath)
+            cell.selectionStyle = .none
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "GoldenCardTableViewCell", for: indexPath) as? GoldenCardTableViewCell {
                 let note = notes[indexPath.row]
