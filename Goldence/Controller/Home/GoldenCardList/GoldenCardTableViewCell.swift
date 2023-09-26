@@ -10,9 +10,9 @@ import UIKit
 class GoldenCardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var goldenceImage: UIImageView!
-    
     @IBOutlet weak var goldenceTitle: UILabel!    
     @IBOutlet weak var goldenceContent: UITextView!
+    @IBOutlet weak var shareButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,4 +24,7 @@ class GoldenCardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        
+    }
 }

@@ -198,18 +198,30 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04m-UW-Glz">
-                                                    <rect key="frame" x="137" y="16" width="240" height="20"/>
+                                                    <rect key="frame" x="137" y="16" width="186" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9q-el-iYU">
+                                                    <rect key="frame" x="325" y="16" width="52" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="分享">
+                                                        <color key="baseForegroundColor" red="0.5866624024" green="0.7240996703" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="shareButtonTapped:" destination="qjE-le-aza" eventType="touchUpInside" id="NlL-5T-rgA"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="goldenceContent" destination="AGO-r1-t1u" id="EwZ-A2-bnV"/>
                                             <outlet property="goldenceImage" destination="4an-8K-DO9" id="0UA-Lf-Vkt"/>
                                             <outlet property="goldenceTitle" destination="04m-UW-Glz" id="6aY-Yv-NKL"/>
+                                            <outlet property="shareButton" destination="C9q-el-iYU" id="XwZ-2f-n7a"/>
                                             <segue destination="HUH-B7-jFq" kind="show" id="pTR-E1-t7z"/>
                                         </connections>
                                     </tableViewCell>
@@ -1053,6 +1065,7 @@
                     <view key="view" contentMode="scaleToFill" id="5VC-b3-HEF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Ov-Gi-DYN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -1067,6 +1080,7 @@
                     <view key="view" contentMode="scaleToFill" id="sxo-Fn-BfW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Wj1-89-dZ4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -1081,6 +1095,7 @@
                     <view key="view" contentMode="scaleToFill" id="3LF-X1-39n">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ETn-Od-eJA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>

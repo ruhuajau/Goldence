@@ -29,12 +29,10 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         } else {
             return notes.count
         }
-        return 0
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         if indexPath.section == 0 {

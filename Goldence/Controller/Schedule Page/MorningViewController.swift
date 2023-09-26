@@ -40,9 +40,32 @@ class SquareView: UIView {
     }
 }
 
+class TimeLabelView: UIView {
+    let labels = ["6:00", "7:00", "8:00", "9:00", "10:00", "11:00"]
+    let squareSize: CGFloat
+    init(frame: CGRect, squareSize: CGFloat) {
+        self.squareSize = squareSize
+        super.init(frame: frame)
+        setupLabels()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    private func setupLabels() {
+        let labelHeight: CGFloat = 20
+        let spacing: CGFloat = 7
+        for (index, labelText) in labels.enumerated() {
+            let labelFrame = CGRect(x: -20, y: CGFloat(index) * (squareSize + spacing), width: squareSize + 5, height: labelHeight)
+            let label = UILabel(frame: labelFrame)
+            label.text = labelText
+            label.textAlignment = .right
+            addSubview(label)
+        }
+    }
+}
+
 class MorningViewController: UIViewController {
-    let scrollView = UIScrollView()
-    var orangeSquareNumbers: [Int] = [] // Array to store numbers of orange squares
+    var orangeSquareNumbers: [Int] = [] // Array to store numbers of orange square
     override func viewDidLoad() {
         super.viewDidLoad()
         let squareSize: CGFloat = 45
@@ -70,6 +93,11 @@ class MorningViewController: UIViewController {
                 }
             }
         }
+        // Calculate the width of the time label view based on the square size
+        let timeLabelViewWidth = squareSize
+        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: squareSize).labels.count) * (squareSize + padding))
+        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: squareSize)
+        view.addSubview(timeLabelView)
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
