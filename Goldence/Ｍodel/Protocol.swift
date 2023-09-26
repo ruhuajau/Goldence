@@ -10,3 +10,8 @@ import Foundation
 protocol BookResultViewControllerDelegate: class {
     func didDismissBookResultViewController()
 }
+
+protocol GoldenCardTableViewCellDelegate: AnyObject {
+    func shareButtonTapped(noteId: String)
+}
+

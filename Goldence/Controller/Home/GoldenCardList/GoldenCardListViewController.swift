@@ -8,12 +8,11 @@
 import UIKit
 import Firebase
 
-class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GoldenCardTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var bookTitle: String?
     var notes: [GoldenNote] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -42,6 +41,8 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
                 let note = notes[indexPath.row]
                 cell.goldenceTitle.text = note.title
                 cell.goldenceContent.text = note.cardContent
+                cell.noteId = note.id
+                cell.delegate = self
                 return cell
             } else {
                 return UITableViewCell()
@@ -63,31 +64,26 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         guard let bookTitle = bookTitle else {
             return
         }
-        
         // Reference to the Firestore collection "note"
         let notesCollection = Firestore.firestore().collection("note")
-        
         // Create a query to filter notes by bookTitle
         let query = notesCollection.whereField("bookTitle", isEqualTo: bookTitle)
-        
         // Fetch documents based on the query
         query.addSnapshotListener { [weak self] (querySnapshot, error) in
             guard let self = self else { return }
-            
             if let error = error {
                 print("Error fetching notes: \(error.localizedDescription)")
                 return
             }
-            
             // Clear the existing notes array
             self.notes.removeAll()
-            
             // Iterate through the documents and populate the notes array
             for document in querySnapshot!.documents {
                 let data = document.data()
                 let title = data["title"] as? String ?? "" // Use the nil coalescing operator to handle potential nil values
                 let cardContent = data["cardContent"] as? String ?? ""
-                let note = GoldenNote(bookTitle: bookTitle, type: "book", title: title, cardContent: cardContent)
+                let id = data["id"] as? String ?? ""
+                let note = GoldenNote(id: id, bookTitle: bookTitle, type: "book", title: title, cardContent: cardContent, isPublic: false)
                 self.notes.append(note)
             }
 
@@ -95,4 +91,30 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
             self.tableView.reloadData()
         }
     }
-}
+    func shareButtonTapped(noteId: String) {
+        if let noteIndex = notes.firstIndex(where: { $0.id == noteId }) {
+            var updatedNote = notes[noteIndex]
+            updatedNote.isPublic = true
+            
+            // Update the Firebase document with the new is_public value
+            let db = Firestore.firestore()
+            let notesCollection = db.collection("note")
+            
+            // Assuming your documents have a unique identifier, you can use it to update the document
+            let documentId = updatedNote.id  // No need for optional binding here
+            
+            let noteDocumentRef = notesCollection.document(documentId)
+            
+            noteDocumentRef.updateData(["is_public": true]) { error in
+                if let error = error {
+                    print("Error updating document: \(error.localizedDescription)")
+                } else {
+                    print("Document updated successfully.")
+                }
+            }
+        }
+    }
+
+    }
+
+

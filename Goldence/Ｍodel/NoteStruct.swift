@@ -8,17 +8,21 @@
 import Foundation
 
 struct GoldenNote {
+    let id: String
     let bookTitle: String
     let type: String
     let title: String
     let cardContent: String
+    var isPublic: Bool
 
     var dictionaryRepresentation: [String: Any] {
         return [
+            "id": id,
             "bookTitle": bookTitle,
             "type": type,
             "title": title,
-            "cardContent": cardContent
+            "cardContent": cardContent,
+            "is_public": isPublic
         ]
     }
 }

@@ -29,6 +29,8 @@
 		0E8297832AC284F1001B5EA0 /* AfternoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297822AC284F1001B5EA0 /* AfternoonViewController.swift */; };
 		0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297842AC284FF001B5EA0 /* NightViewController.swift */; };
 		0E8297872AC29D4E001B5EA0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297862AC29D4E001B5EA0 /* ScheduleViewController.swift */; };
+		0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */; };
+		0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */; };
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
 		0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0742AB1B518003B205C /* HomeViewController.swift */; };
@@ -71,6 +73,8 @@
 		0E8297822AC284F1001B5EA0 /* AfternoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfternoonViewController.swift; sourceTree = "<group>"; };
 		0E8297842AC284FF001B5EA0 /* NightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightViewController.swift; sourceTree = "<group>"; };
 		0E8297862AC29D4E001B5EA0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +169,15 @@
 			path = "Schedule Page";
 			sourceTree = "<group>";
 		};
+		0E8297892AC2C9CC001B5EA0 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */,
+				0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		0EE8C0642AB1B518003B205C = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +239,7 @@
 			children = (
 				0E82970A2ABD1944001B5EA0 /* Home */,
 				0EE8C08F2AB2D98D003B205C /* AddPage */,
+				0E8297892AC2C9CC001B5EA0 /* Share */,
 				0E82977F2AC284A6001B5EA0 /* Schedule Page */,
 			);
 			path = Controller;
@@ -454,6 +468,7 @@
 				0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */,
 				0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */,
 				0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */,
+				0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */,
 				0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */,
 				0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */,
 				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,
@@ -461,6 +476,7 @@
 				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
 				0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */,
 				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,
+				0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */,
 				0E82976A2AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift in Sources */,
 				0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */,
 				0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */,

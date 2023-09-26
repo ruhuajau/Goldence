@@ -13,6 +13,8 @@ class GoldenCardTableViewCell: UITableViewCell {
     @IBOutlet weak var goldenceTitle: UILabel!    
     @IBOutlet weak var goldenceContent: UITextView!
     @IBOutlet weak var shareButton: UIButton!
+    var noteId: String?
+    weak var delegate: GoldenCardTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +27,6 @@ class GoldenCardTableViewCell: UITableViewCell {
     }
 
     @IBAction func shareButtonTapped(_ sender: Any) {
-        
+        delegate?.shareButtonTapped(noteId: noteId ?? "")
     }
 }

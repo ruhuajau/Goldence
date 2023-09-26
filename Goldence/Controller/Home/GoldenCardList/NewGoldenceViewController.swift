@@ -41,12 +41,13 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
                     showAlert(message: "Please fill in both the title and card content.")
                     return
                 }
+            let newDocumentID = db.collection("notes").document()
                 // Create a GoldenNote instance
-                let goldenNote = GoldenNote(bookTitle: bookTitle ?? "", type: "book", title: title, cardContent: cardContent)
+        let goldenNote = GoldenNote(id: newDocumentID.documentID ?? "", bookTitle: bookTitle ?? "", type: "book", title: title, cardContent: cardContent, isPublic: false)
                 // Reference to the "note" collection
                 let notesCollection = db.collection("note")
                 // Add the GoldenNote data to the "note" collection
-                notesCollection.addDocument(data: goldenNote.dictionaryRepresentation) { error in
+        notesCollection.document(newDocumentID.documentID).setData(goldenNote.dictionaryRepresentation) { error in
                     if let error = error {
                         self.showAlert(message: "Error saving note: \(error.localizedDescription)")
                     } else {
