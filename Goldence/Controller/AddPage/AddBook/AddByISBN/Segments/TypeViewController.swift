@@ -16,6 +16,7 @@ class TypeViewController: UIViewController {
     var bookName: String?
     var authorName: String?
     var imageURLString: String?
+    
     @IBOutlet weak var isbnTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
@@ -25,11 +26,14 @@ class TypeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(bookshelfID)
+        searchButton.layer.cornerRadius = 15
+        saveButton.layer.cornerRadius = 15
+        saveButton.isHidden = true
         // Do any additional setup after loading the view.
     }
     @IBAction func searchButtonTapped(_ sender: Any) {
         guard let isbn = isbnTextField.text, !isbn.isEmpty else {
-            showAlert(message: "isbn is missing.")
+            showAlert(title: "錯誤", message: "沒有isbn!")
             return
         }
         // Use the API manager to fetch book information
@@ -51,6 +55,7 @@ class TypeViewController: UIViewController {
                                 self.bookName = title
                                 self.authorName = authors.joined(separator: ", ")
                                 self.imageURLString = imageUrlString
+                                self.saveButton.isHidden = false
                             }
                         }
                     }
@@ -61,8 +66,8 @@ class TypeViewController: UIViewController {
                     }
                 }
     }
-    func showAlert(message: String) {
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
@@ -72,7 +77,7 @@ class TypeViewController: UIViewController {
                       let bookName = bookName,
                       let authorName = authorName,
                       let imageURL = imageURLString.flatMap({ URL(string: $0) }) else {
-                    showAlert(message: "Book information is missing.")
+            showAlert(title: "錯誤", message: "沒有書本資料!")
                     return
                 }
 
@@ -88,9 +93,9 @@ class TypeViewController: UIViewController {
                 // Save the book data to Firestore
                 bookRef.setData(book.dictionaryRepresentation) { error in
                     if let error = error {
-                        self.showAlert(message: "Error saving book data: \(error.localizedDescription)")
+                        self.showAlert(title: "儲存錯誤", message: "Error saving book data: \(error.localizedDescription)")
                     } else {
-                        self.showAlert(message: "Book data saved successfully!")
+                        self.showAlert(title: "成功儲存！", message: "Book data saved successfully!")
                     }
                 }
     }

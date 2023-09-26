@@ -11,4 +11,5 @@ target 'Goldence' do
   pod 'SwiftLint'
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'IQKeyboardManager'
 end
