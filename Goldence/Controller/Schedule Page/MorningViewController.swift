@@ -10,7 +10,7 @@ import UIKit
 class SquareView: UIView {
     var isOrange = false {
         didSet {
-            backgroundColor = isOrange ? .orange : .white
+            backgroundColor = isOrange ? UIColor.hexStringToUIColor(hex: "6b9080") : .white
             orangeSquareHandler?(squareNumber, isOrange)
             if isOrange {
                 print("Square \(squareNumber) turned orange")

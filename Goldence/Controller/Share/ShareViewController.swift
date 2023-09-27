@@ -44,7 +44,7 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
         let notesCollection = db.collection("note")
         
         // Query notes where isPublic is true
-        notesCollection.whereField("is_public", isEqualTo: true).getDocuments { [weak self] (querySnapshot, error) in
+        notesCollection.whereField("is_public", isEqualTo: true).addSnapshotListener { [weak self] (querySnapshot, error) in
             guard let self = self else { return }
             
             if let error = error {

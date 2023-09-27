@@ -10,16 +10,19 @@ import Firebase
 import FirebaseStorage
 
 class NewGoldenceViewController: UIViewController, UIKeyInput {
-    func deleteBackward() {
-    }
+        
     var hasText: Bool = false
     @IBOutlet weak var cardTitleTextField: UITextField!
     @IBOutlet weak var cardContentTextView: UITextView!
+    @IBOutlet weak var addMoreNoteButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     let db = Firestore.firestore()
 
     var bookTitle: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        addMoreNoteButton.layer.cornerRadius = 15
+        saveButton.layer.cornerRadius = 15
         view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
         // Create a custom back button with the image
         let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
@@ -34,7 +37,8 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
         } else {
             print("this device is not support live text")
         }
-        button.backgroundColor = .blue
+        button.backgroundColor = UIColor.hexStringToUIColor(hex: "6096ba")
+        button.layer.cornerRadius = 15
         button.setTitle("一鍵掃描", for: .normal)
         view.addSubview(button)
     }
@@ -42,7 +46,7 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
         guard let title = cardTitleTextField.text, !title.isEmpty,
               let cardContent = cardContentTextView.text, !cardContent.isEmpty else {
                     // Show an error message if either title or cardContent is missing
-                    showAlert(message: "Please fill in both the title and card content.")
+            showAlert(title: "錯誤", message: "資訊不完整")
                     return
                 }
             let newDocumentID = db.collection("notes").document()
@@ -53,16 +57,16 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
                 // Add the GoldenNote data to the "note" collection
         notesCollection.document(newDocumentID.documentID).setData(goldenNote.dictionaryRepresentation) { error in
                     if let error = error {
-                        self.showAlert(message: "Error saving note: \(error.localizedDescription)")
+                        self.showAlert(title: "錯誤", message: "Error saving note: \(error.localizedDescription)")
                     } else {
                         // Successfully saved the note
-                        self.showAlert(message: "Note saved successfully!")
+                        self.showAlert(title: "成功", message: "順利儲存！")
                     }
                 }
         navigationController?.popViewController(animated: true)
     }
-    func showAlert(message: String) {
-            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(title: String, message: String) {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
@@ -82,6 +86,9 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
 
         self.navigationController?.popViewController(animated: true)
     }
+    func deleteBackward() {
+    }
+
 
 }
 
