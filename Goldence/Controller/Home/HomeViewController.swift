@@ -14,8 +14,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     private var bookshelves: [Bookshelf] = []
     private let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
+        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
         tableView.delegate = self
         tableView.dataSource = self
         loadBookshelves()

@@ -139,7 +139,7 @@ class BookResultViewController: UIViewController {
                       let bookName = bookName,
                       let authorName = authorName,
                       let imageURL = imageURLString.flatMap({ URL(string: $0) }) else {
-                    showAlert(message: "Book information is missing.")
+            showAlert(title: "錯誤", message: "沒有書本資訊")
                     return
                 }
 
@@ -155,14 +155,19 @@ class BookResultViewController: UIViewController {
                 // Save the book data to Firestore
                 bookRef.setData(book.dictionaryRepresentation) { error in
                     if let error = error {
-                        self.showAlert(message: "Error saving book data: \(error.localizedDescription)")
+                        self.showAlert(title: "錯誤", message: "Error saving book data: \(error.localizedDescription)")
                     } else {
-                        self.showAlert(message: "Book data saved successfully!")
+                        self.showAlert(title: "成功", message: "成功儲存書本資料！")
                     }
                 }
+        self.dismiss(animated: true) {
+            // Call the delegate method when the view controller is dismissed
+            self.delegate?.didDismissBookResultViewController()
+        }
+
     }
-    func showAlert(message: String) {
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)

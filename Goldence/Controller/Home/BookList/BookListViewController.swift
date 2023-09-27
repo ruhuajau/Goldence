@@ -15,9 +15,16 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
     var bookshelfName: String?
     var books: [Books] = []
     let db = Firestore.firestore()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
+        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
+        // Create a custom back button with the image
+        let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
+        customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
+        // Set the custom back button as the left bar button item
+        navigationItem.leftBarButtonItem = customBackButton
         tableView.delegate = self
         tableView.dataSource = self
         if let bookshelfName = bookshelfName {
@@ -37,6 +44,7 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookListTableViewCell") as? BookListTableViewCell
         let book = books[indexPath.row]
         cell?.bookNameLabel.text = book.title
+        cell?.bookNameLabel.sizeToFit()
         cell?.authorNameLabel.text = book.author
         cell?.bookImageView.kf.setImage(with: book.imageURL)
         return cell!
@@ -104,5 +112,9 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
+    }
+    @objc func customBackAction() {
+
+        self.navigationController?.popViewController(animated: true)
     }
 }

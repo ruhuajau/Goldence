@@ -17,12 +17,21 @@ class AddBookViewController: UIViewController {
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     var newBookImage: UIImage?
     let db = Firestore.firestore()
     let storage = Storage.storage()
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveButton.layer.cornerRadius = 15
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
+        // Create a custom back button with the image
+        let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
+        customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
 
+        // Set the custom back button as the left bar button item
+        navigationItem.leftBarButtonItem = customBackButton
         // Do any additional setup after loading the view.
         titleTextField.delegate = self
         authorTextField.delegate = self
@@ -63,14 +72,14 @@ class AddBookViewController: UIViewController {
                     let bookshelfID = self.bookshelfID { // Use the stored bookshelfID
                     addData(bookshelfId: bookshelfID)
                 } else {
-                    showAlert(message: "請填入完整資訊！")
+                    showAlert(title: "錯誤", message: "請填入完整資訊！")
             }
     }
     func addData(bookshelfId: String) {
             guard let bookName = titleTextField.text,
                   let bookAuthor = authorTextField.text,
                   let bookImage = newBookImage else {
-                showAlert(message: "資訊有誤")
+                showAlert(title: "錯誤", message: "資訊不完整")
                 return
             }
 
@@ -84,13 +93,13 @@ class AddBookViewController: UIViewController {
             if let imageData = bookImage.jpegData(compressionQuality: 0.5) {
                 imageRef.putData(imageData, metadata: nil) { (_, error) in
                     if let error = error {
-                        self.showAlert(message: "Error uploading image: \(error.localizedDescription)")
+                        self.showAlert(title: "錯誤", message: "Error uploading image: \(error.localizedDescription)")
                         return
                     }
                     // Once the image is uploaded, get the download URL
                     imageRef.downloadURL { (url, error) in
                         if let error = error {
-                            self.showAlert(message: "Error getting download URL: \(error.localizedDescription)")
+                            self.showAlert(title: "錯誤", message: "Error getting download URL: \(error.localizedDescription)")
                             return
                         }
                         // Save the book data to Firestore
@@ -101,17 +110,17 @@ class AddBookViewController: UIViewController {
                         ]
                         bookRef.setData(data) { error in
                             if let error = error {
-                                self.showAlert(message: "Error saving book data: \(error.localizedDescription)")
+                                self.showAlert(title: "錯誤", message: "Error saving book data: \(error.localizedDescription)")
                             } else {
-                                self.showAlert(message: "Book data saved successfully!")
+                                self.showAlert(title: "成功", message: "儲存成功！")
                             }
                         }
                     }
                 }
             }
         }
-    func showAlert(message: String) {
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
@@ -146,6 +155,11 @@ class AddBookViewController: UIViewController {
             }
         }
     }
+    @objc func customBackAction() {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }
 
 extension AddBookViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

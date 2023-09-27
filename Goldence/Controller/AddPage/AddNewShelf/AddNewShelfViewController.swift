@@ -13,11 +13,20 @@ class AddNewShelfViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bookShelfImageView: UIImageView!
     var newBookImage: UIImage?
+    @IBOutlet weak var saveButton: UIButton!
     let db = Firestore.firestore()
     let storage = Storage.storage()
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveButton.layer.cornerRadius = 15
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
+        // Create a custom back button with the image
+        let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
+        let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
+        customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
 
+        // Set the custom back button as the left bar button item
+        navigationItem.leftBarButtonItem = customBackButton
         titleTextField.delegate = self
     }
     @IBAction func updateImage(_ sender: Any) {
@@ -101,6 +110,11 @@ class AddNewShelfViewController: UIViewController {
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
     }
+    @objc func customBackAction() {
+
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }
 
 extension AddNewShelfViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
