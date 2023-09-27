@@ -7,27 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E82977E2AC18873001B5EA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E82977D2AC18873001B5EA0 /* GoogleService-Info.plist */; };
+
+		0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */; };
+		0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556E2ABBEBEE00982A6C /* UIColor.swift */; };
+		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
+		0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */; };
+		0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */; };
+		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
+		0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */; };
+		0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */; };
+		0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */; };
+		0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */; };
+		0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */; };
+		0E82973E2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */; };
+		0E82976A2AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297692AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift */; };
+		0E82976E2AC17916001B5EA0 /* ScanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82976D2AC17916001B5EA0 /* ScanTextView.swift */; };
+		0E8297702AC17925001B5EA0 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82976F2AC17925001B5EA0 /* ScanButton.swift */; };
+		0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297712AC17933001B5EA0 /* ScanImageView.swift */; };
+		0E8297742AC17A8B001B5EA0 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297732AC17A8B001B5EA0 /* SaveButton.swift */; };
+		0E82977A2AC18630001B5EA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E8297792AC18630001B5EA0 /* GoogleService-Info.plist */; };
+		0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297802AC284D5001B5EA0 /* MorningViewController.swift */; };
+		0E8297832AC284F1001B5EA0 /* AfternoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297822AC284F1001B5EA0 /* AfternoonViewController.swift */; };
+		0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297842AC284FF001B5EA0 /* NightViewController.swift */; };
+		0E8297872AC29D4E001B5EA0 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297862AC29D4E001B5EA0 /* ScheduleViewController.swift */; };
+		0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */; };
+		0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */; };
+		0E82978F2AC2E34E001B5EA0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */; };
+
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
-		0EE8C0752AB1B518003B205C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0742AB1B518003B205C /* ViewController.swift */; };
+		0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0742AB1B518003B205C /* HomeViewController.swift */; };
 		0EE8C0782AB1B518003B205C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C0762AB1B518003B205C /* Main.storyboard */; };
 		0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C0792AB1B51A003B205C /* Assets.xcassets */; };
 		0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */; };
+
+		0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */; };
+		0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */; };
+		0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */; };
+		0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */; };
+		0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0992AB2F313003B205C /* APIManager.swift */; };
+		0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09B2AB2F32E003B205C /* BookStruct.swift */; };
+		0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */; };
+		0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A12AB30264003B205C /* TypeViewController.swift */; };
+		0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A32AB3026D003B205C /* ScanViewController.swift */; };
+
 		5E810ABDE14966EFA2269261 /* Pods_Goldence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
-		0E82977D2AC18873001B5EA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+
+		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
+		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewShelfViewController.swift; sourceTree = "<group>"; };
+		0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfStruct.swift; sourceTree = "<group>"; };
+		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
+		0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenCardListViewController.swift; sourceTree = "<group>"; };
+		0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoldenceViewController.swift; sourceTree = "<group>"; };
+		0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStruct.swift; sourceTree = "<group>"; };
+		0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenCardTableViewCell.swift; sourceTree = "<group>"; };
+		0E8297692AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoldenceNoteViewController.swift; sourceTree = "<group>"; };
+		0E82976D2AC17916001B5EA0 /* ScanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextView.swift; sourceTree = "<group>"; };
+		0E82976F2AC17925001B5EA0 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
+		0E8297712AC17933001B5EA0 /* ScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageView.swift; sourceTree = "<group>"; };
+		0E8297732AC17A8B001B5EA0 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
+		0E8297792AC18630001B5EA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E8297802AC284D5001B5EA0 /* MorningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningViewController.swift; sourceTree = "<group>"; };
+		0E8297822AC284F1001B5EA0 /* AfternoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfternoonViewController.swift; sourceTree = "<group>"; };
+		0E8297842AC284FF001B5EA0 /* NightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightViewController.swift; sourceTree = "<group>"; };
+		0E8297862AC29D4E001B5EA0 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
+		0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0EE8C0742AB1B518003B205C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EE8C0742AB1B518003B205C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0EE8C0772AB1B518003B205C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EE8C0792AB1B51A003B205C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EE8C07C2AB1B51A003B205C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EE8C07E2AB1B51A003B205C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfViewController.swift; sourceTree = "<group>"; };
+		0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfTableViewCell.swift; sourceTree = "<group>"; };
+		0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		0EE8C0992AB2F313003B205C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0EE8C09B2AB2F32E003B205C /* BookStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStruct.swift; sourceTree = "<group>"; };
+		0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddByISBNViewController.swift; sourceTree = "<group>"; };
+		0EE8C0A12AB30264003B205C /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
+		0EE8C0A32AB3026D003B205C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+
 		20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goldence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6CF90D0CD60947FAA68381 /* Pods-Goldence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.debug.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +118,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E7155762ABC186C00982A6C /* AddNewShelf */ = {
+			isa = PBXGroup;
+			children = (
+				0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */,
+			);
+			path = AddNewShelf;
+			sourceTree = "<group>";
+		};
+		0E82970A2ABD1944001B5EA0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0742AB1B518003B205C /* HomeViewController.swift */,
+				0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */,
+				0E8297132ABEE8CA001B5EA0 /* BookList */,
+				0E8297142ABEE905001B5EA0 /* GoldenCardList */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0E8297132ABEE8CA001B5EA0 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+				0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */,
+				0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */,
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
+		0E8297142ABEE905001B5EA0 /* GoldenCardList */ = {
+			isa = PBXGroup;
+			children = (
+				0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */,
+				0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */,
+				0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */,
+				0E8297692AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift */,
+			);
+			path = GoldenCardList;
+			sourceTree = "<group>";
+		};
+		0E82976C2AC178F1001B5EA0 /* New Goldence Scan Note */ = {
+			isa = PBXGroup;
+			children = (
+				0E82976D2AC17916001B5EA0 /* ScanTextView.swift */,
+				0E82976F2AC17925001B5EA0 /* ScanButton.swift */,
+				0E8297712AC17933001B5EA0 /* ScanImageView.swift */,
+				0E8297732AC17A8B001B5EA0 /* SaveButton.swift */,
+			);
+			path = "New Goldence Scan Note";
+			sourceTree = "<group>";
+		};
+		0E82977F2AC284A6001B5EA0 /* Schedule Page */ = {
+			isa = PBXGroup;
+			children = (
+				0E8297862AC29D4E001B5EA0 /* ScheduleViewController.swift */,
+				0E8297802AC284D5001B5EA0 /* MorningViewController.swift */,
+				0E8297822AC284F1001B5EA0 /* AfternoonViewController.swift */,
+				0E8297842AC284FF001B5EA0 /* NightViewController.swift */,
+			);
+			path = "Schedule Page";
+			sourceTree = "<group>";
+		};
+		0E8297892AC2C9CC001B5EA0 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */,
+				0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		0EE8C0642AB1B518003B205C = {
 			isa = PBXGroup;
 			children = (
@@ -65,16 +209,109 @@
 		0EE8C06F2AB1B518003B205C /* Goldence */ = {
 			isa = PBXGroup;
 			children = (
+				0EE8C0872AB2D7C6003B205C /* Ｍodel */,
+				0EE8C0892AB2D7F4003B205C /* View */,
+				0EE8C08A2AB2D7FA003B205C /* Controller */,
 				0EE8C0702AB1B518003B205C /* AppDelegate.swift */,
 				0EE8C0722AB1B518003B205C /* SceneDelegate.swift */,
-				0EE8C0742AB1B518003B205C /* ViewController.swift */,
-				0EE8C0762AB1B518003B205C /* Main.storyboard */,
 				0EE8C0792AB1B51A003B205C /* Assets.xcassets */,
 				0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */,
 				0EE8C07E2AB1B51A003B205C /* Info.plist */,
-				0E82977D2AC18873001B5EA0 /* GoogleService-Info.plist */,
+
+				0E8297792AC18630001B5EA0 /* GoogleService-Info.plist */,
+
 			);
 			path = Goldence;
+			sourceTree = "<group>";
+		};
+		0EE8C0872AB2D7C6003B205C /* Ｍodel */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0992AB2F313003B205C /* APIManager.swift */,
+				0EE8C09B2AB2F32E003B205C /* BookStruct.swift */,
+				0E71556E2ABBEBEE00982A6C /* UIColor.swift */,
+				0E7155742ABC12C800982A6C /* Protocol.swift */,
+				0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */,
+				0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */,
+			);
+			path = "Ｍodel";
+			sourceTree = "<group>";
+		};
+		0EE8C0892AB2D7F4003B205C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E82976C2AC178F1001B5EA0 /* New Goldence Scan Note */,
+				0EE8C0762AB1B518003B205C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EE8C08A2AB2D7FA003B205C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */,
+				0E82970A2ABD1944001B5EA0 /* Home */,
+				0EE8C08F2AB2D98D003B205C /* AddPage */,
+				0E8297892AC2C9CC001B5EA0 /* Share */,
+				0E82977F2AC284A6001B5EA0 /* Schedule Page */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0EE8C08F2AB2D98D003B205C /* AddPage */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0912AB2DDC0003B205C /* SelectShelf */,
+				0E7155762ABC186C00982A6C /* AddNewShelf */,
+				0EE8C0902AB2DD95003B205C /* AddCategory */,
+				0EE8C0962AB2E5FA003B205C /* AddBook */,
+			);
+			path = AddPage;
+			sourceTree = "<group>";
+		};
+		0EE8C0902AB2DD95003B205C /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */,
+			);
+			path = AddCategory;
+			sourceTree = "<group>";
+		};
+		0EE8C0912AB2DDC0003B205C /* SelectShelf */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */,
+				0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */,
+			);
+			path = SelectShelf;
+			sourceTree = "<group>";
+		};
+		0EE8C0962AB2E5FA003B205C /* AddBook */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */,
+				0EE8C09F2AB30216003B205C /* AddByISBN */,
+			);
+			path = AddBook;
+			sourceTree = "<group>";
+		};
+		0EE8C09F2AB30216003B205C /* AddByISBN */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */,
+				0EE8C0A02AB30233003B205C /* Segments */,
+			);
+			path = AddByISBN;
+			sourceTree = "<group>";
+		};
+		0EE8C0A02AB30233003B205C /* Segments */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0A12AB30264003B205C /* TypeViewController.swift */,
+				0EE8C0A32AB3026D003B205C /* ScanViewController.swift */,
+				0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */,
+			);
+			path = Segments;
 			sourceTree = "<group>";
 		};
 		2F05EB3B05F09F340EB59188 /* Frameworks */ = {
@@ -106,6 +343,7 @@
 				0EE8C06A2AB1B518003B205C /* Frameworks */,
 				0EE8C06B2AB1B518003B205C /* Resources */,
 				2D967D84FAC8A27C96D2442D /* [CP] Embed Pods Frameworks */,
+				0EE8C0862AB2B10D003B205C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -155,7 +393,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */,
-				0E82977E2AC18873001B5EA0 /* GoogleService-Info.plist in Resources */,
+
+				0E82977A2AC18630001B5EA0 /* GoogleService-Info.plist in Resources */,
+
 				0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */,
 				0EE8C0782AB1B518003B205C /* Main.storyboard in Resources */,
 			);
@@ -164,6 +404,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0EE8C0862AB2B10D003B205C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		2D967D84FAC8A27C96D2442D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,9 +467,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EE8C0752AB1B518003B205C /* ViewController.swift in Sources */,
+				0E8297832AC284F1001B5EA0 /* AfternoonViewController.swift in Sources */,
+				0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */,
+				0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */,
+				0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */,
+				0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */,
+				0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */,
+				0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */,
+				0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */,
+				0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */,
+				0E8297872AC29D4E001B5EA0 /* ScheduleViewController.swift in Sources */,
+				0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */,
+				0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */,
+				0E8297702AC17925001B5EA0 /* ScanButton.swift in Sources */,
+				0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */,
+				0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */,
+				0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */,
+				0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */,
+				0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */,
+				0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */,
+				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,
+				0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */,
+				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
+				0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */,
+				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,
+				0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */,
+				0E82976A2AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift in Sources */,
+				0E82978F2AC2E34E001B5EA0 /* CustomTabBarController.swift in Sources */,
+				0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */,
+				0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */,
+				0E7155752ABC12C800982A6C /* Protocol.swift in Sources */,
 				0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */,
 				0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */,
+				0E82973E2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift in Sources */,
+				0E82976E2AC17916001B5EA0 /* ScanTextView.swift in Sources */,
+				0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */,
+				0E8297742AC17A8B001B5EA0 /* SaveButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +653,7 @@
 				DEVELOPMENT_TEAM = ZN536HML37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goldence/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Requires camera to scan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -392,6 +683,7 @@
 				DEVELOPMENT_TEAM = ZN536HML37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goldence/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Requires camera to scan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

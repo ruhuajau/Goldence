@@ -7,5 +7,9 @@ target 'Goldence' do
 
   # Pods for Goldence
   pod 'Firebase/Firestore'
-
+  pod 'Firebase/Storage'
+  pod 'SwiftLint'
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'IQKeyboardManager'
 end
