@@ -374,7 +374,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="查看筆記"/>
                                 <connections>
-                                    <segue destination="X1T-t1-Qsv" kind="show" id="0r7-dC-IW2"/>
+                                    <segue destination="X1T-t1-Qsv" kind="show" identifier="EditGoldenceNote" id="0r7-dC-IW2"/>
                                 </connections>
                             </button>
                         </subviews>
