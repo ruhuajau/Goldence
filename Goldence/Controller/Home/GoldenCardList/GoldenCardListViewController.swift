@@ -12,6 +12,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var tableView: UITableView!
     var bookTitle: String?
+    var noteId: String?
     var notes: [GoldenNote] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +69,16 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
                     destinationVC.bookTitle = bookTitle
                 }
             }
+        } else if segue.identifier == "editGoldence" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let noteId = notes[indexPath.row].id
+                if let destinationVC = segue.destination as? EditGoldenCardContent {
+                    destinationVC.noteId = noteId
+                }
+            }
         }
     }
+
     func loadNotesForBook() {
         // Check if a valid bookTitle is available
         guard let bookTitle = bookTitle else {

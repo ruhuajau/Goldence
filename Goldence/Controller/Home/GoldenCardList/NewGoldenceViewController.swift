@@ -14,14 +14,12 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
     var hasText: Bool = false
     @IBOutlet weak var cardTitleTextField: UITextField!
     @IBOutlet weak var cardContentTextView: UITextView!
-    @IBOutlet weak var addMoreNoteButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     let db = Firestore.firestore()
 
     var bookTitle: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        addMoreNoteButton.layer.cornerRadius = 15
         saveButton.layer.cornerRadius = 15
         view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
         // Create a custom back button with the image

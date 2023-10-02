@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol BookResultViewControllerDelegate: class {
     func didDismissBookResultViewController()
@@ -14,4 +15,9 @@ protocol BookResultViewControllerDelegate: class {
 protocol GoldenCardTableViewCellDelegate: AnyObject {
     func shareButtonTapped(noteId: String)
 }
+
+protocol ImageEditingDelegate: AnyObject {
+    func imageEditingViewController(_ controller: ImageViewController, didFinishEditingImage editedImage: UIImage)
+}
+
 
