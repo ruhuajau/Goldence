@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "blogger.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "blogger.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
