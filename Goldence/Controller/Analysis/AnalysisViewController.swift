@@ -20,7 +20,6 @@ class AnalysisViewController: UIViewController {
 
             fetchDataForLineChart()
         }
-
     func fetchDataForLineChart() {
         let db = Firestore.firestore()
         let collectionRef = db.collection("schedules")
@@ -34,15 +33,15 @@ class AnalysisViewController: UIViewController {
                 return
             }
 
+            // Iterate through each document
             for document in querySnapshot?.documents ?? [] {
                 if let data = document.data() as? [String: Any],
                    let date = data["date"] as? String,
                    let morning = data["morning"] as? [Int],
                    let afternoon = data["afternoon"] as? [Int],
                    let night = data["night"] as? [Int] {
-                    // Calculate the total counts of data for each date and sum them up
+                    // Calculate the total counts of data for each date and add them to dateCountMap
                     let total = morning.count + afternoon.count + night.count
-                    dateCountMap.removeAll()
                     dateCountMap[date] = (dateCountMap[date] ?? 0) + total
                 }
             }
@@ -56,6 +55,7 @@ class AnalysisViewController: UIViewController {
             self.setupLineChart()
         }
     }
+
 
 
         func setupLineChart() {
