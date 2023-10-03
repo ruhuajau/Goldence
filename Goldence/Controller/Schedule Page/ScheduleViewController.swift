@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ScheduleViewController: UIViewController {
 
@@ -15,14 +16,18 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var afternoonSegmentView: UIView!
     @IBOutlet weak var nightSegmentView: UIView!
     let dateFormatter = DateFormatter()
-    let currentDate = Date()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        dateLabel.text = dateFormatter.string(from: currentDate)
-        self.view.bringSubviewToFront(morningSegmentView)
-    }
+        let currentDate = Date()
+        var documentID: String = ""
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            dateFormatter.dateFormat = "MMM d, yyyy"
+            dateLabel.text = dateFormatter.string(from: currentDate)
+            // Generate a document ID for the current date
+            self.documentID = generateDocumentID(for: currentDate)
+            // Check if a document with the same ID exists and create one if not
+            checkAndCreateDocumentIfNeeded(documentID: documentID)
+            self.view.bringSubviewToFront(morningSegmentView)
+        }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -35,5 +40,30 @@ class ScheduleViewController: UIViewController {
             break
         }
     }
-    
+    func generateDocumentID(for date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyyMMdd"
+            return dateFormatter.string(from: date)
+        }
+        
+        func checkAndCreateDocumentIfNeeded(documentID: String) {
+            let db = Firestore.firestore()
+            let schedulesRef = db.collection("schedules").document(documentID)
+            
+            schedulesRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    // Document already exists, do nothing
+                } else {
+                    // Document doesn't exist, create a new one
+                    schedulesRef.setData([:]) { error in
+                        if let error = error {
+                            print("Error creating document: \(error.localizedDescription)")
+                        } else {
+                            print("Document created successfully!")
+                        }
+                    }
+                }
+            }
+        }
+   
 }

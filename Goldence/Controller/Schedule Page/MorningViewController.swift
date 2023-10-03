@@ -6,76 +6,23 @@
 //
 
 import UIKit
-
-class SquareView: UIView {
-    var isOrange = false {
-        didSet {
-            backgroundColor = isOrange ? UIColor.hexStringToUIColor(hex: "6b9080") : .white
-            orangeSquareHandler?(squareNumber, isOrange)
-            if isOrange {
-                print("Square \(squareNumber) turned orange")
-            }
-        }
-    }
-    var isTouched = false
-    var squareNumber: Int = 0
-    var orangeSquareHandler: ((Int, Bool) -> Void)?
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    private func setup() {
-        backgroundColor = .white
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
-        layer.cornerRadius = 10
-    }
-    func toggleColor() {
-        if !isTouched {
-            isOrange.toggle()
-            isTouched = true
-        }
-    }
-}
-
-class TimeLabelView: UIView {
-    let labels = ["6:00", "7:00", "8:00", "9:00", "10:00", "11:00"]
-    let squareSize: CGFloat
-    init(frame: CGRect, squareSize: CGFloat) {
-        self.squareSize = squareSize
-        super.init(frame: frame)
-        setupLabels()
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    private func setupLabels() {
-        let labelHeight: CGFloat = 20
-        let spacing: CGFloat = 7
-        for (index, labelText) in labels.enumerated() {
-            let labelFrame = CGRect(x: -20, y: CGFloat(index) * (squareSize + spacing) - 25, width: squareSize + 5, height: labelHeight)
-            let label = UILabel(frame: labelFrame)
-            label.text = labelText
-            label.textAlignment = .right
-            addSubview(label)
-        }
-    }
-}
+import Firebase
 
 class MorningViewController: UIViewController {
     var orangeSquareNumbers: [Int] = [] // Array to store numbers of orange square
+    var documentID: String?
+    let currentDate = Date()
+
+    let db = Firestore.firestore()
     override func viewDidLoad() {
             super.viewDidLoad()
+        self.documentID = generateDocumentID(for: currentDate)
             let rectangleWidth: CGFloat = 70
             let rectangleHeight: CGFloat = 45
             let numRows = 6
             let numCols = 1
             let padding: CGFloat = 7
             var squareNumber = 6
-            
             for row in 0..<numRows {
                 for col in 0..<numCols {
                     let x = CGFloat(col) * (rectangleWidth + padding)
@@ -115,4 +62,43 @@ class MorningViewController: UIViewController {
             }
         }
     }
-}
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let documentID = documentID, !documentID.isEmpty else {
+            print("Invalid or empty documentID.")
+            return
+        }
+
+            let schedulesRef = db.collection("schedules").document(documentID)
+
+            schedulesRef.getDocument { (document, error) in
+                if let error = error {
+                    print("Error fetching document: \(error.localizedDescription)")
+                    return
+                }
+
+                // Check if the document exists
+                if let document = document, document.exists {
+                    // Document exists, update it with the new "morning" data
+                    var updatedData = document.data() ?? [:]
+                    updatedData["morning"] = self.orangeSquareNumbers // Add the morning data here
+
+                    // Update the document with the modified data
+                    schedulesRef.setData(updatedData, merge: true) { error in
+                        if let error = error {
+                            print("Error updating document: \(error.localizedDescription)")
+                        } else {
+                            print("Morning data updated successfully!")
+                        }
+                    }
+                } else {
+                    print("Document with ID \(documentID) does not exist.")
+                }
+            }
+        }
+    func generateDocumentID(for date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyyMMdd"
+            return dateFormatter.string(from: date)
+        }
+
+    }
