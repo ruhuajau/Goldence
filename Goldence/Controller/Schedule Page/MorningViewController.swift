@@ -31,6 +31,7 @@ class SquareView: UIView {
         backgroundColor = .white
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
+        layer.cornerRadius = 10
     }
     func toggleColor() {
         if !isTouched {
@@ -55,7 +56,7 @@ class TimeLabelView: UIView {
         let labelHeight: CGFloat = 20
         let spacing: CGFloat = 7
         for (index, labelText) in labels.enumerated() {
-            let labelFrame = CGRect(x: -20, y: CGFloat(index) * (squareSize + spacing), width: squareSize + 5, height: labelHeight)
+            let labelFrame = CGRect(x: -20, y: CGFloat(index) * (squareSize + spacing) - 25, width: squareSize + 5, height: labelHeight)
             let label = UILabel(frame: labelFrame)
             label.text = labelText
             label.textAlignment = .right
@@ -67,38 +68,41 @@ class TimeLabelView: UIView {
 class MorningViewController: UIViewController {
     var orangeSquareNumbers: [Int] = [] // Array to store numbers of orange square
     override func viewDidLoad() {
-        super.viewDidLoad()
-        let squareSize: CGFloat = 45
-        let numRows = 6
-        let numCols = 2
-        let padding: CGFloat = 7
-        var squareNumber = 1
-        for row in 0..<numRows {
-            for col in 0..<numCols {
-                let x = CGFloat(col) * (squareSize + padding)
-                let y = CGFloat(row) * (squareSize + padding)
-                let squareFrame = CGRect(x: x + 200, y: y + 80, width: squareSize, height: squareSize)
-                let squareView = SquareView(frame: squareFrame)
-                squareView.squareNumber = squareNumber
-                squareNumber += 1
-                view.addSubview(squareView)
-                squareView.orangeSquareHandler = { [weak self] number, isOrange in
-                    if isOrange {
-                        self?.orangeSquareNumbers.append(number)
-                    } else if let index = self?.orangeSquareNumbers.firstIndex(of: number) {
-                        self?.orangeSquareNumbers.remove(at: index)
+            super.viewDidLoad()
+            let rectangleWidth: CGFloat = 70
+            let rectangleHeight: CGFloat = 45
+            let numRows = 6
+            let numCols = 1
+            let padding: CGFloat = 7
+            var squareNumber = 1
+            
+            for row in 0..<numRows {
+                for col in 0..<numCols {
+                    let x = CGFloat(col) * (rectangleWidth + padding)
+                    let y = CGFloat(row) * (rectangleHeight + padding)
+                    let squareFrame = CGRect(x: x + 200, y: y + 50, width: rectangleWidth, height: rectangleHeight)
+                    let squareView = SquareView(frame: squareFrame)
+                    squareView.squareNumber = squareNumber
+                    squareNumber += 1
+                    view.addSubview(squareView)
+                    squareView.orangeSquareHandler = { [weak self] number, isOrange in
+                        if isOrange {
+                            self?.orangeSquareNumbers.append(number)
+                        } else if let index = self?.orangeSquareNumbers.firstIndex(of: number) {
+                            self?.orangeSquareNumbers.remove(at: index)
+                        }
+                        self?.orangeSquareNumbers.sort()
+                        print("Orange squares: \(self?.orangeSquareNumbers ?? [])")
                     }
-                    self?.orangeSquareNumbers.sort()
-                    print("Orange squares: \(self?.orangeSquareNumbers ?? [])")
                 }
             }
+
+            // Calculate the width of the time label view based on the rectangle size
+            let timeLabelViewWidth = rectangleWidth
+            let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: rectangleHeight).labels.count) * (rectangleHeight + padding))
+            let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: rectangleHeight)
+            view.addSubview(timeLabelView)
         }
-        // Calculate the width of the time label view based on the square size
-        let timeLabelViewWidth = squareSize
-        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: squareSize).labels.count) * (squareSize + padding))
-        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: squareSize)
-        view.addSubview(timeLabelView)
-    }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let touchPoint = touch.location(in: view)
