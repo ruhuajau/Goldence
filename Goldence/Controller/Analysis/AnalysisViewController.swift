@@ -42,6 +42,7 @@ class AnalysisViewController: UIViewController {
                    let night = data["night"] as? [Int] {
                     // Calculate the total counts of data for each date and sum them up
                     let total = morning.count + afternoon.count + night.count
+                    dateCountMap.removeAll()
                     dateCountMap[date] = (dateCountMap[date] ?? 0) + total
                 }
             }
@@ -51,7 +52,6 @@ class AnalysisViewController: UIViewController {
             self.chartData = self.dates.map { date in
                 ChartDataEntry(x: Double(self.dates.firstIndex(of: date) ?? 0), y: Double(dateCountMap[date] ?? 0))
             }
-
             // Call the method to set up and display the line chart
             self.setupLineChart()
         }
