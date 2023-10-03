@@ -97,8 +97,4 @@ class AnalysisViewController: UIViewController {
             return dateStr
         }
     }
-
-
 }
-
-

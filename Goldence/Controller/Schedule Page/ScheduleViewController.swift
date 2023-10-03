@@ -20,6 +20,7 @@ class ScheduleViewController: UIViewController {
         var documentID: String = ""
         override func viewDidLoad() {
             super.viewDidLoad()
+            createNotification()
             dateFormatter.dateFormat = "MMM d, yyyy"
             dateLabel.text = dateFormatter.string(from: currentDate)
             // Generate a document ID for the current date
@@ -82,6 +83,20 @@ class ScheduleViewController: UIViewController {
             }
         }
     }
+    func createNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "該來看書囉！"
+        //content.subtitle = "子標題"
+        content.body = "快打開書，記點筆記吧"
+        content.badge = 1
 
-   
+        let dateComponents = DateComponents(hour: 23, minute: 23, second: 30) // 1
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true) // 2
+        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { err in
+            err != nil ? print("添加本地通知錯誤", err!.localizedDescription) : print("添加本地通知成功")
+        }
+
+    }
+
 }
