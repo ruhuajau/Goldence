@@ -62,7 +62,7 @@ class ScheduleViewController: UIViewController {
             } else {
                 // Document doesn't exist, create a new one
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
+                dateFormatter.dateFormat = "MM/dd"
                 let formattedDate = dateFormatter.string(from: currentDate)
 
                 let data: [String: Any] = [

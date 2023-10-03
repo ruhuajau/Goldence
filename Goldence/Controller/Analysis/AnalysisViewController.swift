@@ -21,7 +21,6 @@ class AnalysisViewController: UIViewController {
             fetchDataForLineChart()
             lineChartView.extraTopOffset = 50 // Add extra top offset (adjust as needed)
             lineChartView.extraBottomOffset = 50 // Add extra bottom offset (adjust as needed)
-
         }
 
     func fetchDataForLineChart() {
@@ -55,22 +54,31 @@ class AnalysisViewController: UIViewController {
             self.chartData = sortedDates.enumerated().map { index, date in
                 ChartDataEntry(x: Double(index), y: Double(dateCountMap[date] ?? 0))
             }
-            self.dates = sortedDates
-
-            // Call the method to set up and display the line chart
+            // Convert dates to abbreviated format and set up the line chart
+            self.dates = self.abbreviateDates(sortedDates)
+            print(dates)
             self.setupLineChart()
         }
     }
 
     func setupLineChart() {
         let line1 = LineChartDataSet(entries: chartData, label: "Total Counts")
-        line1.colors = [NSUIColor.blue]
-
+        let color = NSUIColor(cgColor: UIColor.hexStringToUIColor(hex: "6096ba").cgColor)
+        line1.colors = [color]
+        line1.circleRadius = 0
+        line1.mode = .horizontalBezier
+        
         let data = LineChartData(dataSet: line1)
         lineChartView.data = data
 
         lineChartView.chartDescription.text = "Total Counts by Date"
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: abbreviateDates(dates))
+        lineChartView.xAxis.drawGridLinesEnabled = false
+        lineChartView.xAxis.drawAxisLineEnabled = true
+        lineChartView.leftAxis.drawGridLinesEnabled = false
+        lineChartView.rightAxis.drawGridLinesEnabled = false
+        lineChartView.data?.setValueTextColor(.clear)
+
         print(dates)
         lineChartView.xAxis.labelRotationAngle = 0
         lineChartView.xAxis.granularity = 1

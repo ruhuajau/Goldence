@@ -63,6 +63,7 @@ class MorningViewController: UIViewController {
         }
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
+        uploadDocument()
         guard let documentID = documentID, !documentID.isEmpty else {
             print("Invalid or empty documentID.")
             return
@@ -101,4 +102,30 @@ class MorningViewController: UIViewController {
             return dateFormatter.string(from: date)
         }
 
+    // Function to upload a document
+    func uploadDocument() {
+        let db = Firestore.firestore()
+        
+        // Document data to be uploaded
+        let documentData: [String: Any] = [
+            "date": "10/02",
+            "morning": [7, 8],
+            "afternoon": [14, 15],
+            "night": [21, 22]
+        ]
+        
+        // Reference to the "schedules" collection with the specified document ID
+        let documentID = "20231002"
+        let schedulesRef = db.collection("schedules").document(documentID)
+        
+        // Upload the document data to Firestore
+        schedulesRef.setData(documentData) { error in
+            if let error = error {
+                print("Error uploading document: \(error.localizedDescription)")
+            } else {
+                print("Document uploaded successfully!")
+            }
+        }
+    }
+    
     }
