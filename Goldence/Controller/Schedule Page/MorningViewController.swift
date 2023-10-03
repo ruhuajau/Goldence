@@ -74,7 +74,7 @@ class MorningViewController: UIViewController {
             let numRows = 6
             let numCols = 1
             let padding: CGFloat = 7
-            var squareNumber = 1
+            var squareNumber = 6
             
             for row in 0..<numRows {
                 for col in 0..<numCols {

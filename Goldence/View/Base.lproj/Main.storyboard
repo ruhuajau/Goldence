@@ -962,11 +962,12 @@
                         <segue destination="CAx-h9-dbz" kind="relationship" relationship="viewControllers" id="C7I-m4-6ho"/>
                         <segue destination="xse-QB-l7Z" kind="relationship" relationship="viewControllers" id="bsO-1I-GCd"/>
                         <segue destination="6xm-oI-lIA" kind="relationship" relationship="viewControllers" id="Tft-TG-tbr"/>
+                        <segue destination="TmS-Ds-KHg" kind="relationship" relationship="viewControllers" id="gan-ha-TS0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPk-9S-kPk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-189" y="1644"/>
+            <point key="canvasLocation" x="-1202" y="2489"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dJA-d0-pxF">
@@ -1275,6 +1276,38 @@
             </objects>
             <point key="canvasLocation" x="1035.8778625954199" y="2190.8450704225352"/>
         </scene>
+        <!--閱讀分析-->
+        <scene sceneID="eo3-Cc-Tho">
+            <objects>
+                <viewController id="dEJ-cL-EA7" customClass="AnalysisViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y32-Zr-Tqd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Twh-fr-P5o">
+                                <rect key="frame" x="0.0" y="-4" width="393" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="Uel-Zz-qlj"/>
+                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffz-Cd-h3f" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="129" width="393" height="617"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5RQ-Zn-ivR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="閱讀分析" id="M90-np-NLX"/>
+                    <connections>
+                        <outlet property="myView" destination="Ffz-Cd-h3f" id="d46-dN-tyK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j74-VW-SBM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962.5954198473282" y="2976.7605633802818"/>
+        </scene>
         <!--Morning View Controller-->
         <scene sceneID="0bY-lP-JeJ">
             <objects>
@@ -1282,13 +1315,33 @@
                     <view key="view" contentMode="scaleToFill" id="5VC-b3-HEF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-C9-m3p">
+                                <rect key="frame" x="107" y="392" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="編輯">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-8B-CoL">
+                                <rect key="frame" x="241" y="392" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="確認">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7Ov-Gi-DYN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPD-W0-zWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2623.6641221374043" y="2449.6478873239439"/>
+            <point key="canvasLocation" x="3550.3816793893129" y="2449.2957746478874"/>
         </scene>
         <!--Afternoon View Controller-->
         <scene sceneID="DJf-P7-Eq4">
@@ -1318,11 +1371,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JU9-uF-dRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2625" y="2010"/>
+            <point key="canvasLocation" x="2805" y="1880"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="XdN-cH-fpX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TmS-Ds-KHg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5gM-0m-0kc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9K-fl-89b">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dEJ-cL-EA7" kind="relationship" relationship="rootViewController" id="nBi-Px-joh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ve4-5u-mNo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="2978"/>
         </scene>
     </scenes>
     <resources>
-        <image name="blogger" width="512" height="512"/>
+        <image name="blogger" width="256" height="256"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="book.circle" catalog="system" width="128" height="123"/>
         <image name="book.fill" catalog="system" width="128" height="95"/>
