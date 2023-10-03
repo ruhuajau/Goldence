@@ -22,20 +22,20 @@ class AnalysisViewController: UIViewController {
             lineChartView.extraTopOffset = 50 // Add extra top offset (adjust as needed)
             lineChartView.extraBottomOffset = 50 // Add extra bottom offset (adjust as needed)
         }
-
+    
     func fetchDataForLineChart() {
         let db = Firestore.firestore()
         let collectionRef = db.collection("schedules")
 
         var dateCountMap: [String: Int] = [:]
 
-        // Query the first three documents from the "schedules" collection
-        collectionRef.limit(to: 3).addSnapshotListener { [weak self] (querySnapshot, error) in
+        // Query the most recent three documents from the "schedules" collection
+        collectionRef.order(by: "date", descending: true).limit(to: 3).addSnapshotListener { [weak self] (querySnapshot, error) in
             guard let self = self, error == nil else {
                 print("Error fetching documents: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
-
+            dateCountMap.removeAll()
             // Iterate through each document
             for document in querySnapshot?.documents ?? [] {
                 if let data = document.data() as? [String: Any],
@@ -56,10 +56,11 @@ class AnalysisViewController: UIViewController {
             }
             // Convert dates to abbreviated format and set up the line chart
             self.dates = self.abbreviateDates(sortedDates)
-            print(dates)
+            print(self.dates)
             self.setupLineChart()
         }
     }
+
 
     func setupLineChart() {
         let line1 = LineChartDataSet(entries: chartData, label: "Total Counts")

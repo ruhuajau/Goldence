@@ -119,9 +119,16 @@ class NightViewController: UIViewController {
                         }
                     }
                 } else {
+                    self.showAlert(title: "成功", message: "已順利加入！")
                     print("Document with ID \(documentID) does not exist.")
                 }
             }
     }
-    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+    }
+
 }
