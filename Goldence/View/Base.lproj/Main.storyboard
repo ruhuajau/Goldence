@@ -1291,7 +1291,7 @@
                                 <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffz-Cd-h3f" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="162" width="393" height="584"/>
+                                <rect key="frame" x="28" y="162" width="349" height="584"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -1424,11 +1424,11 @@
             </objects>
             <point key="canvasLocation" x="2805" y="1880"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="XdN-cH-fpX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TmS-Ds-KHg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5gM-0m-0kc"/>
+                    <tabBarItem key="tabBarItem" title="" image="chart.bar.doc.horizontal" catalog="system" selectedImage="chart.bar.doc.horizontal.fill" id="5gM-0m-0kc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9K-fl-89b">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1453,6 +1453,8 @@
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="chart.bar.doc.horizontal.fill" catalog="system" width="115" height="128"/>
         <image name="doc.richtext" catalog="system" width="115" height="128"/>
         <image name="gift-card" width="512" height="512"/>
         <image name="open-book" width="512" height="512"/>

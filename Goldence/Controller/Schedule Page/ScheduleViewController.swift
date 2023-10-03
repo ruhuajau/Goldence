@@ -20,13 +20,13 @@ class ScheduleViewController: UIViewController {
         var documentID: String = ""
         override func viewDidLoad() {
             super.viewDidLoad()
-            createNotification()
             dateFormatter.dateFormat = "MMM d, yyyy"
             dateLabel.text = dateFormatter.string(from: currentDate)
             // Generate a document ID for the current date
             self.documentID = generateDocumentID(for: currentDate)
             // Check if a document with the same ID exists and create one if not
             checkAndCreateDocumentIfNeeded(documentID: documentID, currentDate: currentDate)
+            findFirstNumbersAndScheduleNotification(documentID: documentID)
             self.view.bringSubviewToFront(morningSegmentView)
         }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
@@ -83,14 +83,14 @@ class ScheduleViewController: UIViewController {
             }
         }
     }
-    func createNotification() {
+    func scheduleNotification(hour: Int) {
         let content = UNMutableNotificationContent()
         content.title = "該來看書囉！"
         //content.subtitle = "子標題"
         content.body = "快打開書，記點筆記吧"
         content.badge = 1
 
-        let dateComponents = DateComponents(hour: 23, minute: 23, second: 30) // 1
+        let dateComponents = DateComponents(hour: hour) // 1
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true) // 2
         let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { err in
@@ -98,5 +98,45 @@ class ScheduleViewController: UIViewController {
         }
 
     }
+    
+    func findFirstNumbersAndScheduleNotification(documentID: String) {
+        let db = Firestore.firestore()
+        let schedulesRef = db.collection("schedules").document(documentID)
 
+        schedulesRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error fetching document: \(error.localizedDescription)")
+                return
+            }
+
+            // Check if the document exists
+            if let document = document, document.exists {
+                // Document exists, extract data
+                if let data = document.data(),
+                   let morning = data["morning"] as? [Int],
+                   let afternoon = data["afternoon"] as? [Int],
+                   let night = data["night"] as? [Int] {
+
+                    // Get the first number from each array, if available
+                    let firstMorningNumber = morning.first
+                    let firstAfternoonNumber = afternoon.first
+                    let firstNightNumber = night.first
+
+                    // Schedule notifications for the specified hours
+                    if let morningNumber = firstMorningNumber {
+                        self.scheduleNotification(hour: morningNumber)
+                    }
+                    if let afternoonNumber = firstAfternoonNumber {
+                        self.scheduleNotification(hour: afternoonNumber)
+                    }
+                    if let nightNumber = firstNightNumber {
+                        self.scheduleNotification(hour: nightNumber)
+                    }
+                }
+            } else {
+                // Document doesn't exist
+                print("Document with ID \(documentID) does not exist.")
+            }
+        }
+    }
 }
