@@ -77,7 +77,6 @@ class EditNoteViewController: UIViewController, UIImagePickerControllerDelegate,
         if glyphIndex < textView.textStorage.length {
             // Find the tapped character index in the UITextView
             let characterIndex = layoutManager.characterIndexForGlyph(at: glyphIndex)
-            
             if characterIndex != NSNotFound {
                 let textStorage = textView.textStorage
                 let attributes = textStorage.attributes(at: characterIndex, effectiveRange: nil)
@@ -99,7 +98,6 @@ class EditNoteViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
     }
-    
     func imageEditingViewController(_ controller: ImageViewController, didFinishEditingImage editedImage: UIImage) {
         // Find the edited image attachment in the UITextView's textStorage
             let textStorage = textView.textStorage
@@ -126,10 +124,8 @@ class EditNoteViewController: UIViewController, UIImagePickerControllerDelegate,
                 print("NoteId is missing")
                 return
             }
-            
             // Initialize an array to store all the image URLs
             var imageURLs: [String] = []
-            
             // Iterate through the text storage to find all images and upload them
             let textStorage = textView.textStorage
             textStorage.enumerateAttribute(.attachment, in: NSMakeRange(0, textStorage.length), options: []) { (value, range, stop) in
