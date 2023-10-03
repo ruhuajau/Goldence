@@ -25,7 +25,7 @@ class ScheduleViewController: UIViewController {
             // Generate a document ID for the current date
             self.documentID = generateDocumentID(for: currentDate)
             // Check if a document with the same ID exists and create one if not
-            checkAndCreateDocumentIfNeeded(documentID: documentID)
+            checkAndCreateDocumentIfNeeded(documentID: documentID, currentDate: currentDate)
             self.view.bringSubviewToFront(morningSegmentView)
         }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
@@ -45,25 +45,43 @@ class ScheduleViewController: UIViewController {
             dateFormatter.dateFormat = "yyyyMMdd"
             return dateFormatter.string(from: date)
         }
-        
-        func checkAndCreateDocumentIfNeeded(documentID: String) {
-            let db = Firestore.firestore()
-            let schedulesRef = db.collection("schedules").document(documentID)
-            
-            schedulesRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    // Document already exists, do nothing
-                } else {
-                    // Document doesn't exist, create a new one
-                    schedulesRef.setData([:]) { error in
-                        if let error = error {
-                            print("Error creating document: \(error.localizedDescription)")
-                        } else {
-                            print("Document created successfully!")
-                        }
+    func checkAndCreateDocumentIfNeeded(documentID: String, currentDate: Date) {
+        let db = Firestore.firestore()
+        let schedulesRef = db.collection("schedules").document(documentID)
+
+        schedulesRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error fetching document: \(error.localizedDescription)")
+                return
+            }
+
+            // Check if the document exists
+            if let document = document, document.exists {
+                // Document already exists, do nothing
+                print("Document already exists.")
+            } else {
+                // Document doesn't exist, create a new one
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let formattedDate = dateFormatter.string(from: currentDate)
+
+                let data: [String: Any] = [
+                    "date": formattedDate,
+                    "morning": [], // Initialize the "morning" field with an empty array
+                    "afternoon": [], // Add other fields as needed
+                    "night": []
+                ]
+
+                schedulesRef.setData(data) { error in
+                    if let error = error {
+                        print("Error creating document: \(error.localizedDescription)")
+                    } else {
+                        print("Document created successfully!")
                     }
                 }
             }
         }
+    }
+
    
 }

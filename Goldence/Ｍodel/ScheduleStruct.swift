@@ -9,7 +9,6 @@ import Foundation
 
 struct Schedule: Codable {
     let date: String
-    let id: String
     let morning: [Int]?
     let afternoon: [Int]?
     let night: [Int]?
