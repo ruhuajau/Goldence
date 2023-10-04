@@ -18,7 +18,7 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>BoringSSL-GRPC.xcscheme_^#shared#^_</key>
+		<key>Charts.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>23</integer>
@@ -29,11 +29,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
-		</dict>
-		<key>Firebase.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
 		</dict>
 		<key>FirebaseAppCheckInterop.xcscheme</key>
 		<dict>
@@ -56,11 +51,6 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>FirebaseCore.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
 		<key>FirebaseCoreExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -75,22 +65,12 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>FirebaseCoreInternal.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
-		</dict>
 		<key>FirebaseFirestore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
-		</dict>
-		<key>FirebaseFirestore.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
 		</dict>
 		<key>FirebaseStorage.xcscheme</key>
 		<dict>
@@ -113,11 +93,6 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>GoogleUtilities.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
-		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -139,11 +114,6 @@
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
-		<key>Pods-Goldence.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>21</integer>
-		</dict>
 		<key>PromisesObjC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -151,10 +121,10 @@
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
-		<key>PromisesObjC.xcscheme_^#shared#^_</key>
+		<key>SwiftAlgorithms.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>24</integer>
 		</dict>
 		<key>SwiftLint.xcscheme</key>
 		<dict>
@@ -170,22 +140,12 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>abseil.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>19</integer>
-		</dict>
 		<key>gRPC-C++-gRPCCertificates-Cpp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
-		</dict>
-		<key>gRPC-C++-gRPCCertificates-Cpp.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
 		</dict>
 		<key>gRPC-C++.xcscheme</key>
 		<dict>
@@ -194,22 +154,12 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
-		<key>gRPC-C++.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
-		</dict>
 		<key>gRPC-Core.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>14</integer>
-		</dict>
-		<key>gRPC-Core.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>22</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
@@ -218,22 +168,12 @@
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
-		<key>leveldb-library.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>20</integer>
-		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>19</integer>
-		</dict>
-		<key>nanopb.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>18</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
