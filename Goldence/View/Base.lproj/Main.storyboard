@@ -372,18 +372,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-Mv-VND">
-                                <rect key="frame" x="103" y="523" width="178" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.63921568627450975" green="0.80784313725490198" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="新增更多筆記！">
-                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="vN9-iK-qj2" kind="show" id="HDV-cJ-Fke"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" id="BOD-ea-bqR">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -408,7 +396,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="5fw-yx-dJP"/>
                     <connections>
-                        <outlet property="addMoreNoteButton" destination="XN5-Mv-VND" id="Pbu-dL-eUf"/>
                         <outlet property="cardContentTextView" destination="50e-gg-J1j" id="Hbo-XB-0gN"/>
                         <outlet property="cardTitleTextField" destination="xbd-ie-n7h" id="pSQ-Qs-pPc"/>
                         <outlet property="saveButton" destination="u6q-Ft-Nd7" id="obV-Tt-nTQ"/>
@@ -417,30 +404,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZF-GX-tdM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4380.9160305343512" y="-753.52112676056345"/>
-        </scene>
-        <!--New Goldence Note View Controller-->
-        <scene sceneID="tOp-Hx-CFh">
-            <objects>
-                <viewController id="vN9-iK-qj2" customClass="NewGoldenceNoteViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6th-Bm-q0g">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="C8a-sA-uPv">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="safeArea" id="Z4Y-6U-5kc"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="cdu-Y8-0kN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="N6L-yj-ME3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="28s-Ib-bhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5160" y="-754"/>
         </scene>
         <!--新增-->
         <scene sceneID="7c2-2P-TiK">
