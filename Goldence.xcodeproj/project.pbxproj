@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */; };
 		0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556E2ABBEBEE00982A6C /* UIColor.swift */; };
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
@@ -20,7 +19,6 @@
 		0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */; };
 		0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */; };
 		0E82973E2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */; };
-		0E82976A2AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297692AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift */; };
 		0E82976E2AC17916001B5EA0 /* ScanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82976D2AC17916001B5EA0 /* ScanTextView.swift */; };
 		0E8297702AC17925001B5EA0 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82976F2AC17925001B5EA0 /* ScanButton.swift */; };
 		0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297712AC17933001B5EA0 /* ScanImageView.swift */; };
@@ -34,10 +32,12 @@
 		0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */; };
 		0E82978F2AC2E34E001B5EA0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */; };
 
+
 		0E8297E12ACBE612001B5EA0 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */; };
 		0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */; };
 		0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */; };
 		0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */; };
+
 
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
@@ -45,7 +45,6 @@
 		0EE8C0782AB1B518003B205C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C0762AB1B518003B205C /* Main.storyboard */; };
 		0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C0792AB1B51A003B205C /* Assets.xcassets */; };
 		0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */; };
-
 		0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */; };
 		0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */; };
 		0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */; };
@@ -55,13 +54,11 @@
 		0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */; };
 		0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A12AB30264003B205C /* TypeViewController.swift */; };
 		0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A32AB3026D003B205C /* ScanViewController.swift */; };
-
 		5E810ABDE14966EFA2269261 /* Pods_Goldence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
-
 		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
 		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -74,7 +71,6 @@
 		0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoldenceViewController.swift; sourceTree = "<group>"; };
 		0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStruct.swift; sourceTree = "<group>"; };
 		0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenCardTableViewCell.swift; sourceTree = "<group>"; };
-		0E8297692AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoldenceNoteViewController.swift; sourceTree = "<group>"; };
 		0E82976D2AC17916001B5EA0 /* ScanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextView.swift; sourceTree = "<group>"; };
 		0E82976F2AC17925001B5EA0 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		0E8297712AC17933001B5EA0 /* ScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageView.swift; sourceTree = "<group>"; };
@@ -88,10 +84,12 @@
 		0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
 		0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 
+
 		0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStruct.swift; sourceTree = "<group>"; };
 		0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRectangle.swift; sourceTree = "<group>"; };
 		0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLabels.swift; sourceTree = "<group>"; };
+
 
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		0EE8C0792AB1B51A003B205C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EE8C07C2AB1B51A003B205C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EE8C07E2AB1B51A003B205C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfViewController.swift; sourceTree = "<group>"; };
 		0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfTableViewCell.swift; sourceTree = "<group>"; };
 		0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +108,6 @@
 		0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddByISBNViewController.swift; sourceTree = "<group>"; };
 		0EE8C0A12AB30264003B205C /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		0EE8C0A32AB3026D003B205C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-
 		20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goldence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6CF90D0CD60947FAA68381 /* Pods-Goldence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.debug.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +158,7 @@
 				0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */,
 				0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */,
 				0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */,
-				0E8297692AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift */,
+				0E8297D82ACABC29001B5EA0 /* EditGoldenCard */,
 			);
 			path = GoldenCardList;
 			sourceTree = "<group>";
@@ -198,6 +194,7 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+
 		0E8297DF2ACBE5E6001B5EA0 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +210,7 @@
 				0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */,
 			);
 			path = Schedule;
+
 			sourceTree = "<group>";
 		};
 		0EE8C0642AB1B518003B205C = {
@@ -244,9 +242,7 @@
 				0EE8C0792AB1B51A003B205C /* Assets.xcassets */,
 				0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */,
 				0EE8C07E2AB1B51A003B205C /* Info.plist */,
-
 				0E8297792AC18630001B5EA0 /* GoogleService-Info.plist */,
-
 			);
 			path = Goldence;
 			sourceTree = "<group>";
@@ -423,9 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */,
-
 				0E82977A2AC18630001B5EA0 /* GoogleService-Info.plist in Resources */,
-
 				0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */,
 				0EE8C0782AB1B518003B205C /* Main.storyboard in Resources */,
 			);
@@ -503,6 +497,7 @@
 				0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */,
 				0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */,
 				0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */,
+				0E8297DA2ACABC5B001B5EA0 /* EditGoldenCardContent.swift in Sources */,
 				0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */,
 				0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */,
 				0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */,
@@ -513,6 +508,7 @@
 				0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */,
 				0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */,
 				0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */,
+				0E8297DE2ACABCBD001B5EA0 /* ImageViewController.swift in Sources */,
 				0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */,
 				0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */,
 				0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */,
@@ -524,8 +520,8 @@
 				0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */,
 				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,
 				0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */,
-				0E82976A2AC178A1001B5EA0 /* NewGoldenceNoteViewController.swift in Sources */,
 				0E82978F2AC2E34E001B5EA0 /* CustomTabBarController.swift in Sources */,
+				0E8297DC2ACABC92001B5EA0 /* EditNoteViewController.swift in Sources */,
 				0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */,
 				0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */,
 				0E7155752ABC12C800982A6C /* Protocol.swift in Sources */,
