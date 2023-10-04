@@ -1667,12 +1667,9 @@
         <image name="gift-card" width="512" height="512"/>
         <image name="open-book" width="512" height="512"/>
         <image name="paper-tape" width="266" height="224"/>
-<<<<<<< HEAD
+        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
-=======
-        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="123"/>
->>>>>>> develop
         <image name="plus.message" catalog="system" width="128" height="116"/>
         <image name="plus.message.fill" catalog="system" width="128" height="114"/>
         <image name="three-books" width="512" height="512"/>
