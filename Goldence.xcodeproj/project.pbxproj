@@ -31,9 +31,14 @@
 		0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */; };
 		0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */; };
 		0E82978F2AC2E34E001B5EA0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */; };
-		0E8297DA2ACABC5B001B5EA0 /* EditGoldenCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297D92ACABC5B001B5EA0 /* EditGoldenCardContent.swift */; };
-		0E8297DC2ACABC92001B5EA0 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297DB2ACABC92001B5EA0 /* EditNoteViewController.swift */; };
-		0E8297DE2ACABCBD001B5EA0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297DD2ACABCBD001B5EA0 /* ImageViewController.swift */; };
+
+
+		0E8297E12ACBE612001B5EA0 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */; };
+		0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */; };
+		0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */; };
+		0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */; };
+
+
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
 		0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0742AB1B518003B205C /* HomeViewController.swift */; };
@@ -78,9 +83,14 @@
 		0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
 		0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		0E8297D92ACABC5B001B5EA0 /* EditGoldenCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoldenCardContent.swift; sourceTree = "<group>"; };
-		0E8297DB2ACABC92001B5EA0 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
-		0E8297DD2ACABCBD001B5EA0 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+
+
+		0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStruct.swift; sourceTree = "<group>"; };
+		0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRectangle.swift; sourceTree = "<group>"; };
+		0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLabels.swift; sourceTree = "<group>"; };
+
+
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,14 +194,23 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
-		0E8297D82ACABC29001B5EA0 /* EditGoldenCard */ = {
+
+		0E8297DF2ACBE5E6001B5EA0 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
-				0E8297D92ACABC5B001B5EA0 /* EditGoldenCardContent.swift */,
-				0E8297DB2ACABC92001B5EA0 /* EditNoteViewController.swift */,
-				0E8297DD2ACABCBD001B5EA0 /* ImageViewController.swift */,
+				0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */,
 			);
-			path = EditGoldenCard;
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		0E8297E42ACBF3D9001B5EA0 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */,
+				0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */,
+			);
+			path = Schedule;
+
 			sourceTree = "<group>";
 		};
 		0EE8C0642AB1B518003B205C = {
@@ -237,6 +256,7 @@
 				0E7155742ABC12C800982A6C /* Protocol.swift */,
 				0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */,
 				0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */,
+				0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */,
 			);
 			path = "Ｍodel";
 			sourceTree = "<group>";
@@ -244,6 +264,7 @@
 		0EE8C0892AB2D7F4003B205C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E8297E42ACBF3D9001B5EA0 /* Schedule */,
 				0E82976C2AC178F1001B5EA0 /* New Goldence Scan Note */,
 				0EE8C0762AB1B518003B205C /* Main.storyboard */,
 			);
@@ -258,6 +279,7 @@
 				0EE8C08F2AB2D98D003B205C /* AddPage */,
 				0E8297892AC2C9CC001B5EA0 /* Share */,
 				0E82977F2AC284A6001B5EA0 /* Schedule Page */,
+				0E8297DF2ACBE5E6001B5EA0 /* Analysis */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -483,6 +505,7 @@
 				0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */,
 				0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */,
 				0E8297702AC17925001B5EA0 /* ScanButton.swift in Sources */,
+				0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */,
 				0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */,
 				0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */,
 				0E8297DE2ACABCBD001B5EA0 /* ImageViewController.swift in Sources */,
@@ -493,6 +516,7 @@
 				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,
 				0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */,
 				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
+				0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */,
 				0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */,
 				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,
 				0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */,
@@ -503,7 +527,9 @@
 				0E7155752ABC12C800982A6C /* Protocol.swift in Sources */,
 				0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */,
 				0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */,
+				0E8297E12ACBE612001B5EA0 /* AnalysisViewController.swift in Sources */,
 				0E82973E2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift in Sources */,
+				0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */,
 				0E82976E2AC17916001B5EA0 /* ScanTextView.swift in Sources */,
 				0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */,
 				0E8297742AC17A8B001B5EA0 /* SaveButton.swift in Sources */,
