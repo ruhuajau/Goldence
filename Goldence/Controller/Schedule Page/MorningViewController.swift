@@ -13,10 +13,14 @@ class MorningViewController: UIViewController {
     var orangeSquareNumbers: [Int] = [] // Array to store numbers of orange square
     var documentID: String?
     let currentDate = Date()
-
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     let db = Firestore.firestore()
     override func viewDidLoad() {
             super.viewDidLoad()
+        editButton.layer.cornerRadius = 8
+        saveButton.layer.cornerRadius = 8
+        checkMorningArray()
         self.documentID = generateDocumentID(for: currentDate)
             let rectangleWidth: CGFloat = 70
             let rectangleHeight: CGFloat = 45
@@ -135,5 +139,26 @@ class MorningViewController: UIViewController {
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
     }
-
+    func checkMorningArray() {
+        if let documentID = documentID, !documentID.isEmpty {
+                let schedulesRef = db.collection("schedules").document(documentID)
+                
+                schedulesRef.getDocument { [weak self] (document, error) in
+                    guard let self = self, error == nil else {
+                        print("Error fetching document: \(error?.localizedDescription ?? "Unknown error")")
+                        return
+                    }
+                    
+                    if let document = document, document.exists, let morning = document.data()?["morning"] as? [Int] {
+                        self.orangeSquareNumbers = morning
+                        self.updateRectangles()
+                    }
+                }
+            }
     }
+    func updateRectangles() {
+        for case let squareView as SquareView in view.subviews {
+            squareView.isOrange = orangeSquareNumbers.contains(squareView.squareNumber)
+        }
+    }
+}

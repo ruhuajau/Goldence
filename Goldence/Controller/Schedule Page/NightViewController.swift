@@ -37,8 +37,12 @@ class NightViewController: UIViewController {
     var documentID: String?
     let currentDate = Date()
     let db = Firestore.firestore()
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        editButton.layer.cornerRadius = 8
+        saveButton.layer.cornerRadius = 8
         self.documentID = generateDocumentID(for: currentDate)
             let rectangleWidth: CGFloat = 70
             let rectangleHeight: CGFloat = 45
