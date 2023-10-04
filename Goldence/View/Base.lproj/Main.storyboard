@@ -359,29 +359,52 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr3-sn-Iig">
                                 <rect key="frame" x="73" y="331" width="59" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="編輯"/>
+                                <buttonConfiguration key="configuration" style="plain" title="編輯">
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkD-u9-kYh">
                                 <rect key="frame" x="254" y="331" width="59" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="儲存"/>
+                                <buttonConfiguration key="configuration" style="plain" title="儲存">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDZ-y1-TUh">
                                 <rect key="frame" x="150" y="476" width="94" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="查看筆記"/>
+                                <buttonConfiguration key="configuration" style="plain" title="查看筆記">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="X1T-t1-Qsv" kind="show" identifier="EditGoldenceNote" id="0r7-dC-IW2"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="ahl-mI-t3v">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="TQc-Hn-jgX"/>
+                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v4h-hp-6Z0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="jP4-Rh-4yb"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="mdr-Am-VPV" id="oLC-Ze-btr"/>
+                        <outlet property="editButton" destination="pr3-sn-Iig" id="rXI-8h-jdq"/>
+                        <outlet property="lookNote" destination="iDZ-y1-TUh" id="XQR-cq-aud"/>
+                        <outlet property="saveButton" destination="gkD-u9-kYh" id="rWW-vJ-6qY"/>
+                        <outlet property="titleTextField" destination="CrJ-6t-fbI" id="bLb-Dy-w60"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQn-m9-tyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -407,7 +430,9 @@
                                 <rect key="frame" x="77" y="717" width="56" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system">
+                                    <color key="baseForegroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="insertImage:" destination="X1T-t1-Qsv" eventType="touchUpInside" id="0wd-jy-YUv"/>
                                 </connections>
@@ -415,12 +440,21 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idP-D2-sxN">
                                 <rect key="frame" x="255" y="717" width="59" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.45882352939999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="儲存"/>
+                                <buttonConfiguration key="configuration" style="plain" title="儲存">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="X1T-t1-Qsv" eventType="touchUpInside" id="Daa-ot-QRe"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="tYS-H4-hL3">
+                                <rect key="frame" x="0.0" y="-4" width="393" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="6ih-AD-pOA"/>
+                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mnv-Iv-zwA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -443,27 +477,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qo5-9A-Vyn">
-                                <rect key="frame" x="0.0" y="126" width="393" height="552"/>
+                                <rect key="frame" x="0.0" y="185" width="393" height="493"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-o8-ZAA">
-                                <rect key="frame" x="307" y="74" width="65" height="35"/>
+                                <rect key="frame" x="310" y="119" width="59" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <buttonConfiguration key="configuration" style="plain" title="完成">
+                                    <color key="baseForegroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="doneButtonTapped:" destination="vzb-7O-zMJ" eventType="touchUpInside" id="XEo-QC-qzz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f2-Ew-S5d">
-                                <rect key="frame" x="22" y="74" width="64" height="35"/>
+                                <rect key="frame" x="30" y="119" width="50" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Draw"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil.tip.crop.circle" catalog="system">
+                                    <color key="baseForegroundColor" red="0.27450980390000002" green="0.45882352939999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="drawButtonTapped:" destination="vzb-7O-zMJ" eventType="touchUpInside" id="OCg-QS-zar"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="RDl-Om-Clt">
+                                <rect key="frame" x="0.0" y="-3" width="393" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="IOW-9h-eSh"/>
+                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CRk-u2-HcL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1446,6 +1490,7 @@
         <image name="gift-card" width="512" height="512"/>
         <image name="open-book" width="512" height="512"/>
         <image name="paper-tape" width="266" height="224"/>
+        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="123"/>
         <image name="plus.message" catalog="system" width="128" height="116"/>
         <image name="plus.message.fill" catalog="system" width="128" height="114"/>
         <image name="three-books" width="512" height="512"/>

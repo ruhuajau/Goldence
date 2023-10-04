@@ -18,6 +18,7 @@ class EditNoteViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         print(noteId)
+        textView.layer.cornerRadius = 8
         imagePicker.delegate = self
         // Add tap gesture recognizer to detect image taps
         // Add a custom UITapGestureRecognizer to the UITextView
