@@ -35,9 +35,9 @@
 		0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */; };
 		0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */; };
 		0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */; };
-		0EDECDEA2ACCF2250011D4BB /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDE72ACCF2240011D4BB /* EditNoteViewController.swift */; };
-		0EDECDEB2ACCF2250011D4BB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDE82ACCF2240011D4BB /* ImageViewController.swift */; };
-		0EDECDEC2ACCF2250011D4BB /* EditGoldenCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDE92ACCF2240011D4BB /* EditGoldenCardContent.swift */; };
+		0EDECDF12ACD679E0011D4BB /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDEE2ACD679E0011D4BB /* EditNoteViewController.swift */; };
+		0EDECDF22ACD679E0011D4BB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDEF2ACD679E0011D4BB /* ImageViewController.swift */; };
+		0EDECDF32ACD679E0011D4BB /* EditGoldenCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDF02ACD679E0011D4BB /* EditGoldenCardContent.swift */; };
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
 		0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0742AB1B518003B205C /* HomeViewController.swift */; };
@@ -86,9 +86,9 @@
 		0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStruct.swift; sourceTree = "<group>"; };
 		0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRectangle.swift; sourceTree = "<group>"; };
 		0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLabels.swift; sourceTree = "<group>"; };
-		0EDECDE72ACCF2240011D4BB /* EditNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
-		0EDECDE82ACCF2240011D4BB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		0EDECDE92ACCF2240011D4BB /* EditGoldenCardContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoldenCardContent.swift; sourceTree = "<group>"; };
+		0EDECDEE2ACD679E0011D4BB /* EditNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		0EDECDEF2ACD679E0011D4BB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		0EDECDF02ACD679E0011D4BB /* EditGoldenCardContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoldenCardContent.swift; sourceTree = "<group>"; };
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,10 +153,10 @@
 		0E8297142ABEE905001B5EA0 /* GoldenCardList */ = {
 			isa = PBXGroup;
 			children = (
-				0EDECDE62ACCF2240011D4BB /* EditGoldenCard */,
 				0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */,
 				0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */,
 				0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */,
+				0EDECDED2ACD679E0011D4BB /* EditGoldenCard */,
 			);
 			path = GoldenCardList;
 			sourceTree = "<group>";
@@ -209,15 +209,15 @@
 			path = Schedule;
 			sourceTree = "<group>";
 		};
-		0EDECDE62ACCF2240011D4BB /* EditGoldenCard */ = {
+		0EDECDED2ACD679E0011D4BB /* EditGoldenCard */ = {
 			isa = PBXGroup;
 			children = (
-				0EDECDE72ACCF2240011D4BB /* EditNoteViewController.swift */,
-				0EDECDE82ACCF2240011D4BB /* ImageViewController.swift */,
-				0EDECDE92ACCF2240011D4BB /* EditGoldenCardContent.swift */,
+				0EDECDEE2ACD679E0011D4BB /* EditNoteViewController.swift */,
+				0EDECDEF2ACD679E0011D4BB /* ImageViewController.swift */,
+				0EDECDF02ACD679E0011D4BB /* EditGoldenCardContent.swift */,
 			);
 			name = EditGoldenCard;
-			path = ../../../../../../../../Desktop/Goldence/Goldence/Controller/Home/GoldenCardList/EditGoldenCard;
+			path = "../../../../../../../../Downloads/Goldence-feature-note/Goldence/Controller/Home/GoldenCardList/EditGoldenCard";
 			sourceTree = "<group>";
 		};
 		0EE8C0642AB1B518003B205C = {
@@ -498,7 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EDECDEC2ACCF2250011D4BB /* EditGoldenCardContent.swift in Sources */,
+				0EDECDF32ACD679E0011D4BB /* EditGoldenCardContent.swift in Sources */,
 				0E8297832AC284F1001B5EA0 /* AfternoonViewController.swift in Sources */,
 				0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */,
 				0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */,
@@ -510,7 +510,7 @@
 				0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */,
 				0E8297872AC29D4E001B5EA0 /* ScheduleViewController.swift in Sources */,
 				0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */,
-				0EDECDEB2ACCF2250011D4BB /* ImageViewController.swift in Sources */,
+				0EDECDF22ACD679E0011D4BB /* ImageViewController.swift in Sources */,
 				0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */,
 				0E8297702AC17925001B5EA0 /* ScanButton.swift in Sources */,
 				0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */,
@@ -518,7 +518,7 @@
 				0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */,
 				0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */,
 				0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */,
-				0EDECDEA2ACCF2250011D4BB /* EditNoteViewController.swift in Sources */,
+				0EDECDF12ACD679E0011D4BB /* EditNoteViewController.swift in Sources */,
 				0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */,
 				0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */,
 				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,

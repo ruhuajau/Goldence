@@ -421,10 +421,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="whX-Xv-rpT">
-                                <rect key="frame" x="16" y="114" width="361" height="595"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="whX-Xv-rpT">
+                                <rect key="frame" x="16" y="113" width="361" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="glk-Q6-6jk"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -462,6 +464,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mnv-Iv-zwA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mnv-Iv-zwA" firstAttribute="trailing" secondItem="whX-Xv-rpT" secondAttribute="trailing" constant="16" id="Huo-hF-fmr"/>
+                            <constraint firstItem="whX-Xv-rpT" firstAttribute="leading" secondItem="Mnv-Iv-zwA" secondAttribute="leading" constant="16" id="Pd2-ce-zhx"/>
+                            <constraint firstItem="whX-Xv-rpT" firstAttribute="top" secondItem="Mnv-Iv-zwA" secondAttribute="top" constant="10" id="sPV-Xa-VJD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fDL-s8-jFx"/>
                     <connections>
@@ -1451,7 +1458,7 @@
                                 <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffz-Cd-h3f" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="28" y="162" width="349" height="584"/>
+                                <rect key="frame" x="28" y="162" width="335" height="584"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -1466,7 +1473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j74-VW-SBM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2802" y="2977"/>
+            <point key="canvasLocation" x="2800.7633587786258" y="2976.7605633802818"/>
         </scene>
         <!--Morning View Controller-->
         <scene sceneID="0bY-lP-JeJ">
@@ -1510,7 +1517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPD-W0-zWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3550.3816793893129" y="2449.2957746478874"/>
+            <point key="canvasLocation" x="3585" y="2354"/>
         </scene>
         <!--Afternoon View Controller-->
         <scene sceneID="DJf-P7-Eq4">
