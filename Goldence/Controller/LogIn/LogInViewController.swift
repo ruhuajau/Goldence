@@ -48,30 +48,42 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
             let userIdentifier = credentials.user
             let authorizationCode = credentials.authorizationCode?.base64EncodedString() ?? ""
             let identityToken = credentials.identityToken?.base64EncodedString() ?? ""
-
-            // Store user data in Firebase
-            let userData: [String: Any] = [
-                "Name": firstName,
-                "userIdentifier": userIdentifier,
-                "authorizationCode": authorizationCode,
-                "identityToken": identityToken
-            ]
-
-            let usersCollection = Firestore.firestore().collection("users")
-            usersCollection.document(userIdentifier).setData(userData) { error in
-                if let error = error {
-                    print("Error storing user data in Firestore: \(error.localizedDescription)")
-                    return
-                }
-
-                // Transition to the WelcomeViewController
-                if let welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController {
-                    welcomeVC.modalPresentationStyle = .fullScreen
-                    self.present(welcomeVC, animated: true)
-                }
+            checkUserExistsInFirebase(userIdentifier: userIdentifier, name: firstName, authorizationCode: authorizationCode, identityToken: identityToken)
+            default:
+                break
             }
-        default:
-            break
+        func checkUserExistsInFirebase(userIdentifier: String, name: String, authorizationCode: String, identityToken: String) {
+        let usersCollection = Firestore.firestore().collection("users")
+        usersCollection.document(userIdentifier).getDocument { [weak self] (document, error) in
+            guard let self = self else { return }
+            if let document = document, document.exists {
+                // User already exists in Firebase, navigate to CustomTabBarController
+                if let customTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController {
+                    customTabBarController.modalPresentationStyle = .fullScreen
+                    self.present(customTabBarController, animated: true)
+                }
+            } else {
+                // Store user data in Firebase
+                let userData: [String: Any] = [
+                    "Name": name,
+                    "userIdentifier": userIdentifier,
+                    "authorizationCode": authorizationCode,
+                    "identityToken": identityToken
+                ]
+                let usersCollection = Firestore.firestore().collection("users")
+                usersCollection.document(userIdentifier).setData(userData) { error in
+                    if let error = error {
+                        print("Error storing user data in Firestore: \(error.localizedDescription)")
+                        return
+                    }
+                }
+
+                    // Transition to the WelcomeViewController
+                    if let welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController {
+                        welcomeVC.modalPresentationStyle = .fullScreen
+                        self.present(welcomeVC, animated: true)
+                    }
+                }            }
         }
     }
 }
