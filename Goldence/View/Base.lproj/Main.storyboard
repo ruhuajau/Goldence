@@ -1141,7 +1141,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="oIe-lg-R4O">
             <objects>
-                <viewController id="snz-Ms-Hs9" customClass="WelcomeViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="snz-Ms-Hs9" customClass="WelcomeViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o8B-Oy-Avt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1193,7 +1193,7 @@
         <!--Custom Tab Bar Controller-->
         <scene sceneID="yhi-UJ-Bgy">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eDr-zW-4Ps" customClass="CustomTabBarController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="eDr-zW-4Ps" customClass="CustomTabBarController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="YTj-NK-W9S"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="book" catalog="system" id="kW2-F2-M4l">
@@ -1302,7 +1302,7 @@
             <objects>
                 <viewController id="6qh-dF-NMs" customClass="TypeViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3l-nk-YBp">
-                        <rect key="frame" x="0.0" y="0.0" width="363" height="572"/>
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="562"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c8-Z7-jJp">
@@ -1375,7 +1375,7 @@
             <objects>
                 <viewController id="o5O-tf-R97" customClass="ScanViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="03E-I2-C0S">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="572"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="562"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbi-O3-1lH">

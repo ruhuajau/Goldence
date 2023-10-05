@@ -6,6 +6,7 @@
 //
 import AuthenticationServices
 import UIKit
+import Firebase
 
 class LogInViewController: UIViewController {
 
@@ -41,10 +42,34 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let credentials as ASAuthorizationAppleIDCredential:
-            let firstName = credentials.fullName?.givenName
-            let lastName = credentials.fullName?.familyName
-            let email = credentials.email
-            break
+            let firstName = credentials.fullName?.givenName ?? ""
+            let lastName = credentials.fullName?.familyName ?? ""
+            let email = credentials.email ?? ""
+            let userIdentifier = credentials.user
+            let authorizationCode = credentials.authorizationCode?.base64EncodedString() ?? ""
+            let identityToken = credentials.identityToken?.base64EncodedString() ?? ""
+
+            // Store user data in Firebase
+            let userData: [String: Any] = [
+                "Name": firstName,
+                "userIdentifier": userIdentifier,
+                "authorizationCode": authorizationCode,
+                "identityToken": identityToken
+            ]
+
+            let usersCollection = Firestore.firestore().collection("users")
+            usersCollection.document(userIdentifier).setData(userData) { error in
+                if let error = error {
+                    print("Error storing user data in Firestore: \(error.localizedDescription)")
+                    return
+                }
+
+                // Transition to the WelcomeViewController
+                if let welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController {
+                    welcomeVC.modalPresentationStyle = .fullScreen
+                    self.present(welcomeVC, animated: true)
+                }
+            }
         default:
             break
         }
