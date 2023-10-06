@@ -83,7 +83,8 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
                         welcomeVC.modalPresentationStyle = .fullScreen
                         self.present(welcomeVC, animated: true)
                     }
-                }            }
+                }
+            }
         }
     }
 }

@@ -12,6 +12,7 @@
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
 		0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */; };
 		0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */; };
+		0E7E37862ACFFC5F001A2741 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E37852ACFFC5F001A2741 /* ShadowView.swift */; };
 		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
 		0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */; };
 		0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */; };
@@ -65,6 +66,7 @@
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewShelfViewController.swift; sourceTree = "<group>"; };
 		0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfStruct.swift; sourceTree = "<group>"; };
+		0E7E37852ACFFC5F001A2741 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				0E8297E42ACBF3D9001B5EA0 /* Schedule */,
 				0E82976C2AC178F1001B5EA0 /* New Goldence Scan Note */,
 				0EE8C0762AB1B518003B205C /* Main.storyboard */,
+				0E7E37852ACFFC5F001A2741 /* ShadowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */,
 				0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */,
 				0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */,
+				0E7E37862ACFFC5F001A2741 /* ShadowView.swift in Sources */,
 				0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */,
 				0E8297872AC29D4E001B5EA0 /* ScheduleViewController.swift in Sources */,
 				0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */,
