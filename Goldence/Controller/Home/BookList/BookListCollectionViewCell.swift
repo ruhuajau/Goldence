@@ -13,3 +13,5 @@ class BookListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
 }
+
+

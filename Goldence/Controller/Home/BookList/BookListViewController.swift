@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 import Kingfisher
 
-class BookListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class BookListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
 
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,6 +19,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
         let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
         customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
@@ -31,16 +33,8 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
                 self.collectionView.reloadData()
             }
         }
+
     }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "BookListTableViewCell") as? BookListCollectionViewCell
-//        let book = books[indexPath.row]
-//        cell?.bookNameLabel.text = book.title
-//        cell?.bookNameLabel.sizeToFit()
-//        cell?.authorNameLabel.text = book.author
-//        cell?.bookImageView.kf.setImage(with: book.imageURL)
-//        return cell!
-//    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return books.count
     }
@@ -53,7 +47,9 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
             cell.bookNameLabel.sizeToFit()
             cell.authorNameLabel.text = book.author
             cell.bookImageView.kf.setImage(with: book.imageURL)
-                    return cell        } else {
+            cell.bookImageView.layer.cornerRadius = 8
+            return cell
+        } else {
             return UICollectionViewCell()
         }
     }
@@ -117,4 +113,14 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         self.navigationController?.popViewController(animated: true)
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionViewWidth = collectionView.bounds.width
+        let cellWidth = (collectionViewWidth - 25) / 2
+        return CGSize(width: cellWidth, height: 370)
+
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+
 }
