@@ -9,9 +9,10 @@ import UIKit
 import Firebase
 import Kingfisher
 
-class BookListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BookListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var collectionView: UICollectionView!
     var bookshelfName: String?
     var books: [Books] = []
     let db = Firestore.firestore()
@@ -22,32 +23,42 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
         customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
         // Set the custom back button as the left bar button item
         navigationItem.leftBarButtonItem = customBackButton
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
         if let bookshelfName = bookshelfName {
             getBooksFromBookshelf(bookshelfName: bookshelfName) { (retrievedBooks) in
                 self.books = retrievedBooks
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             }
         }
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "BookListTableViewCell") as? BookListCollectionViewCell
+//        let book = books[indexPath.row]
+//        cell?.bookNameLabel.text = book.title
+//        cell?.bookNameLabel.sizeToFit()
+//        cell?.authorNameLabel.text = book.author
+//        cell?.bookImageView.kf.setImage(with: book.imageURL)
+//        return cell!
+//    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return books.count
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Dequeue a cell and use optional binding to safely unwrap it
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookListCollectionViewCell", for: indexPath) as? BookListCollectionViewCell {
+            let book = books[indexPath.row]
+            cell.bookNameLabel.text = book.title
+            cell.bookNameLabel.sizeToFit()
+            cell.authorNameLabel.text = book.author
+            cell.bookImageView.kf.setImage(with: book.imageURL)
+                    return cell        } else {
+            return UICollectionViewCell()
+        }
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookListTableViewCell") as? BookListTableViewCell
-        let book = books[indexPath.row]
-        cell?.bookNameLabel.text = book.title
-        cell?.bookNameLabel.sizeToFit()
-        cell?.authorNameLabel.text = book.author
-        cell?.bookImageView.kf.setImage(with: book.imageURL)
-        return cell!
-    }
+
+    
     func findBookshelf(byName bookshelfName: String, completion: @escaping (DocumentSnapshot?) -> Void) {
         let bookshelvesCollection = db.collection("bookshelves")
 
@@ -99,16 +110,6 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
                 }
 
                 completion(books)
-            }
-        }
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "bookToGoldence" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let bookTitle = books[indexPath.row].title
-                if let destinationVC = segue.destination as? GoldenCardListViewController {
-                    destinationVC.bookTitle = bookTitle
-                }
             }
         }
     }

@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -130,91 +131,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N4P-77-1go">
-                                <rect key="frame" x="0.0" y="103" width="393" height="690"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="separatorColor" red="0.1215686275" green="0.47843137250000001" blue="0.54901960780000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookListTableViewCell" rowHeight="173" id="fGp-zF-JUz" customClass="BookListTableViewCell" customModule="Goldence" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="173"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGp-zF-JUz" id="Zep-6C-6Yl">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="173"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-Xs-Sl8" customClass="ShadowView" customModule="Goldence" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="20" width="348" height="133"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcY-9E-165">
-                                                            <rect key="frame" x="10" y="53" width="218" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="書名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFl-Tk-4mn">
-                                                            <rect key="frame" x="10" y="20" width="218" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="TFl-Tk-4mn" firstAttribute="top" secondItem="Bcd-Xs-Sl8" secondAttribute="top" constant="20" id="1i3-1p-teL"/>
-                                                        <constraint firstItem="RcY-9E-165" firstAttribute="leading" secondItem="Bcd-Xs-Sl8" secondAttribute="leading" constant="10" id="619-jQ-nRw"/>
-                                                        <constraint firstAttribute="trailing" secondItem="RcY-9E-165" secondAttribute="trailing" constant="120" id="T0T-ss-fsn"/>
-                                                        <constraint firstItem="RcY-9E-165" firstAttribute="top" secondItem="TFl-Tk-4mn" secondAttribute="bottom" constant="15" id="cgN-Il-Soc"/>
-                                                        <constraint firstItem="TFl-Tk-4mn" firstAttribute="leading" secondItem="Bcd-Xs-Sl8" secondAttribute="leading" constant="10" id="tRp-x0-5BM"/>
-                                                        <constraint firstAttribute="trailing" secondItem="TFl-Tk-4mn" secondAttribute="trailing" constant="120" id="wGZ-lp-KmQ"/>
-                                                    </constraints>
-                                                </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-Ec-l09">
-                                                    <rect key="frame" x="248" y="11.333333333333329" width="130" height="140.33333333333337"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="xUW-NV-OFg"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="QdH-Ec-l09" secondAttribute="trailing" constant="15" id="4hG-im-iqT"/>
-                                                <constraint firstItem="QdH-Ec-l09" firstAttribute="top" secondItem="Zep-6C-6Yl" secondAttribute="top" constant="10" id="6lx-mH-ucy"/>
-                                                <constraint firstAttribute="trailing" secondItem="Bcd-Xs-Sl8" secondAttribute="trailing" constant="30" id="WkD-cc-rTR"/>
-                                                <constraint firstItem="Bcd-Xs-Sl8" firstAttribute="leading" secondItem="Zep-6C-6Yl" secondAttribute="leading" constant="15" id="YgY-b6-qmk"/>
-                                                <constraint firstItem="Bcd-Xs-Sl8" firstAttribute="top" secondItem="Zep-6C-6Yl" secondAttribute="top" constant="20" id="eR3-hA-7MI"/>
-                                                <constraint firstAttribute="bottom" secondItem="Bcd-Xs-Sl8" secondAttribute="bottom" constant="20" id="i9W-ul-nQx"/>
-                                                <constraint firstAttribute="bottom" secondItem="QdH-Ec-l09" secondAttribute="bottom" constant="20" id="kwN-df-sdB"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="authorNameLabel" destination="RcY-9E-165" id="ZW6-Ig-APG"/>
-                                            <outlet property="bookImageView" destination="QdH-Ec-l09" id="3Ty-m4-sSZ"/>
-                                            <outlet property="bookNameLabel" destination="TFl-Tk-4mn" id="owz-5p-qIq"/>
-                                            <outlet property="bookView" destination="Bcd-Xs-Sl8" id="lnk-kR-SSP"/>
-                                            <segue destination="Fmx-oD-aSK" kind="show" identifier="bookToGoldence" id="1JJ-yL-zwZ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" id="ZBG-WE-RlD">
                                 <rect key="frame" x="0.0" y="-1" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="iRy-f5-myz"/>
                                 <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vNv-Z8-T5V">
+                                <rect key="frame" x="0.0" y="103" width="393" height="700"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WqO-ES-LMO">
+                                    <size key="itemSize" width="185" height="322"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookListCollectionViewCell" id="Ofi-Ud-mTZ" customClass="BookListCollectionViewCell" customModule="Goldence" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="322"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1cr-f3-LK5">
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="322"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLn-yN-ymb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="210"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACJ-to-nhz">
+                                                    <rect key="frame" x="71" y="228" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ker-d4-QPV">
+                                                    <rect key="frame" x="71" y="265" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="185" height="322"/>
+                                        <connections>
+                                            <outlet property="authorNameLabel" destination="Ker-d4-QPV" id="uLm-5A-T4f"/>
+                                            <outlet property="bookImageView" destination="nLn-yN-ymb" id="vIl-kr-tyd"/>
+                                            <outlet property="bookNameLabel" destination="ACJ-to-nhz" id="rZU-fC-sBb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KMm-hC-whv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="N4P-77-1go" firstAttribute="leading" secondItem="10v-fW-lDr" secondAttribute="leading" id="Iq9-6a-hkt"/>
-                            <constraint firstItem="KMm-hC-whv" firstAttribute="bottom" secondItem="N4P-77-1go" secondAttribute="bottom" constant="10" id="hAl-tO-GbC"/>
-                            <constraint firstItem="N4P-77-1go" firstAttribute="trailing" secondItem="10v-fW-lDr" secondAttribute="trailing" id="pjA-Oz-hf1"/>
-                            <constraint firstItem="N4P-77-1go" firstAttribute="top" secondItem="ZBG-WE-RlD" secondAttribute="bottom" id="xB9-5V-ErU"/>
+                            <constraint firstItem="KMm-hC-whv" firstAttribute="bottom" secondItem="vNv-Z8-T5V" secondAttribute="bottom" id="Oy1-Rn-yAz"/>
+                            <constraint firstItem="vNv-Z8-T5V" firstAttribute="leading" secondItem="KMm-hC-whv" secondAttribute="leading" id="gDi-Ly-zWO"/>
+                            <constraint firstItem="KMm-hC-whv" firstAttribute="trailing" secondItem="vNv-Z8-T5V" secondAttribute="trailing" id="gRm-NW-Tel"/>
+                            <constraint firstItem="vNv-Z8-T5V" firstAttribute="top" secondItem="ZBG-WE-RlD" secondAttribute="bottom" id="jfC-Iq-HmB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lCX-Jv-e7f"/>
                     <connections>
-                        <outlet property="tableView" destination="N4P-77-1go" id="Ycz-eK-kqB"/>
+                        <outlet property="collectionView" destination="vNv-Z8-T5V" id="08V-eC-JtF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di3-rq-kG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iv6-ft-jF6">
-                                <rect key="frame" x="0.0" y="104" width="393" height="689"/>
+                                <rect key="frame" x="0.0" y="104" width="393" height="704"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddGoldenCardCell" rowHeight="136" id="eJn-XJ-eiS">
@@ -351,7 +332,7 @@
             <objects>
                 <viewController storyboardIdentifier="EditGoldenCardContent" id="HUH-B7-jFq" customClass="EditGoldenCardContent" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="flm-QI-pfl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="小卡標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlh-iB-Ezn">
@@ -444,11 +425,11 @@
             <objects>
                 <viewController id="X1T-t1-Qsv" customClass="EditNoteViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qe0-wf-Oo1">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="whX-Xv-rpT">
-                                <rect key="frame" x="16" y="54" width="361" height="600"/>
+                                <rect key="frame" x="16" y="10" width="361" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="glk-Q6-6jk"/>
@@ -564,7 +545,7 @@
             <objects>
                 <viewController id="pep-Se-EMo" customClass="NewGoldenceViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yKG-Ka-FxH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="小卡標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okc-kF-Jff">
@@ -1786,9 +1767,6 @@
         <image name="three-books" width="512" height="512"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

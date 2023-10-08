@@ -15,7 +15,7 @@
 		0E7E37862ACFFC5F001A2741 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E37852ACFFC5F001A2741 /* ShadowView.swift */; };
 		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
 		0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */; };
-		0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */; };
+		0E82970E2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */; };
 		0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */; };
 		0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */; };
 		0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */; };
@@ -69,7 +69,7 @@
 		0E7E37852ACFFC5F001A2741 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
-		0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
+		0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenCardListViewController.swift; sourceTree = "<group>"; };
 		0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoldenceViewController.swift; sourceTree = "<group>"; };
 		0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStruct.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */,
-				0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */,
+				0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -537,7 +537,7 @@
 				0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */,
 				0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */,
 				0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */,
-				0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */,
+				0E82970E2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift in Sources */,
 				0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */,
 				0EDECDF12ACD679E0011D4BB /* EditNoteViewController.swift in Sources */,
 				0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */,
