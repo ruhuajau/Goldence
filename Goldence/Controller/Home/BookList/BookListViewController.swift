@@ -122,5 +122,15 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bookToCard" {
+            if let destinationVC = segue.destination as? GoldenCardListViewController,
+               let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first {
+                let book = books[selectedIndexPath.row].title
+                destinationVC.bookTitle = book
+            }
+        }
+    }
+
 
 }
