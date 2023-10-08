@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="SyF-aw-l80"/>
-                                <color key="backgroundColor" red="0.63529411764705879" green="0.63921568627450975" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d1K-p0-Jb8">
                                 <rect key="frame" x="0.0" y="104" width="393" height="689"/>
@@ -143,41 +143,54 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="書名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFl-Tk-4mn">
-                                                    <rect key="frame" x="140" y="7.9999999999999982" width="244" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-Ec-l09">
-                                                    <rect key="frame" x="5" y="6.3333333333333286" width="130" height="160.33333333333331"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-Xs-Sl8" customClass="ShadowView" customModule="Goldence" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="20" width="348" height="133"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcY-9E-165">
+                                                            <rect key="frame" x="10" y="53" width="218" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="書名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFl-Tk-4mn">
+                                                            <rect key="frame" x="10" y="20" width="218" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="Gmh-Zp-VwK"/>
+                                                        <constraint firstItem="TFl-Tk-4mn" firstAttribute="top" secondItem="Bcd-Xs-Sl8" secondAttribute="top" constant="20" id="1i3-1p-teL"/>
+                                                        <constraint firstItem="RcY-9E-165" firstAttribute="leading" secondItem="Bcd-Xs-Sl8" secondAttribute="leading" constant="10" id="619-jQ-nRw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RcY-9E-165" secondAttribute="trailing" constant="120" id="T0T-ss-fsn"/>
+                                                        <constraint firstItem="RcY-9E-165" firstAttribute="top" secondItem="TFl-Tk-4mn" secondAttribute="bottom" constant="15" id="cgN-Il-Soc"/>
+                                                        <constraint firstItem="TFl-Tk-4mn" firstAttribute="leading" secondItem="Bcd-Xs-Sl8" secondAttribute="leading" constant="10" id="tRp-x0-5BM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TFl-Tk-4mn" secondAttribute="trailing" constant="120" id="wGZ-lp-KmQ"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-Ec-l09">
+                                                    <rect key="frame" x="248" y="11.333333333333329" width="130" height="140.33333333333337"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="xUW-NV-OFg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcY-9E-165">
-                                                    <rect key="frame" x="140" y="33.333333333333336" width="248" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="RcY-9E-165" firstAttribute="leading" secondItem="QdH-Ec-l09" secondAttribute="trailing" constant="5" id="37w-Wp-5DI"/>
-                                                <constraint firstItem="QdH-Ec-l09" firstAttribute="top" secondItem="Zep-6C-6Yl" secondAttribute="top" constant="5" id="56v-ts-Hlp"/>
-                                                <constraint firstItem="TFl-Tk-4mn" firstAttribute="leading" secondItem="QdH-Ec-l09" secondAttribute="trailing" constant="5" id="8La-ir-7De"/>
-                                                <constraint firstAttribute="bottom" secondItem="QdH-Ec-l09" secondAttribute="bottom" constant="5" id="Di7-8z-tct"/>
-                                                <constraint firstItem="QdH-Ec-l09" firstAttribute="leading" secondItem="Zep-6C-6Yl" secondAttribute="leading" constant="5" id="Var-Sx-3nR"/>
-                                                <constraint firstAttribute="trailing" secondItem="RcY-9E-165" secondAttribute="trailing" constant="5" id="X3F-wb-CrI"/>
-                                                <constraint firstAttribute="trailing" secondItem="TFl-Tk-4mn" secondAttribute="trailing" constant="9" id="XZ1-cX-KQV"/>
-                                                <constraint firstItem="RcY-9E-165" firstAttribute="top" secondItem="TFl-Tk-4mn" secondAttribute="bottom" constant="5" id="YSR-2P-qY9"/>
-                                                <constraint firstItem="TFl-Tk-4mn" firstAttribute="top" secondItem="Zep-6C-6Yl" secondAttribute="top" constant="8" id="cAz-og-t3F"/>
+                                                <constraint firstAttribute="trailing" secondItem="QdH-Ec-l09" secondAttribute="trailing" constant="15" id="4hG-im-iqT"/>
+                                                <constraint firstItem="QdH-Ec-l09" firstAttribute="top" secondItem="Zep-6C-6Yl" secondAttribute="top" constant="10" id="6lx-mH-ucy"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bcd-Xs-Sl8" secondAttribute="trailing" constant="30" id="WkD-cc-rTR"/>
+                                                <constraint firstItem="Bcd-Xs-Sl8" firstAttribute="leading" secondItem="Zep-6C-6Yl" secondAttribute="leading" constant="15" id="YgY-b6-qmk"/>
+                                                <constraint firstItem="Bcd-Xs-Sl8" firstAttribute="top" secondItem="Zep-6C-6Yl" secondAttribute="top" constant="20" id="eR3-hA-7MI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bcd-Xs-Sl8" secondAttribute="bottom" constant="20" id="i9W-ul-nQx"/>
+                                                <constraint firstAttribute="bottom" secondItem="QdH-Ec-l09" secondAttribute="bottom" constant="20" id="kwN-df-sdB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorNameLabel" destination="RcY-9E-165" id="ZW6-Ig-APG"/>
                                             <outlet property="bookImageView" destination="QdH-Ec-l09" id="3Ty-m4-sSZ"/>
                                             <outlet property="bookNameLabel" destination="TFl-Tk-4mn" id="owz-5p-qIq"/>
+                                            <outlet property="bookView" destination="Bcd-Xs-Sl8" id="lnk-kR-SSP"/>
                                             <segue destination="Fmx-oD-aSK" kind="show" identifier="bookToGoldence" id="1JJ-yL-zwZ"/>
                                         </connections>
                                     </tableViewCell>
@@ -187,7 +200,7 @@
                                 <rect key="frame" x="0.0" y="-1" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="iRy-f5-myz"/>
-                                <color key="backgroundColor" red="0.84705882352941175" green="0.88627450980392153" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KMm-hC-whv"/>
@@ -247,7 +260,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="4cK-9V-E30" secondAttribute="bottom" constant="5" id="tSp-6q-xPK"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.91764705882352937" green="0.95686274509803915" blue="0.95686274509803915" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="pep-Se-EMo" kind="show" identifier="addNewGoldence" id="za5-Sl-6FB"/>
                                         </connections>
@@ -267,7 +279,6 @@
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="我常常一個人走很長的路，在起風的時候覺得自己像一片落葉。仰望星空我想知道，有人正從世界的某個地方朝我走來嗎？" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-r1-t1u">
                                                     <rect key="frame" x="143" y="47" width="242" height="103"/>
-                                                    <color key="backgroundColor" red="0.91764705882352937" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -329,7 +340,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="Xrg-YU-s4b"/>
-                                <color key="backgroundColor" red="0.84705882352941175" green="0.88627450980392153" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Ld-Fr-Pit"/>
@@ -424,7 +435,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="TQc-Hn-jgX"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v4h-hp-6Z0"/>
@@ -489,7 +500,7 @@
                                 <rect key="frame" x="0.0" y="-4" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="6ih-AD-pOA"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mnv-Iv-zwA"/>
@@ -548,7 +559,7 @@
                                 <rect key="frame" x="0.0" y="-3" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="IOW-9h-eSh"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CRk-u2-HcL"/>
@@ -603,7 +614,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="fhw-14-fGa"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6q-Ft-Nd7">
                                 <rect key="frame" x="135" y="606" width="114" height="35"/>
@@ -671,7 +682,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.91764705879999997" green="0.95686274510000002" blue="0.95686274510000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="Uta-Vq-6iT" kind="show" id="8F6-Wm-tLd"/>
                                         </connections>
@@ -708,7 +718,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="MPT-w6-bAE"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aK1-pj-zdW">
                                 <rect key="frame" x="0.0" y="103" width="393" height="36"/>
@@ -808,7 +818,7 @@
                                 <rect key="frame" x="1" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="5YY-SL-FLC"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-eQ-TuH">
                                 <rect key="frame" x="120" y="142.66666666666666" width="253" height="34"/>
@@ -896,7 +906,7 @@
                                 <rect key="frame" x="0.0" y="-1" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="dxu-BJ-8bi"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CmS-eq-2fq"/>
@@ -943,7 +953,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.91764705879999997" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="fnx-lf-Xl0" kind="show" identifier="addNewBook" id="sRa-MY-QuS"/>
                                         </connections>
@@ -968,7 +977,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.91764705879999997" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -976,7 +984,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="frH-vr-MhC"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2r-UN-uC7">
                                 <rect key="frame" x="0.0" y="44" width="393" height="37"/>
@@ -1105,7 +1113,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="nvI-u3-VRU"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WKB-s0-9zB"/>
@@ -1297,7 +1305,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="1J8-i6-7jx"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oe3-NM-Z57"/>
@@ -1512,7 +1520,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="M6d-LQ-0Fm"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zhr-B7-nG4"/>
@@ -1562,7 +1570,7 @@
                                 <rect key="frame" x="0.0" y="-4" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="Uel-Zz-qlj"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffz-Cd-h3f" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="28" y="162" width="335" height="584"/>
@@ -1747,7 +1755,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="safeArea" id="r0B-1F-rC8"/>
-                                <color key="backgroundColor" red="0.61960784310000006" green="0.84705882349999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.76470588235294112" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvT-A8-UuB">
                                 <rect key="frame" x="106" y="361" width="180" height="35"/>
@@ -1763,7 +1771,6 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y3y-Td-Sf7"/>
-                        <color key="backgroundColor" red="0.91764705879999997" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="個人檔案" id="9zZ-k3-pq3"/>
                 </viewController>

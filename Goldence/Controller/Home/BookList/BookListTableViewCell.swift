@@ -12,12 +12,11 @@ class BookListTableViewCell: UITableViewCell {
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var bookView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        contentView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
-
+        bookView.layer.masksToBounds = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

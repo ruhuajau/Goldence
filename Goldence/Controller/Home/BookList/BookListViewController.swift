@@ -17,9 +17,6 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
-        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
-        // Create a custom back button with the image
         let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
         let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
         customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
@@ -27,6 +24,8 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
         navigationItem.leftBarButtonItem = customBackButton
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         if let bookshelfName = bookshelfName {
             getBooksFromBookshelf(bookshelfName: bookshelfName) { (retrievedBooks) in
                 self.books = retrievedBooks
@@ -38,7 +37,7 @@ class BookListViewController: UIViewController, UITableViewDelegate, UITableView
         return books.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 170
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookListTableViewCell") as? BookListTableViewCell

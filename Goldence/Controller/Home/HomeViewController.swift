@@ -24,6 +24,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         loadBookshelves()
+        // Set the title text attributes for the navigation bar
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
