@@ -222,35 +222,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iv6-ft-jF6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iv6-ft-jF6">
                                 <rect key="frame" x="0.0" y="104" width="393" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddGoldenCardCell" rowHeight="136" id="eJn-XJ-eiS">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="136"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddGoldenCardCell" rowHeight="160" id="eJn-XJ-eiS">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eJn-XJ-eiS" id="6hG-qm-uTx">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="136"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift-card" translatesAutoresizingMaskIntoConstraints="NO" id="4cK-9V-E30">
-                                                    <rect key="frame" x="5" y="5" width="130" height="126"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRX-x6-qDr" customClass="ShadowView" customModule="Goldence" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="15" width="373" height="130"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="original_say-the-words-i-love-you-greeting-card" translatesAutoresizingMaskIntoConstraints="NO" id="4cK-9V-E30">
+                                                            <rect key="frame" x="8" y="8" width="120" height="114"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="09a-be-ge0"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新增金句小卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixd-h3-ClU">
+                                                            <rect key="frame" x="189" y="55" width="104" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="hww-5k-ffd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="4cK-9V-E30" secondAttribute="bottom" constant="8" id="Y0v-2h-Ky5"/>
+                                                        <constraint firstItem="4cK-9V-E30" firstAttribute="top" secondItem="dRX-x6-qDr" secondAttribute="top" constant="8" id="Zth-yb-cJJ"/>
+                                                        <constraint firstItem="4cK-9V-E30" firstAttribute="leading" secondItem="dRX-x6-qDr" secondAttribute="leading" constant="8" id="cWn-rM-szq"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新增金句小卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixd-h3-ClU">
-                                                    <rect key="frame" x="175" y="58" width="104" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4cK-9V-E30" firstAttribute="top" secondItem="6hG-qm-uTx" secondAttribute="top" constant="5" id="Cw7-RX-nqN"/>
-                                                <constraint firstItem="4cK-9V-E30" firstAttribute="leading" secondItem="6hG-qm-uTx" secondAttribute="leading" constant="5" id="Qct-zf-WZ2"/>
-                                                <constraint firstAttribute="bottom" secondItem="4cK-9V-E30" secondAttribute="bottom" constant="5" id="tSp-6q-xPK"/>
+                                                <constraint firstAttribute="bottom" secondItem="dRX-x6-qDr" secondAttribute="bottom" constant="15" id="6RW-vm-Vfi"/>
+                                                <constraint firstAttribute="trailing" secondItem="dRX-x6-qDr" secondAttribute="trailing" constant="10" id="Dhu-gb-5wV"/>
+                                                <constraint firstItem="dRX-x6-qDr" firstAttribute="leading" secondItem="6hG-qm-uTx" secondAttribute="leading" constant="10" id="NUO-iT-apk"/>
+                                                <constraint firstItem="dRX-x6-qDr" firstAttribute="top" secondItem="6hG-qm-uTx" secondAttribute="top" constant="15" id="jfd-wW-hMq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -258,14 +270,18 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoldenCardTableViewCell" rowHeight="155" id="qjE-le-aza" customClass="GoldenCardTableViewCell" customModule="Goldence" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="186" width="393" height="155"/>
+                                        <rect key="frame" x="0.0" y="210" width="393" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qjE-le-aza" id="pbp-Nd-Elz">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-77-dgx" customClass="ShadowView" customModule="Goldence" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="15" width="373" height="125"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="我常常一個人走很長的路，在起風的時候覺得自己像一片落葉。仰望星空我想知道，有人正從世界的某個地方朝我走來嗎？I'm wondering" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-r1-t1u">
-                                                    <rect key="frame" x="15" y="48.333333333333343" width="358" height="50"/>
+                                                    <rect key="frame" x="15" y="52.333333333333343" width="358" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="K3g-sU-9r5"/>
                                                     </constraints>
@@ -274,7 +290,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9q-el-iYU">
-                                                    <rect key="frame" x="295" y="15.999999999999998" width="90" height="27.333333333333329"/>
+                                                    <rect key="frame" x="288" y="20" width="90" height="27.333333333333329"/>
                                                     <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="hfR-EA-ppC"/>
@@ -289,7 +305,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04m-UW-Glz">
-                                                    <rect key="frame" x="20" y="103.33333333333333" width="353" height="21"/>
+                                                    <rect key="frame" x="20" y="107.33333333333333" width="353" height="20.999999999999986"/>
                                                     <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -297,9 +313,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="AGO-r1-t1u" secondAttribute="trailing" constant="20" id="82S-Lx-Ufb"/>
+                                                <constraint firstAttribute="bottom" secondItem="fXd-77-dgx" secondAttribute="bottom" constant="15" id="H6f-48-VpA"/>
                                                 <constraint firstAttribute="trailing" secondItem="04m-UW-Glz" secondAttribute="trailing" constant="20" id="HGi-qU-HKI"/>
-                                                <constraint firstAttribute="trailing" secondItem="C9q-el-iYU" secondAttribute="trailing" constant="8" id="R8J-Me-gi3"/>
-                                                <constraint firstItem="C9q-el-iYU" firstAttribute="top" secondItem="pbp-Nd-Elz" secondAttribute="top" constant="16" id="Zi4-FJ-44y"/>
+                                                <constraint firstAttribute="trailing" secondItem="fXd-77-dgx" secondAttribute="trailing" constant="10" id="OHi-Rt-ycL"/>
+                                                <constraint firstAttribute="trailing" secondItem="C9q-el-iYU" secondAttribute="trailing" constant="15" id="R8J-Me-gi3"/>
+                                                <constraint firstItem="fXd-77-dgx" firstAttribute="leading" secondItem="pbp-Nd-Elz" secondAttribute="leading" constant="10" id="VkF-6L-o1f"/>
+                                                <constraint firstItem="fXd-77-dgx" firstAttribute="top" secondItem="pbp-Nd-Elz" secondAttribute="top" constant="15" id="ZTJ-XU-1J9"/>
+                                                <constraint firstItem="C9q-el-iYU" firstAttribute="top" secondItem="pbp-Nd-Elz" secondAttribute="top" constant="20" id="Zi4-FJ-44y"/>
                                                 <constraint firstItem="04m-UW-Glz" firstAttribute="top" secondItem="AGO-r1-t1u" secondAttribute="bottom" constant="5" id="dVX-lA-nxd"/>
                                                 <constraint firstItem="04m-UW-Glz" firstAttribute="leading" secondItem="pbp-Nd-Elz" secondAttribute="leading" constant="20" id="iKY-Nq-WlN"/>
                                                 <constraint firstItem="AGO-r1-t1u" firstAttribute="leading" secondItem="pbp-Nd-Elz" secondAttribute="leading" constant="15" id="lD3-5A-We6"/>
@@ -1769,8 +1789,8 @@
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="doc.richtext" catalog="system" width="115" height="128"/>
-        <image name="gift-card" width="512" height="512"/>
         <image name="open-book" width="512" height="512"/>
+        <image name="original_say-the-words-i-love-you-greeting-card" width="1024" height="1024"/>
         <image name="paper-tape" width="266" height="224"/>
         <image name="pencil.tip.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
