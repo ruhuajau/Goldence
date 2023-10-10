@@ -22,13 +22,13 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
         fetchPublicNotes()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 200
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ShareTableViewCell", for: indexPath) as? ShareTableViewCell {
             let note = publicNotes[indexPath.row]
             // Configure your cell with the note's data (e.g., title, content)
-            cell.shareTitle.text = note.title
+            cell.shareTitle.text = "——\(note.title)"
             cell.shareTextView.text = note.cardContent
             return cell
         } else {

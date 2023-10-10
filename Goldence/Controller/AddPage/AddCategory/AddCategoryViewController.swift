@@ -13,7 +13,6 @@ class AddCategoryViewController: UIViewController, UITableViewDelegate, UITableV
     var bookshelfName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
         // Create a custom back button with the image
         let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
         let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
@@ -21,7 +20,6 @@ class AddCategoryViewController: UIViewController, UITableViewDelegate, UITableV
 
         // Set the custom back button as the left bar button item
         navigationItem.leftBarButtonItem = customBackButton
-        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
