@@ -13,6 +13,7 @@
 		0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */; };
 		0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */; };
 		0E7E37862ACFFC5F001A2741 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E37852ACFFC5F001A2741 /* ShadowView.swift */; };
+		0E7E378E2AD4F780001A2741 /* AddNewCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */; };
 		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
 		0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */; };
 		0E82970E2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */; };
@@ -67,6 +68,7 @@
 		0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewShelfViewController.swift; sourceTree = "<group>"; };
 		0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfStruct.swift; sourceTree = "<group>"; };
 		0E7E37852ACFFC5F001A2741 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardTableViewCell.swift; sourceTree = "<group>"; };
 		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */,
 				0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */,
+				0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */,
 				0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */,
 				0EDECDED2ACD679E0011D4BB /* EditGoldenCard */,
 			);
@@ -545,6 +548,7 @@
 				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,
 				0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */,
 				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
+				0E7E378E2AD4F780001A2741 /* AddNewCardTableViewCell.swift in Sources */,
 				0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */,
 				0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */,
 				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,

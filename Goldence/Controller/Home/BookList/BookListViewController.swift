@@ -126,11 +126,10 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
         if segue.identifier == "bookToCard" {
             if let destinationVC = segue.destination as? GoldenCardListViewController,
                let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first {
-                let book = books[selectedIndexPath.row].title
-                destinationVC.bookTitle = book
+                let bookTitle = books[selectedIndexPath.row].title
+                destinationVC.bookTitle = bookTitle
             }
         }
     }
-
 
 }

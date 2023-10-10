@@ -226,7 +226,7 @@
                                 <rect key="frame" x="0.0" y="104" width="393" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddGoldenCardCell" rowHeight="160" id="eJn-XJ-eiS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddGoldenCardCell" rowHeight="160" id="eJn-XJ-eiS" customClass="AddNewCardTableViewCell" customModule="Goldence" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eJn-XJ-eiS" id="6hG-qm-uTx">
@@ -241,19 +241,27 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="09a-be-ge0"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新增金句小卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixd-h3-ClU">
-                                                            <rect key="frame" x="189" y="55" width="104" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a New Goldence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixd-h3-ClU">
+                                                            <rect key="frame" x="148" y="55.666666666666671" width="205" height="19"/>
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="Ixd-h3-ClU" firstAttribute="centerY" secondItem="dRX-x6-qDr" secondAttribute="centerY" id="4W6-p6-USr"/>
                                                         <constraint firstAttribute="bottom" secondItem="4cK-9V-E30" secondAttribute="bottom" constant="8" id="Y0v-2h-Ky5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ixd-h3-ClU" secondAttribute="trailing" constant="20" id="Yme-dz-KxM"/>
                                                         <constraint firstItem="4cK-9V-E30" firstAttribute="top" secondItem="dRX-x6-qDr" secondAttribute="top" constant="8" id="Zth-yb-cJJ"/>
+                                                        <constraint firstItem="Ixd-h3-ClU" firstAttribute="leading" secondItem="4cK-9V-E30" secondAttribute="trailing" constant="20" id="ajd-mx-L1K"/>
                                                         <constraint firstItem="4cK-9V-E30" firstAttribute="leading" secondItem="dRX-x6-qDr" secondAttribute="leading" constant="8" id="cWn-rM-szq"/>
                                                     </constraints>
                                                 </view>
@@ -266,64 +274,68 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addCardImage" destination="4cK-9V-E30" id="S8h-R8-LsQ"/>
                                             <segue destination="pep-Se-EMo" kind="show" identifier="addNewGoldence" id="za5-Sl-6FB"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoldenCardTableViewCell" rowHeight="155" id="qjE-le-aza" customClass="GoldenCardTableViewCell" customModule="Goldence" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="393" height="155"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoldenCardTableViewCell" rowHeight="200" id="qjE-le-aza" customClass="GoldenCardTableViewCell" customModule="Goldence" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="210" width="393" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qjE-le-aza" id="pbp-Nd-Elz">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-77-dgx" customClass="ShadowView" customModule="Goldence" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="15" width="373" height="125"/>
+                                                    <rect key="frame" x="10" y="15" width="373" height="170"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9q-el-iYU">
+                                                            <rect key="frame" x="23" y="126.33333333333336" width="60" height="28.666666666666671"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="60" id="hfR-EA-ppC"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="share">
+                                                                <fontDescription key="titleFontDescription" name=".PingFangTC-Regular" family=".PingFang TC" pointSize="14"/>
+                                                                <color key="baseForegroundColor" red="0.22745098039215686" green="0.43137254901960786" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="shareButtonTapped:" destination="qjE-le-aza" eventType="touchUpInside" id="NlL-5T-rgA"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="我常常一個人走很長的路，在起風的時候覺得自己像一片落葉。仰望星空我想知道，有人正從世界的某個地方朝我走來嗎？I'm wondering" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-r1-t1u">
+                                                            <rect key="frame" x="8" y="30" width="357" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="70" id="K3g-sU-9r5"/>
+                                                            </constraints>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04m-UW-Glz">
+                                                            <rect key="frame" x="93" y="134" width="257" height="21"/>
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="AGO-r1-t1u" firstAttribute="leading" secondItem="fXd-77-dgx" secondAttribute="leading" constant="8" id="18T-6t-uze"/>
+                                                        <constraint firstAttribute="trailing" secondItem="04m-UW-Glz" secondAttribute="trailing" constant="23" id="2qI-BX-hkf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="C9q-el-iYU" secondAttribute="bottom" constant="15" id="6gp-sR-7ek"/>
+                                                        <constraint firstItem="AGO-r1-t1u" firstAttribute="top" secondItem="fXd-77-dgx" secondAttribute="top" constant="30" id="7jX-hd-fI2"/>
+                                                        <constraint firstItem="04m-UW-Glz" firstAttribute="leading" secondItem="C9q-el-iYU" secondAttribute="trailing" constant="10" id="KF2-ST-Dcl"/>
+                                                        <constraint firstAttribute="bottom" secondItem="04m-UW-Glz" secondAttribute="bottom" constant="15" id="atX-ii-NrW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="AGO-r1-t1u" secondAttribute="trailing" constant="8" id="ipN-Qu-Grg"/>
+                                                        <constraint firstItem="C9q-el-iYU" firstAttribute="leading" secondItem="fXd-77-dgx" secondAttribute="leading" constant="23" id="slq-1B-Cid"/>
+                                                    </constraints>
                                                 </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="我常常一個人走很長的路，在起風的時候覺得自己像一片落葉。仰望星空我想知道，有人正從世界的某個地方朝我走來嗎？I'm wondering" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-r1-t1u">
-                                                    <rect key="frame" x="15" y="52.333333333333343" width="358" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="K3g-sU-9r5"/>
-                                                    </constraints>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9q-el-iYU">
-                                                    <rect key="frame" x="288" y="20" width="90" height="27.333333333333329"/>
-                                                    <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="hfR-EA-ppC"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="分享">
-                                                        <fontDescription key="titleFontDescription" name=".PingFangTC-Regular" family=".PingFang TC" pointSize="12"/>
-                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="shareButtonTapped:" destination="qjE-le-aza" eventType="touchUpInside" id="NlL-5T-rgA"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04m-UW-Glz">
-                                                    <rect key="frame" x="20" y="107.33333333333333" width="353" height="20.999999999999986"/>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="AGO-r1-t1u" secondAttribute="trailing" constant="20" id="82S-Lx-Ufb"/>
                                                 <constraint firstAttribute="bottom" secondItem="fXd-77-dgx" secondAttribute="bottom" constant="15" id="H6f-48-VpA"/>
-                                                <constraint firstAttribute="trailing" secondItem="04m-UW-Glz" secondAttribute="trailing" constant="20" id="HGi-qU-HKI"/>
                                                 <constraint firstAttribute="trailing" secondItem="fXd-77-dgx" secondAttribute="trailing" constant="10" id="OHi-Rt-ycL"/>
-                                                <constraint firstAttribute="trailing" secondItem="C9q-el-iYU" secondAttribute="trailing" constant="15" id="R8J-Me-gi3"/>
                                                 <constraint firstItem="fXd-77-dgx" firstAttribute="leading" secondItem="pbp-Nd-Elz" secondAttribute="leading" constant="10" id="VkF-6L-o1f"/>
                                                 <constraint firstItem="fXd-77-dgx" firstAttribute="top" secondItem="pbp-Nd-Elz" secondAttribute="top" constant="15" id="ZTJ-XU-1J9"/>
-                                                <constraint firstItem="C9q-el-iYU" firstAttribute="top" secondItem="pbp-Nd-Elz" secondAttribute="top" constant="20" id="Zi4-FJ-44y"/>
-                                                <constraint firstItem="04m-UW-Glz" firstAttribute="top" secondItem="AGO-r1-t1u" secondAttribute="bottom" constant="5" id="dVX-lA-nxd"/>
-                                                <constraint firstItem="04m-UW-Glz" firstAttribute="leading" secondItem="pbp-Nd-Elz" secondAttribute="leading" constant="20" id="iKY-Nq-WlN"/>
-                                                <constraint firstItem="AGO-r1-t1u" firstAttribute="leading" secondItem="pbp-Nd-Elz" secondAttribute="leading" constant="15" id="lD3-5A-We6"/>
-                                                <constraint firstItem="AGO-r1-t1u" firstAttribute="top" secondItem="C9q-el-iYU" secondAttribute="bottom" constant="5" id="zDJ-VF-Lvn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

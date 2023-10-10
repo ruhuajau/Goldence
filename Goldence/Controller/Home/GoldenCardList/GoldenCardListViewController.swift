@@ -9,14 +9,13 @@ import UIKit
 import Firebase
 
 class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GoldenCardTableViewCellDelegate {
-    
     @IBOutlet weak var tableView: UITableView!
     var bookTitle: String?
     var noteId: String?
     var notes: [GoldenNote] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(bookTitle)
         // Create a custom back button with the image
         let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
         let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
@@ -39,7 +38,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 200
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
