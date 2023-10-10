@@ -22,7 +22,7 @@ class MorningViewController: UIViewController {
         saveButton.layer.cornerRadius = 8
         checkMorningArray()
         self.documentID = generateDocumentID(for: currentDate)
-            let rectangleWidth: CGFloat = 70
+            let rectangleWidth: CGFloat = 110
             let rectangleHeight: CGFloat = 45
             let numRows = 6
             let numCols = 1
