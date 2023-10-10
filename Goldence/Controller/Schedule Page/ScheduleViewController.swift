@@ -20,6 +20,26 @@ class ScheduleViewController: UIViewController {
         var documentID: String = ""
         override func viewDidLoad() {
             super.viewDidLoad()
+            // Define the font you want to use
+                    let font = UIFont(name: "Chalkduster", size: 13) // Replace "YourFontName" with the name of your custom font
+
+                    // Define text attributes
+                    let normalTextAttributes = [
+                        NSAttributedString.Key.font: font!,
+                        NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "274c77") // Change text color if needed
+                    ]
+
+                    // Apply the text attributes to the normal state
+            segmentOutlet.setTitleTextAttributes(normalTextAttributes, for: .normal)
+
+                    // You can also set attributes for the selected state if needed
+                    let selectedTextAttributes = [
+                        NSAttributedString.Key.font: font!,
+                        NSAttributedString.Key.foregroundColor: UIColor.white // Change text color if needed
+                    ]
+
+            //segmentOutlet.setTitleTextAttributes(selectedTextAttributes, for: .selected)
+
             dateFormatter.dateFormat = "MMM d, yyyy"
             dateLabel.text = dateFormatter.string(from: currentDate)
             // Generate a document ID for the current date

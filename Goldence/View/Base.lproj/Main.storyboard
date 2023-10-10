@@ -1690,12 +1690,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJN-DR-hFO">
                                 <rect key="frame" x="132.66666666666666" y="139" width="127.66666666666666" height="54.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="43"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.15294117647058825" green="0.29803921568627451" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LsV-gO-ls5">
-                                <rect key="frame" x="62" y="241" width="269" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LsV-gO-ls5">
+                                <rect key="frame" x="30" y="238.33333333333334" width="333" height="32.000000000000028"/>
                                 <segments>
                                     <segment title="Morning"/>
                                     <segment title="Afternoon"/>
@@ -1716,7 +1715,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tJN-DR-hFO" firstAttribute="centerX" secondItem="r1P-cr-YKW" secondAttribute="centerX" id="6WU-5Y-9qQ"/>
+                            <constraint firstItem="zhr-B7-nG4" firstAttribute="trailing" secondItem="LsV-gO-ls5" secondAttribute="trailing" constant="30" id="AEn-fx-U2n"/>
                             <constraint firstItem="tJN-DR-hFO" firstAttribute="top" secondItem="xpo-OL-Uch" secondAttribute="bottom" constant="35" id="SII-Dx-N4T"/>
+                            <constraint firstItem="LsV-gO-ls5" firstAttribute="leading" secondItem="zhr-B7-nG4" secondAttribute="leading" constant="30" id="e4h-UF-BEc"/>
+                            <constraint firstItem="LsV-gO-ls5" firstAttribute="top" secondItem="tJN-DR-hFO" secondAttribute="bottom" constant="45" id="ww8-hm-rwc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="閱讀行程" id="f0f-8K-5Un"/>
@@ -1791,9 +1793,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-C9-m3p">
-                                <rect key="frame" x="109" y="394" width="55" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-C9-m3p">
+                                <rect key="frame" x="169" y="364" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1801,9 +1802,8 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-8B-CoL">
-                                <rect key="frame" x="243" y="395" width="55" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-8B-CoL">
+                                <rect key="frame" x="169" y="364" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="確認">
@@ -1817,6 +1817,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Ov-Gi-DYN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Ov-Gi-DYN" firstAttribute="bottom" secondItem="Jvk-C9-m3p" secondAttribute="bottom" constant="40" id="cvY-Hx-Wp4"/>
+                            <constraint firstItem="L2w-8B-CoL" firstAttribute="centerX" secondItem="5VC-b3-HEF" secondAttribute="centerX" id="fnY-lO-2EU"/>
+                            <constraint firstItem="Jvk-C9-m3p" firstAttribute="centerX" secondItem="5VC-b3-HEF" secondAttribute="centerX" id="mM7-iz-EmZ"/>
+                            <constraint firstItem="7Ov-Gi-DYN" firstAttribute="bottom" secondItem="L2w-8B-CoL" secondAttribute="bottom" constant="40" id="w58-EF-s3G"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="editButton" destination="Jvk-C9-m3p" id="BoE-ON-F0W"/>
@@ -1835,9 +1841,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4t-ce-dsh">
-                                <rect key="frame" x="86" y="392" width="55" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4t-ce-dsh">
+                                <rect key="frame" x="169" y="364" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1845,9 +1850,8 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtQ-jr-8df">
-                                <rect key="frame" x="244" y="392" width="55" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtQ-jr-8df">
+                                <rect key="frame" x="169" y="364" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="確認">
@@ -1862,6 +1866,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wj1-89-dZ4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JtQ-jr-8df" firstAttribute="centerX" secondItem="sxo-Fn-BfW" secondAttribute="centerX" id="31X-pC-sHV"/>
+                            <constraint firstItem="Wj1-89-dZ4" firstAttribute="bottom" secondItem="s4t-ce-dsh" secondAttribute="bottom" constant="40" id="4mC-mF-hql"/>
+                            <constraint firstItem="s4t-ce-dsh" firstAttribute="centerX" secondItem="sxo-Fn-BfW" secondAttribute="centerX" id="AsK-CR-6z8"/>
+                            <constraint firstItem="Wj1-89-dZ4" firstAttribute="bottom" secondItem="JtQ-jr-8df" secondAttribute="bottom" constant="40" id="dG8-pt-YHs"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="editButton" destination="s4t-ce-dsh" id="DI6-Qm-qmm"/>
@@ -1880,9 +1890,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBN-HX-kfs">
-                                <rect key="frame" x="89" y="385" width="55" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBN-HX-kfs">
+                                <rect key="frame" x="169" y="364" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1890,9 +1899,8 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-21-tBt">
-                                <rect key="frame" x="251" y="385" width="55" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-21-tBt">
+                                <rect key="frame" x="169" y="364" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="確認">
@@ -1907,6 +1915,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ETn-Od-eJA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B8Q-21-tBt" firstAttribute="centerX" secondItem="3LF-X1-39n" secondAttribute="centerX" id="3Hr-nx-eFB"/>
+                            <constraint firstItem="ETn-Od-eJA" firstAttribute="bottom" secondItem="FBN-HX-kfs" secondAttribute="bottom" constant="40" id="3XA-Qz-GVf"/>
+                            <constraint firstItem="ETn-Od-eJA" firstAttribute="bottom" secondItem="B8Q-21-tBt" secondAttribute="bottom" constant="40" id="DHM-h5-KPr"/>
+                            <constraint firstItem="FBN-HX-kfs" firstAttribute="centerX" secondItem="3LF-X1-39n" secondAttribute="centerX" id="IHd-LI-MEd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="editButton" destination="FBN-HX-kfs" id="0Nr-zS-VZC"/>

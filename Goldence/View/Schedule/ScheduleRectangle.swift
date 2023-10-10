@@ -31,7 +31,7 @@ class SquareView: UIView {
     private func setup() {
         backgroundColor = .white
         layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
+        layer.borderColor = UIColor.hexStringToUIColor(hex: "274c77").cgColor
         layer.cornerRadius = 10
     }
     func toggleColor() {
