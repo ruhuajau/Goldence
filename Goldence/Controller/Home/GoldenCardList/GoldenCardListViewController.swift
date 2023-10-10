@@ -15,7 +15,6 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
     var notes: [GoldenNote] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(bookTitle)
         // Create a custom back button with the image
         let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
         let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
@@ -41,25 +40,32 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         return 200
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell
+        let cell: UITableViewCell // Declare cell with an initial value
         if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "AddGoldenCardCell", for: indexPath)
-            cell.selectionStyle = .none
-        } else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "GoldenCardTableViewCell", for: indexPath) as? GoldenCardTableViewCell {
-                let note = notes[indexPath.row]
-                cell.selectionStyle = .none
-                cell.goldenceTitle.text = "——\(note.title)"
-                cell.goldenceContent.text = note.cardContent
-                cell.noteId = note.id
-                cell.delegate = self
-                return cell
+            if let addCardCell = tableView.dequeueReusableCell(withIdentifier: "AddNewCardTableViewCell", for: indexPath) as? AddNewCardTableViewCell {
+                addCardCell.selectionStyle = .none
+                addCardCell.addCardImage.layer.cornerRadius = 40
+                cell = addCardCell // Assign the cell
             } else {
-                return UITableViewCell()
+                cell = UITableViewCell() // Assign a default cell if the cast fails
+            }
+        } else {
+            if let goldenCardCell = tableView.dequeueReusableCell(withIdentifier: "GoldenCardTableViewCell", for: indexPath) as? GoldenCardTableViewCell {
+                let note = notes[indexPath.row]
+                goldenCardCell.selectionStyle = .none
+                goldenCardCell.goldenceTitle.text = "——\(note.title)"
+                goldenCardCell.goldenceContent.text = note.cardContent
+                goldenCardCell.noteId = note.id
+                goldenCardCell.delegate = self
+                cell = goldenCardCell // Assign the cell
+            } else {
+                cell = UITableViewCell() // Assign a default cell if the cast fails
             }
         }
-        return cell
+        
+        return cell // Return the assigned cell
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNewGoldence" {
             if let indexPath = tableView.indexPathForSelectedRow {
