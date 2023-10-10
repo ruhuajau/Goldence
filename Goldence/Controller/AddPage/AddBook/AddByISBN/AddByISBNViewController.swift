@@ -27,6 +27,11 @@ class AddByISBNViewController: UIViewController {
 
         // Set the custom back button as the left bar button item
         navigationItem.leftBarButtonItem = customBackButton
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+
     }
     @objc func customBackAction() {
 

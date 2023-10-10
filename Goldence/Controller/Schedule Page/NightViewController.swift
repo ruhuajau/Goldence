@@ -23,9 +23,11 @@ class TimeLabelView3: UIView {
         let labelHeight: CGFloat = 20
         let spacing: CGFloat = 7
         for (index, labelText) in labels.enumerated() {
-            let labelFrame = CGRect(x: -20, y: CGFloat(index) * (squareSize + spacing) - 25, width: squareSize + 5, height: labelHeight)
+            let labelFrame = CGRect(x: 15, y: CGFloat(index) * (squareSize + spacing) - 25, width: squareSize + 15, height: labelHeight)
             let label = UILabel(frame: labelFrame)
             label.text = labelText
+            label.textColor = UIColor.hexStringToUIColor(hex: "274c77")
+            label.font = UIFont(name: "Chalkduster", size: 18)
             label.textAlignment = .right
             addSubview(label)
         }
@@ -44,7 +46,7 @@ class NightViewController: UIViewController {
         editButton.layer.cornerRadius = 8
         saveButton.layer.cornerRadius = 8
         self.documentID = generateDocumentID(for: currentDate)
-            let rectangleWidth: CGFloat = 70
+            let rectangleWidth: CGFloat = 110
             let rectangleHeight: CGFloat = 45
             let numRows = 6
             let numCols = 1

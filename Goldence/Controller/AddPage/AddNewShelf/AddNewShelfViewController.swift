@@ -28,6 +28,11 @@ class AddNewShelfViewController: UIViewController {
         // Set the custom back button as the left bar button item
         navigationItem.leftBarButtonItem = customBackButton
         titleTextField.delegate = self
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+
     }
     @IBAction func updateImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()

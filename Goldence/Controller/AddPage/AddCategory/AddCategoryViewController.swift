@@ -23,6 +23,7 @@ class AddCategoryViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

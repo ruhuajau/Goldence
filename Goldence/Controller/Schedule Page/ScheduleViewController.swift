@@ -20,6 +20,11 @@ class ScheduleViewController: UIViewController {
         var documentID: String = ""
         override func viewDidLoad() {
             super.viewDidLoad()
+            if let navigationBar = navigationController?.navigationBar {
+                // Customize the title color
+                navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            }
+
             // Define the font you want to use
                     let font = UIFont(name: "Chalkduster", size: 13) // Replace "YourFontName" with the name of your custom font
 

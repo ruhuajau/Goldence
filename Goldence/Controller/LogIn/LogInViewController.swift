@@ -19,8 +19,11 @@ class LogInViewController: UIViewController {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        signInButton.frame = CGRect(x: 0, y: 0, width: 250, height: 50)
-        signInButton.center = view.center
+
+        // Change the 'y' coordinate to position the button higher up
+        let yOffset: CGFloat = 600 // Adjust this value to your desired position
+        signInButton.frame = CGRect(x: 0, y: yOffset, width: 250, height: 50)
+        signInButton.center.x = view.center.x
         signInButton.layer.cornerRadius = 8
     }
     @objc func didTapSignIn() {
@@ -81,12 +84,14 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
                     // Transition to the WelcomeViewController
                     if let welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController {
                         welcomeVC.modalPresentationStyle = .fullScreen
+                        welcomeVC.userID = userIdentifier
                         self.present(welcomeVC, animated: true)
                     }
                 }
             }
         }
     }
+    
 }
 
 extension LogInViewController: ASAuthorizationControllerPresentationContextProviding {
