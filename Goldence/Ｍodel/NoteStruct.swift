@@ -20,7 +20,7 @@ struct GoldenNote {
     var dictionaryRepresentation: [String: Any] {
         var dict: [String: Any] = [
             "id": id,
-            "bookTitle": bookTitle,
+            "book_title": bookTitle,
             "type": type,
             "title": title,
             "cardContent": cardContent,

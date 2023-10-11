@@ -8,6 +8,7 @@
 import UIKit
 
 struct Bookshelf {
+    let bookID: String
     let title: String
     let imageURL: String?
 }

@@ -73,10 +73,9 @@ class AddNewShelfViewController: UIViewController {
         }
 
         // Generate a unique ID for the document
-        let documentID = UUID().uuidString
-        // Reference to Firestore collection
         let bookshelvesCollection = db.collection("bookshelves")
         // Create a document with the unique ID
+        let documentID = bookshelvesCollection.document().documentID
         let documentRef = bookshelvesCollection.document(documentID)
         // Upload the image to Firebase Storage
         let imageRef = storage.reference().child("bookshelfImages/\(documentID).jpg")
@@ -94,6 +93,7 @@ class AddNewShelfViewController: UIViewController {
                     }
                     // Save the bookshelf data to Firestore
                     let data: [String: Any] = [
+                        "book_id": documentID,
                         "name": bookShelfName,
                         "imageURL": url?.absoluteString ?? ""
                     ]

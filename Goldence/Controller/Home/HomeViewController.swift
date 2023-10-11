@@ -61,8 +61,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.bookshelves.removeAll()
             for document in querySnapshot!.documents {
                 let data = document.data()
-                if let title = data["name"] as? String, let imageURL = data["imageURL"] as? String {
-                    let bookshelf = Bookshelf(title: title, imageURL: imageURL)
+                if let title = data["name"] as? String, let imageURL = data["imageURL"], let documentID = data["book_id"] as? String {
+                    let bookshelf = Bookshelf(bookID: documentID, title: title, imageURL: imageURL as? String)
                     self.bookshelves.append(bookshelf)
                 }
             }
