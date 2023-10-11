@@ -80,6 +80,8 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
                         return
                     }
                 }
+                // Save userIdentifier in UserDefaults
+                UserDefaults.standard.set(userIdentifier, forKey: "userIdentifier")
 
                     // Transition to the WelcomeViewController
                     if let welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController {
