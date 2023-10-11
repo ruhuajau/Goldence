@@ -33,7 +33,7 @@ class TypeViewController: UIViewController {
     }
     @IBAction func searchButtonTapped(_ sender: Any) {
         guard let isbn = isbnTextField.text, !isbn.isEmpty else {
-            showAlert(title: "錯誤", message: "沒有isbn!")
+            showAlert(title: "Error", message: "No ISBN")
             return
         }
         // Use the API manager to fetch book information
@@ -77,7 +77,7 @@ class TypeViewController: UIViewController {
                       let bookName = bookName,
                       let authorName = authorName,
                       let imageURL = imageURLString.flatMap({ URL(string: $0) }) else {
-            showAlert(title: "錯誤", message: "沒有書本資料!")
+            showAlert(title: "Error", message: "No Book Data")
                     return
                 }
 
@@ -93,9 +93,15 @@ class TypeViewController: UIViewController {
                 // Save the book data to Firestore
                 bookRef.setData(book.dictionaryRepresentation) { error in
                     if let error = error {
-                        self.showAlert(title: "儲存錯誤", message: "Error saving book data: \(error.localizedDescription)")
+                        self.showAlert(title: "Error", message: "Error saving book data: \(error.localizedDescription)")
                     } else {
-                        self.showAlert(title: "成功儲存！", message: "Book data saved successfully!")
+                        self.showAlert(title: "Success", message: "Book data saved successfully!")
+                        // Reset the UI elements to their original state
+                                    self.isbnTextField.text = ""
+                                    self.titleLabel.text = ""
+                                    self.authorLabel.text = ""
+                                    self.bookImage.image = nil
+                                    self.saveButton.isHidden = true
                     }
                 }
     }
