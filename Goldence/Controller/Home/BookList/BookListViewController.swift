@@ -10,10 +10,8 @@ import Firebase
 import Kingfisher
 
 class BookListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-
-
     @IBOutlet weak var collectionView: UICollectionView!
+    var bookshelfID: String?
     var bookshelfName: String?
     var books: [Books] = []
     let db = Firestore.firestore()
