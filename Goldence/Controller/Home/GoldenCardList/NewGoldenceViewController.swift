@@ -52,7 +52,7 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
                 }
             let newDocumentID = db.collection("notes").document()
                 // Create a GoldenNote instance
-        let goldenNote = GoldenNote(id: newDocumentID.documentID ?? "", bookTitle: bookTitle ?? "", type: "book", title: title, cardContent: cardContent, isPublic: false)
+        let goldenNote = GoldenNote(noteID: newDocumentID.documentID ?? "", bookTitle: bookTitle ?? "", type: "book", title: title, cardContent: cardContent, isPublic: false)
                 // Reference to the "note" collection
                 let notesCollection = db.collection("notes")
                 // Add the GoldenNote data to the "note" collection

@@ -55,7 +55,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
                 goldenCardCell.selectionStyle = .none
                 goldenCardCell.goldenceTitle.text = "——\(note.title)"
                 goldenCardCell.goldenceContent.text = note.cardContent
-                goldenCardCell.noteId = note.id
+                goldenCardCell.noteId = note.noteID
                 goldenCardCell.delegate = self
                 cell = goldenCardCell // Assign the cell
             } else {
@@ -75,7 +75,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
             }
         } else if segue.identifier == "editGoldence" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let noteId = notes[indexPath.row].id
+                let noteId = notes[indexPath.row].noteID
                 if let destinationVC = segue.destination as? EditGoldenCardContent {
                     destinationVC.noteId = noteId
                 }
@@ -106,8 +106,8 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
                 let data = document.data()
                 let title = data["title"] as? String ?? "" // Use the nil coalescing operator to handle potential nil values
                 let cardContent = data["cardContent"] as? String ?? ""
-                let id = data["id"] as? String ?? ""
-                let note = GoldenNote(id: id, bookTitle: bookTitle, type: "book", title: title, cardContent: cardContent, isPublic: false)
+                let id = data["note_id"] as? String ?? ""
+                let note = GoldenNote(noteID: id, bookTitle: bookTitle, type: "book", title: title, cardContent: cardContent, isPublic: false)
                 self.notes.append(note)
             }
 
@@ -116,14 +116,14 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     func shareButtonTapped(noteId: String) {
-        if let noteIndex = notes.firstIndex(where: { $0.id == noteId }) {
+        if let noteIndex = notes.firstIndex(where: { $0.noteID == noteId }) {
             var updatedNote = notes[noteIndex]
             updatedNote.isPublic = true
             // Update the Firebase document with the new is_public value
             let db = Firestore.firestore()
             let notesCollection = db.collection("notes")
             // Assuming your documents have a unique identifier, you can use it to update the document
-            let documentId = updatedNote.id  // No need for optional binding here
+            let documentId = updatedNote.noteID  // No need for optional binding here
             let noteDocumentRef = notesCollection.document(documentId)
             noteDocumentRef.updateData(["is_public": true]) { error in
                 if let error = error {

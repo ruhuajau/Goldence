@@ -65,10 +65,10 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
                 let data = document.data()
                 let title = data["title"] as? String ?? ""
                 let cardContent = data["cardContent"] as? String ?? ""
-                let id = data["id"] as? String ?? ""
+                let id = data["note_id"] as? String ?? ""
                 let isPublic = data["is_public"] as? Bool ?? false
                 
-                let note = GoldenNote(id: id, bookTitle: "", type: "", title: title, cardContent: cardContent, isPublic: isPublic)
+                let note = GoldenNote(noteID: id, bookTitle: "", type: "", title: title, cardContent: cardContent, isPublic: isPublic)
                 
                 self.publicNotes.append(note)
             }

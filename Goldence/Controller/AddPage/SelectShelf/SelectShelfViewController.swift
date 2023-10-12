@@ -63,24 +63,47 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
         }
         return cell // Return the default cell outside of the if conditions
     }
+    
     func loadBookshelves() {
+        // Retrieve the user's userIdentifier from UserDefaults
+        guard let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+            print("UserIdentifier not found in UserDefaults")
+            return
+        }
+
         let db = Firestore.firestore()
-        let bookshelvesCollection = db.collection("bookshelves")
-        bookshelvesCollection.addSnapshotListener { (querySnapshot, error) in
+        let usersCollection = db.collection("users")
+        
+        // Get the user's document
+        usersCollection.document(userIdentifier).getDocument { (document, error) in
             if let error = error {
-                print("Error fetching bookshelves: \(error.localizedDescription)")
+                print("Error fetching user document: \(error.localizedDescription)")
                 return
             }
-            self.bookshelves.removeAll()
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                if let title = data["name"] as? String, let imageURL = data["imageURL"] as? String, let bookshelfID =  data["bookshelf_id"] as? String {
-                    let bookshelf = Bookshelf(bookshelfID: bookshelfID, title: title, imageURL: imageURL)
-                    self.bookshelves.append(bookshelf)
+
+            if let document = document, document.exists {
+                if let bookshelfIDs = document["bookshelfIDs"] as? [String] {
+                    // Fetch bookshelves associated with bookshelfIDs
+                    let bookshelvesCollection = db.collection("bookshelves")
+                    self.bookshelves.removeAll() // Clear existing bookshelves
+
+                    // Iterate through each bookshelfID and fetch the corresponding bookshelf document
+                    for bookshelfID in bookshelfIDs {
+                        bookshelvesCollection.document(bookshelfID).getDocument { (bookshelfDocument, error) in
+                            if let error = error {
+                                print("Error fetching bookshelf document: \(error.localizedDescription)")
+                            } else if let bookshelfDocument = bookshelfDocument, bookshelfDocument.exists {
+                                // Extract data from the bookshelf document
+                                if let title = bookshelfDocument["name"] as? String, let imageURL = bookshelfDocument["imageURL"] as? String {
+                                    let bookshelf = Bookshelf(bookshelfID: bookshelfID, title: title, imageURL: imageURL)
+                                    self.bookshelves.append(bookshelf)
+                                    self.tableView.reloadData() // Reload the table view
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            // Reload the table view with the updated data
-            self.tableView.reloadData()
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

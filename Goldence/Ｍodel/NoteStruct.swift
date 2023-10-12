@@ -8,7 +8,7 @@
 import Foundation
 
 struct GoldenNote {
-    let id: String
+    let noteID: String
     let bookTitle: String
     let type: String
     let title: String
@@ -19,7 +19,7 @@ struct GoldenNote {
 
     var dictionaryRepresentation: [String: Any] {
         var dict: [String: Any] = [
-            "id": id,
+            "note_id": noteID,
             "book_title": bookTitle,
             "type": type,
             "title": title,
