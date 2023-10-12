@@ -15,6 +15,7 @@
 		0E7E37862ACFFC5F001A2741 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E37852ACFFC5F001A2741 /* ShadowView.swift */; };
 		0E7E378E2AD4F780001A2741 /* AddNewCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */; };
 		0E7E37902AD59372001A2741 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E378F2AD59372001A2741 /* ProfileViewController.swift */; };
+		0E7E37922AD7D23E001A2741 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E37912AD7D23E001A2741 /* UserStruct.swift */; };
 		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
 		0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */; };
 		0E82970E2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */; };
@@ -71,6 +72,7 @@
 		0E7E37852ACFFC5F001A2741 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardTableViewCell.swift; sourceTree = "<group>"; };
 		0E7E378F2AD59372001A2741 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0E7E37912AD7D23E001A2741 /* UserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
 		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */,
 				0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */,
 				0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */,
+				0E7E37912AD7D23E001A2741 /* UserStruct.swift */,
 			);
 			path = "Ｍodel";
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				0E8297872AC29D4E001B5EA0 /* ScheduleViewController.swift in Sources */,
 				0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */,
 				0EDECDF22ACD679E0011D4BB /* ImageViewController.swift in Sources */,
+				0E7E37922AD7D23E001A2741 /* UserStruct.swift in Sources */,
 				0EDECDF92ACEA09E0011D4BB /* WelcomeViewController.swift in Sources */,
 				0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */,
 				0E8297702AC17925001B5EA0 /* ScanButton.swift in Sources */,
