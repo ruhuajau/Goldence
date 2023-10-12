@@ -68,7 +68,7 @@ class AddNewShelfViewController: UIViewController {
     func addData() {
         guard let bookShelfName = titleTextField.text,
               let bookShelfImage = newBookImage,
-              let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier")else {
+              let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
             showAlert(message: "資訊有誤")
             return
         }
@@ -102,7 +102,6 @@ class AddNewShelfViewController: UIViewController {
                         if let error = error {
                             self.showAlert(message: "Error saving data: \(error.localizedDescription)")
                         } else {
-                            self.showAlert(message: "Data saved successfully!")
                             self.showAlert(message: "Data saved successfully!")
                             // Update the user's document to include the bookshelfID in the array
                             let usersCollection = self.db.collection("users")

@@ -10,6 +10,7 @@ import Foundation
 struct GoldenNote {
     let noteID: String
     let bookTitle: String
+    let bookID: String
     let type: String
     let title: String
     let cardContent: String
@@ -21,6 +22,7 @@ struct GoldenNote {
         var dict: [String: Any] = [
             "note_id": noteID,
             "book_title": bookTitle,
+            "book_id": bookID,
             "type": type,
             "title": title,
             "cardContent": cardContent,

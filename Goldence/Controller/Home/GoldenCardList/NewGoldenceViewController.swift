@@ -16,7 +16,7 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
     @IBOutlet weak var cardContentTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     let db = Firestore.firestore()
-
+    var bookID: String?
     var bookTitle: String?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +45,15 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = cardTitleTextField.text, !title.isEmpty,
-              let cardContent = cardContentTextView.text, !cardContent.isEmpty else {
+              let cardContent = cardContentTextView.text, !cardContent.isEmpty,
+        let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
                     // Show an error message if either title or cardContent is missing
             showAlert(title: "Error", message: "incomplete information")
                     return
                 }
             let newDocumentID = db.collection("notes").document()
                 // Create a GoldenNote instance
-        let goldenNote = GoldenNote(noteID: newDocumentID.documentID ?? "", bookTitle: bookTitle ?? "", type: "book", title: title, cardContent: cardContent, isPublic: false)
+        let goldenNote = GoldenNote(noteID: newDocumentID.documentID ?? "", bookTitle: bookTitle ?? "", bookID: bookID ?? "", type: "book", title: title, cardContent: cardContent, isPublic: false)
                 // Reference to the "note" collection
                 let notesCollection = db.collection("notes")
                 // Add the GoldenNote data to the "note" collection
@@ -62,6 +63,15 @@ class NewGoldenceViewController: UIViewController, UIKeyInput {
                     } else {
                         // Successfully saved the note
                         self.showAlert(title: "Success", message: "Store successfully!")
+                        let usersCollection = self.db.collection("users")
+                        let userDocRef = usersCollection.document(userIdentifier)
+                        
+                        userDocRef.updateData(["noteIDs": FieldValue.arrayUnion([newDocumentID.documentID])]) { error in
+                            if let error = error {
+                                self.showAlert(title: "Error", message: "Error updating user data: \(error.localizedDescription)")
+                            }
+                        }
+
                     }
                 }
         navigationController?.popViewController(animated: true)

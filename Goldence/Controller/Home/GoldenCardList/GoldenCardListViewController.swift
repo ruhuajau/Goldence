@@ -10,6 +10,7 @@ import Firebase
 
 class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GoldenCardTableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
+    var bookID: String?
     var bookTitle: String?
     var noteId: String?
     var notes: [GoldenNote] = []
@@ -71,6 +72,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
             if let indexPath = tableView.indexPathForSelectedRow {
                 if let destinationVC = segue.destination as? NewGoldenceViewController {
                     destinationVC.bookTitle = bookTitle
+                    destinationVC.bookID = bookID
                 }
             }
         } else if segue.identifier == "editGoldence" {
@@ -85,7 +87,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
 
     func loadNotesForBook() {
         // Check if a valid bookTitle is available
-        guard let bookTitle = bookTitle else {
+        guard let bookTitle = bookTitle, let bookID = bookID else {
             return
         }
         // Reference to the Firestore collection "note"
@@ -107,7 +109,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
                 let title = data["title"] as? String ?? "" // Use the nil coalescing operator to handle potential nil values
                 let cardContent = data["cardContent"] as? String ?? ""
                 let id = data["note_id"] as? String ?? ""
-                let note = GoldenNote(noteID: id, bookTitle: bookTitle, type: "book", title: title, cardContent: cardContent, isPublic: false)
+                let note = GoldenNote(noteID: id, bookTitle: bookTitle, bookID: bookID, type: "book", title: title, cardContent: cardContent, isPublic: false)
                 self.notes.append(note)
             }
 
