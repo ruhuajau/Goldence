@@ -32,7 +32,7 @@ class WelcomeViewController: UIViewController {
                 let userDocRef = usersCollection.document(userID)
 
                 // Update the "name" field for the user
-                userDocRef.updateData(["Name": newName]) { error in
+                userDocRef.updateData(["name": newName]) { error in
                     if let error = error {
                         print("Error updating user's name: \(error.localizedDescription)")
                         // Handle the error appropriately

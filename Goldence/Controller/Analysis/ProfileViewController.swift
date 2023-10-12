@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController {
                 guard let self = self else { return }
                 if let document = document, document.exists {
                     if let userData = document.data(),
-                       let userName = userData["Name"] as? String {
+                       let userName = userData["name"] as? String {
                         // Update the nameLabel with the fetched user name
                         self.nameLabel.text = userName
                         print(userName)

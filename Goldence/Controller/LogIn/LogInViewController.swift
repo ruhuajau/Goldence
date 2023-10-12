@@ -68,10 +68,10 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
             } else {
                 // Store user data in Firebase
                 let userData: [String: Any] = [
-                    "Name": name,
-                    "userIdentifier": userIdentifier,
-                    "authorizationCode": authorizationCode,
-                    "identityToken": identityToken
+                    "name": name,
+                    "user_identifier": userIdentifier,
+                    "authorization_code": authorizationCode,
+                    "identity_token": identityToken
                 ]
                 let usersCollection = Firestore.firestore().collection("users")
                 usersCollection.document(userIdentifier).setData(userData) { error in
