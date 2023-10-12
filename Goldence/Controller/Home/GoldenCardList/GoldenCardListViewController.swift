@@ -91,7 +91,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         // Reference to the Firestore collection "note"
         let notesCollection = Firestore.firestore().collection("notes")
         // Create a query to filter notes by bookTitle
-        let query = notesCollection.whereField("bookTitle", isEqualTo: bookTitle)
+        let query = notesCollection.whereField("book_title", isEqualTo: bookTitle)
         // Fetch documents based on the query
         query.addSnapshotListener { [weak self] (querySnapshot, error) in
             guard let self = self else { return }
@@ -119,21 +119,17 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
         if let noteIndex = notes.firstIndex(where: { $0.id == noteId }) {
             var updatedNote = notes[noteIndex]
             updatedNote.isPublic = true
-            
             // Update the Firebase document with the new is_public value
             let db = Firestore.firestore()
             let notesCollection = db.collection("notes")
-            
             // Assuming your documents have a unique identifier, you can use it to update the document
             let documentId = updatedNote.id  // No need for optional binding here
-            
             let noteDocumentRef = notesCollection.document(documentId)
-            
             noteDocumentRef.updateData(["is_public": true]) { error in
                 if let error = error {
                     print("Error updating document: \(error.localizedDescription)")
                 } else {
-                    self.showAlert(title: "成功", message: "順利上傳！")
+                    self.showAlert(title: "Success", message: "Upload Successfully!")
                     print("Document updated successfully.")
                 }
             }

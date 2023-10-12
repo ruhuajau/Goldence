@@ -40,19 +40,19 @@ class AddNewShelfViewController: UIViewController {
             // Create an action sheet with options
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             // Add the "Take Photo" option
-            actionSheet.addAction(UIAlertAction(title: "拍照", style: .default, handler: { _ in
+            actionSheet.addAction(UIAlertAction(title: "Take a Photo", style: .default, handler: { _ in
                 imagePicker.sourceType = .camera
                 imagePicker.allowsEditing = true
                 self.present(imagePicker, animated: true)
             }))
             // Add the "Choose Photo" option
-            actionSheet.addAction(UIAlertAction(title: "上傳圖片", style: .default, handler: { _ in
+            actionSheet.addAction(UIAlertAction(title: "Upload a Photo", style: .default, handler: { _ in
                 imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = true
                 self.present(imagePicker, animated: true)
             }))
             // Add a cancel option
-            actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             // Present the action sheet
             present(actionSheet, animated: true)
     }
@@ -93,7 +93,7 @@ class AddNewShelfViewController: UIViewController {
                     }
                     // Save the bookshelf data to Firestore
                     let data: [String: Any] = [
-                        "book_id": documentID,
+                        "bookshelf_id": documentID,
                         "name": bookShelfName,
                         "imageURL": url?.absoluteString ?? ""
                     ]
