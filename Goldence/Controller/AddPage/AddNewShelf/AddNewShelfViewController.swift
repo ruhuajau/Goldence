@@ -67,11 +67,12 @@ class AddNewShelfViewController: UIViewController {
     }
     func addData() {
         guard let bookShelfName = titleTextField.text,
-              let bookShelfImage = newBookImage else {
+              let bookShelfImage = newBookImage,
+              let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier")else {
             showAlert(message: "資訊有誤")
             return
         }
-
+        
         // Generate a unique ID for the document
         let bookshelvesCollection = db.collection("bookshelves")
         // Create a document with the unique ID
@@ -102,13 +103,22 @@ class AddNewShelfViewController: UIViewController {
                             self.showAlert(message: "Error saving data: \(error.localizedDescription)")
                         } else {
                             self.showAlert(message: "Data saved successfully!")
+                            self.showAlert(message: "Data saved successfully!")
+                            // Update the user's document to include the bookshelfID in the array
+                            let usersCollection = self.db.collection("users")
+                            let userDocRef = usersCollection.document(userIdentifier)
+                            
+                            userDocRef.updateData(["bookshelfIDs": FieldValue.arrayUnion([documentID])]) { error in
+                                if let error = error {
+                                    self.showAlert(message: "Error updating user data: \(error.localizedDescription)")
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
-
     func showAlert(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

@@ -12,7 +12,8 @@ struct User {
     let authorizationCode: String
     let identityToken: String
     let userIdentifier: String
-    
+    var bookshelfID: [String]?
+    var noteID: String?
     var dictionaryRepresentation: [String: Any] {
         var dict: [String: Any] = [
             "name": name,
