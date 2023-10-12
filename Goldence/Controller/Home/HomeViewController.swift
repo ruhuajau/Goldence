@@ -98,7 +98,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let bookshelfName = bookshelves[indexPath.row].title
                 let bookshelfID = bookshelves[indexPath.row].bookshelfID
                 if let destinationVC = segue.destination as? BookListViewController {
-                    destinationVC.bookshelfName = bookshelfName
+                    //destinationVC.bookshelfName = bookshelfName
                     destinationVC.bookshelfID = bookshelfID
                 }
             }

@@ -12,7 +12,7 @@ import Kingfisher
 class BookListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
     var bookshelfID: String?
-    var bookshelfName: String?
+    //var bookshelfName: String?
     var books: [Books] = []
     let db = Firestore.firestore()
     override func viewDidLoad() {
@@ -25,13 +25,12 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
         navigationItem.leftBarButtonItem = customBackButton
         collectionView.delegate = self
         collectionView.dataSource = self
-        if let bookshelfName = bookshelfName {
-            getBooksFromBookshelf(bookshelfName: bookshelfName) { (retrievedBooks) in
-                self.books = retrievedBooks
-                self.collectionView.reloadData()
+        if let bookshelfID = bookshelfID {
+                getBooksFromBookshelf(bookshelfID: bookshelfID) { (retrievedBooks) in
+                    self.books = retrievedBooks
+                    self.collectionView.reloadData()
+                }
             }
-        }
-
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return books.count
@@ -52,60 +51,32 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
 
-    
-    func findBookshelf(byName bookshelfName: String, completion: @escaping (DocumentSnapshot?) -> Void) {
+    func getBooksFromBookshelf(bookshelfID: String, completion: @escaping ([Books]) -> Void) {
         let bookshelvesCollection = db.collection("bookshelves")
-
-        // Create a query to find the bookshelf with the specified name
-        let query = bookshelvesCollection.whereField("name", isEqualTo: bookshelfName)
-
-        query.getDocuments { (querySnapshot, error) in
+        // Reference to the specific bookshelf document using its ID
+        let bookshelfRef = bookshelvesCollection.document(bookshelfID)
+        let booksCollection = bookshelfRef.collection("books")
+        booksCollection.getDocuments { (querySnapshot, error) in
             if let error = error {
-                print("Error querying bookshelves: \(error.localizedDescription)")
-                completion(nil)
-                return
-            }
-
-            // Check if any documents were found
-            if let document = querySnapshot?.documents.first {
-                completion(document)
-            } else {
-                // No matching document found
-                completion(nil)
-            }
-        }
-    }
-    func getBooksFromBookshelf(bookshelfName: String, completion: @escaping ([Books]) -> Void) {
-        findBookshelf(byName: bookshelfName) { (bookshelfDocument) in
-            guard let bookshelfDocument = bookshelfDocument else {
+                print("Error fetching books: \(error.localizedDescription)")
                 completion([])
                 return
             }
-
-            let booksCollection = bookshelfDocument.reference.collection("books")
-
-            booksCollection.getDocuments { (querySnapshot, error) in
-                if let error = error {
-                    print("Error fetching books: \(error.localizedDescription)")
-                    completion([])
-                    return
+            
+            var books: [Books] = []
+            for document in querySnapshot!.documents {
+                let data = document.data()
+                if let title = data["title"] as? String,
+                   let author = data["author"] as? String,
+                   let imageURLString = data["imageURL"] as? String,
+                   let bookID = data["book_id"] as? String,
+                   let imageURL = URL(string: imageURLString) {
+                    let book = Books(bookID: bookID, title: title, author: author, imageURL: imageURL)
+                    books.append(book)
                 }
-
-                var books: [Books] = []
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    if let title = data["title"] as? String,
-                       let author = data["author"] as? String,
-                       let imageURLString = data["imageURL"] as? String,
-                       let bookID = data["book_id"] as? String,
-                       let imageURL = URL(string: imageURLString) {
-                        let book = Books(bookID: bookID, title: title, author: author, imageURL: imageURL)
-                        books.append(book)
-                    }
-                }
-
-                completion(books)
             }
+            
+            completion(books)
         }
     }
     @objc func customBackAction() {
