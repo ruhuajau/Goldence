@@ -99,8 +99,9 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
                     if let title = data["title"] as? String,
                        let author = data["author"] as? String,
                        let imageURLString = data["imageURL"] as? String,
+                       let bookID = data["book_id"] as? String,
                        let imageURL = URL(string: imageURLString) {
-                        let book = Books(title: title, author: author, imageURL: imageURL)
+                        let book = Books(bookID: bookID, title: title, author: author, imageURL: imageURL)
                         books.append(book)
                     }
                 }

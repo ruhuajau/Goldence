@@ -12,6 +12,7 @@ import FirebaseStorage
 
 class TypeViewController: UIViewController {
 
+    var bookID: String?
     var bookshelfID: String?
     var bookName: String?
     var authorName: String?
@@ -45,6 +46,7 @@ class TypeViewController: UIViewController {
                     let bookItem = book.items.first
                     if let bookItem = bookItem {
                         let title = bookItem.volumeInfo.title
+                        let bookID = bookItem.id
                         let authors = bookItem.volumeInfo.authors
                         self.titleLabel.text = title
                         self.authorLabel.text = authors.joined(separator: ", ")
@@ -52,6 +54,7 @@ class TypeViewController: UIViewController {
                             if let imageUrl = URL(string: imageUrlString) {
                                 self.bookImage.kf.setImage(with: imageUrl)
                                 // Update the properties for saving
+                                self.bookID = bookID
                                 self.bookName = title
                                 self.authorName = authors.joined(separator: ", ")
                                 self.imageURLString = imageUrlString
@@ -76,6 +79,7 @@ class TypeViewController: UIViewController {
         guard let bookshelfID = bookshelfID,
                       let bookName = bookName,
                       let authorName = authorName,
+                      let bookID = bookID,
                       let imageURL = imageURLString.flatMap({ URL(string: $0) }) else {
             showAlert(title: "Error", message: "No Book Data")
                     return
@@ -85,10 +89,10 @@ class TypeViewController: UIViewController {
                 let bookshelfRef = Firestore.firestore().collection("bookshelves").document(bookshelfID)
 
                 // Create a new book document within the specified bookshelf
-                let bookRef = bookshelfRef.collection("books").document()
+                let bookRef = bookshelfRef.collection("books").document(bookID)
 
                 // Create a Book instance
-                let book = Books(title: bookName, author: authorName, imageURL: imageURL)
+        let book = Books(bookID: bookID, title: bookName, author: authorName, imageURL: imageURL)
 
                 // Save the book data to Firestore
                 bookRef.setData(book.dictionaryRepresentation) { error in

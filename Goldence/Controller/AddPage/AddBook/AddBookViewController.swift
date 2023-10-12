@@ -90,9 +90,10 @@ class AddBookViewController: UIViewController {
 
             // Reference to the parent bookshelf document
             let bookshelfRef = db.collection("bookshelves").document(bookshelfId)
-
-            let bookRef = bookshelfRef.collection("books").document()
-
+ 
+            let bookRefCollection = bookshelfRef.collection("books")
+            let bookID = bookRefCollection.document().documentID
+            let bookRef = bookRefCollection.document(bookID)
             // Upload the image to Firebase Storage
             let imageRef = storage.reference().child("bookImages/\(bookRef.documentID).jpg")
             if let imageData = bookImage.jpegData(compressionQuality: 0.5) {
@@ -109,6 +110,7 @@ class AddBookViewController: UIViewController {
                         }
                         // Save the book data to Firestore
                         let data: [String: Any] = [
+                            "book_id": bookID,
                             "title": bookName,
                             "author": bookAuthor,
                             "imageURL": url?.absoluteString ?? ""
