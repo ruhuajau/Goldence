@@ -86,36 +86,56 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func loadNotesForBook() {
-        // Check if a valid bookTitle is available
-        guard let bookTitle = bookTitle, let bookID = bookID else {
-            return
-        }
-        // Reference to the Firestore collection "note"
-        let notesCollection = Firestore.firestore().collection("notes")
-        // Create a query to filter notes by bookTitle
-        let query = notesCollection.whereField("book_title", isEqualTo: bookTitle)
-        // Fetch documents based on the query
-        query.addSnapshotListener { [weak self] (querySnapshot, error) in
-            guard let self = self else { return }
-            if let error = error {
-                print("Error fetching notes: \(error.localizedDescription)")
+        guard let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier"), let bookID = bookID else {
                 return
             }
-            // Clear the existing notes array
-            self.notes.removeAll()
-            // Iterate through the documents and populate the notes array
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                let title = data["title"] as? String ?? "" // Use the nil coalescing operator to handle potential nil values
-                let cardContent = data["cardContent"] as? String ?? ""
-                let id = data["note_id"] as? String ?? ""
-                let note = GoldenNote(noteID: id, bookTitle: bookTitle, bookID: bookID, type: "book", title: title, cardContent: cardContent, isPublic: false)
-                self.notes.append(note)
+        // Reference to the Firestore collection "users"
+            let usersCollection = Firestore.firestore().collection("users")
+            
+            // Get the user's document
+            usersCollection.document(userIdentifier).getDocument { [weak self] (userDocument, error) in
+                guard let self = self, let userDocument = userDocument, userDocument.exists else {
+                    return
+                }
+                
+                // Retrieve the noteIDs array from the user's document
+                if let noteIDs = userDocument["noteIDs"] as? [String] {
+                    // Reference to the Firestore collection "notes"
+                    let notesCollection = Firestore.firestore().collection("notes")
+                    
+                    // Clear the existing notes array
+                    self.notes.removeAll()
+                    
+                    // Iterate through the noteIDs and fetch the corresponding notes
+                    for noteID in noteIDs {
+                        // Create a query to filter notes by noteID and bookID
+                        let query = notesCollection.whereField("note_id", isEqualTo: noteID).whereField("book_id", isEqualTo: bookID)
+                        query.getDocuments { (querySnapshot, error) in
+                            if let error = error {
+                                print("Error fetching notes: \(error.localizedDescription)")
+                                return
+                            }
+                            
+                            if let document = querySnapshot?.documents.first {
+                                let data = document.data()
+                                let title = data["title"] as? String ?? ""
+                                let cardContent = data["cardContent"] as? String ?? ""
+                                let note = GoldenNote(
+                                    noteID: noteID,
+                                    bookTitle: self.bookTitle ?? "",
+                                    bookID: self.bookID ?? "",
+                                    type: "book",
+                                    title: title,
+                                    cardContent: cardContent,
+                                    isPublic: false
+                                )
+                                self.notes.append(note)
+                                self.tableView.reloadData() // Reload the table view to display the notes
+                            }
+                        }
+                    }
+                }
             }
-
-            // Reload the table view to display the notes
-            self.tableView.reloadData()
-        }
     }
     func shareButtonTapped(noteId: String) {
         if let noteIndex = notes.firstIndex(where: { $0.noteID == noteId }) {
