@@ -1843,7 +1843,7 @@
                                     <constraint firstAttribute="height" constant="150" id="UQK-gj-XNB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEF-XJ-tBn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEF-XJ-tBn">
                                 <rect key="frame" x="136.66666666666666" y="359" width="119.99999999999997" height="29.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="TPg-Jr-oIz"/>
@@ -1872,10 +1872,13 @@
                                     <constraint firstAttribute="width" constant="155" id="K6k-aM-JKb"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit Profile">
+                                <buttonConfiguration key="configuration" style="plain" title="Delete Account">
                                     <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
-                                    <color key="baseForegroundColor" red="0.15294117647058825" green="0.29803921568627451" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="F2d-DM-ATA" eventType="touchUpInside" id="Mev-iw-rly"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y3y-Td-Sf7"/>
@@ -1894,7 +1897,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="9zZ-k3-pq3"/>
                     <connections>
                         <outlet property="analysisButton" destination="VvT-A8-UuB" id="TUV-vo-6Hx"/>
-                        <outlet property="editButton" destination="blc-m8-9R1" id="WkO-FL-lPL"/>
+                        <outlet property="deleteButton" destination="blc-m8-9R1" id="WkO-FL-lPL"/>
                         <outlet property="nameLabel" destination="TEF-XJ-tBn" id="4jl-WX-CmU"/>
                     </connections>
                 </viewController>
@@ -1939,6 +1942,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
