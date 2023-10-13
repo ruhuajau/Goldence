@@ -60,7 +60,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let db = Firestore.firestore()
         let usersCollection = db.collection("users")
-        
+
         // Get the user's document
         usersCollection.document(userIdentifier).addSnapshotListener { (document, error) in
             if let error = error {
@@ -85,14 +85,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     let bookshelf = Bookshelf(bookshelfID: bookshelfID, title: title, imageURL: imageURL)
                                     self.bookshelves.append(bookshelf)
                                     self.tableView.reloadData() // Reload the table view
+                                    
+                                    // Check the count of bookshelves and show/hide the remindLabel accordingly
+                                    if self.bookshelves.isEmpty {
+                                        self.remindLabel.isHidden = false
+                                    } else {
+                                        self.remindLabel.isHidden = true
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            } else {
+                // If the user document doesn't exist, show the remindLabel
+                self.remindLabel.isHidden = false
             }
         }
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "booksInShelf" {
             if let indexPath = tableView.indexPathForSelectedRow {
