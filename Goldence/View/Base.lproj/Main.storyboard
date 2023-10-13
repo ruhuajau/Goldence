@@ -97,18 +97,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to Add page in second tab!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-Lz-hxc">
+                                <rect key="frame" x="81.333333333333329" y="415.66666666666669" width="230.66666666666669" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="oe0-Lz-hxc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1PV-9W-F1x"/>
                             <constraint firstAttribute="trailing" secondItem="d1K-p0-Jb8" secondAttribute="trailing" id="CaG-gN-9Bg"/>
                             <constraint firstItem="d1K-p0-Jb8" firstAttribute="top" secondItem="djr-j6-4NZ" secondAttribute="bottom" id="Ml8-10-kci"/>
+                            <constraint firstItem="oe0-Lz-hxc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SNG-RT-Xom"/>
                             <constraint firstItem="d1K-p0-Jb8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nUC-Is-wFh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d1K-p0-Jb8" secondAttribute="bottom" constant="10" id="ziS-3W-Trk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Bookshelf" id="gXx-4b-y8y"/>
                     <connections>
+                        <outlet property="remindLabel" destination="oe0-Lz-hxc" id="s8G-jM-tvH"/>
                         <outlet property="tableView" destination="d1K-p0-Jb8" id="Aww-lz-k7P"/>
                     </connections>
                 </viewController>
@@ -803,8 +812,8 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Bookshelf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53x-m0-vXn">
-                                <rect key="frame" x="16" y="109" width="160" height="21.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Bookshelf or Add a New One" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53x-m0-vXn">
+                                <rect key="frame" x="16" y="109" width="365.66666666666669" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

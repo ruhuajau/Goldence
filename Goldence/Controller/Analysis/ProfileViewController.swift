@@ -25,8 +25,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         deleteButton.layer.cornerRadius = 8
         deleteButton.layer.borderColor = UIColor.red.cgColor
-        deleteButton.layer.borderWidth = 1
-        
+        deleteButton.layer.borderWidth = 1        
         analysisButton.layer.cornerRadius = 8
         analysisButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "6096ba").cgColor
         analysisButton.layer.borderWidth = 1
@@ -61,7 +60,6 @@ class ProfileViewController: UIViewController {
             if let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") {
                 let db = Firestore.firestore()
                 let usersCollection = db.collection("users")
-                
                 // Reference to the user document
                 let userDocRef = usersCollection.document(userIdentifier)
                 userDocRef.getDocument { (document, error) in
@@ -69,23 +67,19 @@ class ProfileViewController: UIViewController {
                         print("Error fetching user document: \(error.localizedDescription)")
                         return
                     }
-                    
                     if let document = document, document.exists {
                         // Check if bookshelfIDs and noteIDs arrays exist
                         if let bookshelfIDs = document["bookshelfIDs"] as? [String],
                            let noteIDs = document["noteIDs"] as? [String] {
-                            
                             // Iterate over each bookshelf
                             for bookshelfID in bookshelfIDs {
                                 // Delete the books within the bookshelf
                                 let booksCollectionRef = db.collection("bookshelves").document(bookshelfID).collection("books")
                                 self.deleteBooksInCollection(collectionReference: booksCollectionRef)
-                                
                                 // Delete the bookshelf document
                                 let bookshelfRef = db.collection("bookshelves").document(bookshelfID)
                                 self.deleteDocument(documentReference: bookshelfRef)
                             }
-                            
                             // Iterate over each note and delete it
                             let notesCollection = db.collection("notes")
                             for noteID in noteIDs {
@@ -93,10 +87,8 @@ class ProfileViewController: UIViewController {
                                 self.deleteDocument(documentReference: noteRef)
                             }
                         }
-                        
                         // Delete the user document
                         self.deleteDocument(documentReference: userDocRef)
-                        
                         // Remove userIdentifier from UserDefaults
                         UserDefaults.standard.removeObject(forKey: "userIdentifier")
                         self.navigationController?.popViewController(animated: true)
@@ -111,7 +103,6 @@ class ProfileViewController: UIViewController {
                 print("Error fetching documents in collection: \(error.localizedDescription)")
                 return
             }
-            
             for document in querySnapshot?.documents ?? [] {
                 self.deleteDocument(documentReference: document.reference)
             }

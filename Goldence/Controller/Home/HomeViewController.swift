@@ -12,6 +12,7 @@ import Kingfisher
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var remindLabel: UILabel!
     
     private var bookshelves: [Bookshelf] = []
     private let db = Firestore.firestore()
