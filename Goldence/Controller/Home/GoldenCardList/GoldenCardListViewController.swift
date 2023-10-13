@@ -110,7 +110,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
                     for noteID in noteIDs {
                         // Create a query to filter notes by noteID and bookID
                         let query = notesCollection.whereField("note_id", isEqualTo: noteID).whereField("book_id", isEqualTo: bookID)
-                        query.addSnapshotListener { (querySnapshot, error) in
+                        query.getDocuments { (querySnapshot, error) in
                             if let error = error {
                                 print("Error fetching notes: \(error.localizedDescription)")
                                 return
