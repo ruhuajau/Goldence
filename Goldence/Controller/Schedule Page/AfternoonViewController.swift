@@ -105,7 +105,7 @@ class AfternoonViewController: UIViewController {
 
             let schedulesRef = db.collection("schedules").document(documentID)
 
-            schedulesRef.getDocument { (document, error) in
+            schedulesRef.addSnapshotListener { (document, error) in
                 if let error = error {
                     print("Error fetching document: \(error.localizedDescription)")
                     return

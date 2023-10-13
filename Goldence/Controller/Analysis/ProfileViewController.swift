@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
             let usersCollection = Firestore.firestore().collection("users")
             let userDocRef = usersCollection.document(userIdentifier)
 
-            userDocRef.getDocument { [weak self] (document, error) in
+            userDocRef.addSnapshotListener { [weak self] (document, error) in
                 guard let self = self else { return }
                 if let document = document, document.exists {
                     if let userData = document.data(),

@@ -75,7 +75,7 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
         let usersCollection = db.collection("users")
         
         // Get the user's document
-        usersCollection.document(userIdentifier).getDocument { (document, error) in
+        usersCollection.document(userIdentifier).addSnapshotListener { (document, error) in
             if let error = error {
                 print("Error fetching user document: \(error.localizedDescription)")
                 return
@@ -89,7 +89,7 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
 
                     // Iterate through each bookshelfID and fetch the corresponding bookshelf document
                     for bookshelfID in bookshelfIDs {
-                        bookshelvesCollection.document(bookshelfID).getDocument { (bookshelfDocument, error) in
+                        bookshelvesCollection.document(bookshelfID).addSnapshotListener { (bookshelfDocument, error) in
                             if let error = error {
                                 print("Error fetching bookshelf document: \(error.localizedDescription)")
                             } else if let bookshelfDocument = bookshelfDocument, bookshelfDocument.exists {
@@ -107,11 +107,11 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "chooseCategory" {
+        if segue.identifier == "addBook" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let bookshelfName = bookshelves[indexPath.row].title
-                if let destinationVC = segue.destination as? AddCategoryViewController {
-                    destinationVC.bookshelfName = bookshelfName
+                let bookshelfID = bookshelves[indexPath.row].bookshelfID
+                if let destinationVC = segue.destination as? AddBookViewController {
+                    destinationVC.bookshelfID = bookshelfID
                 }
             }
         }

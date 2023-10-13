@@ -56,7 +56,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Reference to the specific bookshelf document using its ID
         let bookshelfRef = bookshelvesCollection.document(bookshelfID)
         let booksCollection = bookshelfRef.collection("books")
-        booksCollection.getDocuments { (querySnapshot, error) in
+        booksCollection.addSnapshotListener { (querySnapshot, error) in
             if let error = error {
                 print("Error fetching books: \(error.localizedDescription)")
                 completion([])

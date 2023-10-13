@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let usersCollection = db.collection("users")
         
         // Get the user's document
-        usersCollection.document(userIdentifier).getDocument { (document, error) in
+        usersCollection.document(userIdentifier).addSnapshotListener { (document, error) in
             if let error = error {
                 print("Error fetching user document: \(error.localizedDescription)")
                 return
@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                     // Iterate through each bookshelfID and fetch the corresponding bookshelf document
                     for bookshelfID in bookshelfIDs {
-                        bookshelvesCollection.document(bookshelfID).getDocument { (bookshelfDocument, error) in
+                        bookshelvesCollection.document(bookshelfID).addSnapshotListener { (bookshelfDocument, error) in
                             if let error = error {
                                 print("Error fetching bookshelf document: \(error.localizedDescription)")
                             } else if let bookshelfDocument = bookshelfDocument, bookshelfDocument.exists {

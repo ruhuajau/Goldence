@@ -76,7 +76,7 @@ class MorningViewController: UIViewController {
 
             let schedulesRef = db.collection("schedules").document(documentID)
 
-            schedulesRef.getDocument { (document, error) in
+            schedulesRef.addSnapshotListener { (document, error) in
                 if let error = error {
                     print("Error fetching document: \(error.localizedDescription)")
                     return
@@ -143,7 +143,7 @@ class MorningViewController: UIViewController {
         if let documentID = documentID, !documentID.isEmpty {
                 let schedulesRef = db.collection("schedules").document(documentID)
                 
-                schedulesRef.getDocument { [weak self] (document, error) in
+                schedulesRef.addSnapshotListener { [weak self] (document, error) in
                     guard let self = self, error == nil else {
                         print("Error fetching document: \(error?.localizedDescription ?? "Unknown error")")
                         return
