@@ -61,6 +61,7 @@ class ProfileViewController: UIViewController {
             if let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") {
                 let db = Firestore.firestore()
                 let usersCollection = db.collection("users")
+                
                 // Reference to the user document
                 let userDocRef = usersCollection.document(userIdentifier)
                 userDocRef.getDocument { (document, error) in
@@ -68,49 +69,61 @@ class ProfileViewController: UIViewController {
                         print("Error fetching user document: \(error.localizedDescription)")
                         return
                     }
+                    
                     if let document = document, document.exists {
                         // Check if bookshelfIDs and noteIDs arrays exist
                         if let bookshelfIDs = document["bookshelfIDs"] as? [String],
                            let noteIDs = document["noteIDs"] as? [String] {
-                            let batch = db.batch() // Create a batch for multiple deletes
-                            // Delete user's bookshelves
-                            let bookshelvesCollection = db.collection("bookshelves")
+                            
+                            // Iterate over each bookshelf
                             for bookshelfID in bookshelfIDs {
-                                let bookshelfRef = bookshelvesCollection.document(bookshelfID)
-                                batch.deleteDocument(bookshelfRef)
+                                // Delete the books within the bookshelf
+                                let booksCollectionRef = db.collection("bookshelves").document(bookshelfID).collection("books")
+                                self.deleteBooksInCollection(collectionReference: booksCollectionRef)
+                                
+                                // Delete the bookshelf document
+                                let bookshelfRef = db.collection("bookshelves").document(bookshelfID)
+                                self.deleteDocument(documentReference: bookshelfRef)
                             }
-                            // Delete user's notes
+                            
+                            // Iterate over each note and delete it
                             let notesCollection = db.collection("notes")
                             for noteID in noteIDs {
                                 let noteRef = notesCollection.document(noteID)
-                                batch.deleteDocument(noteRef)
-                            }
-                            // Delete the user document
-                            batch.deleteDocument(userDocRef)
-                            // Commit the batch operation
-                            batch.commit { (error) in
-                                if let error = error {
-                                    print("Error deleting user data: \(error.localizedDescription)")
-                                } else {
-                                    // Remove userIdentifier from UserDefaults
-                                    UserDefaults.standard.removeObject(forKey: "userIdentifier")
-                                    self.navigationController?.popViewController(animated: true)
-                                }
-                            }
-                        } else {
-                            // If the arrays don't exist, delete only the user document
-                            userDocRef.delete { (error) in
-                                if let error = error {
-                                    print("Error deleting user data: \(error.localizedDescription)")
-                                } else {
-                                    // Remove userIdentifier from UserDefaults
-                                    UserDefaults.standard.removeObject(forKey: "userIdentifier")
-                                    self.navigationController?.popViewController(animated: true)
-                                }
+                                self.deleteDocument(documentReference: noteRef)
                             }
                         }
+                        
+                        // Delete the user document
+                        self.deleteDocument(documentReference: userDocRef)
+                        
+                        // Remove userIdentifier from UserDefaults
+                        UserDefaults.standard.removeObject(forKey: "userIdentifier")
+                        self.navigationController?.popViewController(animated: true)
                     }
                 }
             }
     }
+    // Helper function to delete documents in a collection
+    func deleteBooksInCollection(collectionReference: CollectionReference) {
+        collectionReference.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching documents in collection: \(error.localizedDescription)")
+                return
+            }
+            
+            for document in querySnapshot?.documents ?? [] {
+                self.deleteDocument(documentReference: document.reference)
+            }
+        }
+    }
+    // Helper function to delete a document
+    func deleteDocument(documentReference: DocumentReference) {
+        documentReference.delete { error in
+            if let error = error {
+                print("Error deleting document: \(error.localizedDescription)")
+            }
+        }
+    }
+
 }
