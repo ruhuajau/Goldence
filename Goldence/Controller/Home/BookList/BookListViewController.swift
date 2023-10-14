@@ -11,6 +11,7 @@ import Kingfisher
 
 class BookListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var remindLabel: UILabel!
     var bookshelfID: String?
     //var bookshelfName: String?
     var books: [Books] = []
@@ -53,31 +54,41 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     func getBooksFromBookshelf(bookshelfID: String, completion: @escaping ([Books]) -> Void) {
         let bookshelvesCollection = db.collection("bookshelves")
-        // Reference to the specific bookshelf document using its ID
-        let bookshelfRef = bookshelvesCollection.document(bookshelfID)
-        let booksCollection = bookshelfRef.collection("books")
-        booksCollection.addSnapshotListener { (querySnapshot, error) in
-            if let error = error {
-                print("Error fetching books: \(error.localizedDescription)")
-                completion([])
-                return
-            }
+            // Reference to the specific bookshelf document using its ID
+            let bookshelfRef = bookshelvesCollection.document(bookshelfID)
+            let booksCollection = bookshelfRef.collection("books")
             
-            var books: [Books] = []
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                if let title = data["title"] as? String,
-                   let author = data["author"] as? String,
-                   let imageURLString = data["imageURL"] as? String,
-                   let bookID = data["book_id"] as? String,
-                   let imageURL = URL(string: imageURLString) {
-                    let book = Books(bookID: bookID, title: title, author: author, imageURL: imageURL)
-                    books.append(book)
+            booksCollection.addSnapshotListener { (querySnapshot, error) in
+                if let error = error {
+                    print("Error fetching books: \(error.localizedDescription)")
+                    completion([])
+                    return
                 }
+                
+                var books: [Books] = []
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if let title = data["title"] as? String,
+                       let author = data["author"] as? String,
+                       let imageURLString = data["imageURL"] as? String,
+                       let bookID = data["book_id"] as? String,
+                       let imageURL = URL(string: imageURLString) {
+                        let book = Books(bookID: bookID, title: title, author: author, imageURL: imageURL)
+                        books.append(book)
+                    }
+                }
+                // Update the UI to show or hide the remindLabel
+                if books.isEmpty {
+                    DispatchQueue.main.async {
+                        self.remindLabel.isHidden = false
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.remindLabel.isHidden = true
+                    }
+                }
+                completion(books)
             }
-            
-            completion(books)
-        }
     }
     @objc func customBackAction() {
 
