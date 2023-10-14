@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="1939.6946564885495" y="-427.46478873239437"/>
         </scene>
-        <!--Book List View Controller-->
+        <!--My Books-->
         <scene sceneID="3zf-Hk-iT9">
             <objects>
                 <viewController id="nzd-le-rbp" customClass="BookListViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,7 +214,7 @@
                             <constraint firstItem="vNv-Z8-T5V" firstAttribute="top" secondItem="ZBG-WE-RlD" secondAttribute="bottom" constant="25" id="jfC-Iq-HmB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lCX-Jv-e7f"/>
+                    <navigationItem key="navigationItem" title="My Books" id="lCX-Jv-e7f"/>
                     <connections>
                         <outlet property="collectionView" destination="vNv-Z8-T5V" id="08V-eC-JtF"/>
                         <outlet property="remindLabel" destination="Sak-pu-6gO" id="6EG-PI-C3H"/>
@@ -224,7 +224,7 @@
             </objects>
             <point key="canvasLocation" x="2875.5725190839694" y="-427.46478873239437"/>
         </scene>
-        <!--Golden Card List View Controller-->
+        <!--Goldence-->
         <scene sceneID="INC-Be-4fV">
             <objects>
                 <viewController id="Fmx-oD-aSK" customClass="GoldenCardListViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
@@ -367,7 +367,7 @@
                             <constraint firstItem="Iv6-ft-jF6" firstAttribute="top" secondItem="ap6-fE-x94" secondAttribute="bottom" id="Xr7-Cu-beF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="K6o-EM-XuZ"/>
+                    <navigationItem key="navigationItem" title="Goldence" id="K6o-EM-XuZ"/>
                     <connections>
                         <outlet property="tableView" destination="Iv6-ft-jF6" id="HRW-ps-oSR"/>
                     </connections>
@@ -376,7 +376,7 @@
             </objects>
             <point key="canvasLocation" x="3672.5190839694656" y="-427.46478873239437"/>
         </scene>
-        <!--Edit Golden Card Content-->
+        <!--Edit More-->
         <scene sceneID="igN-9N-cm7">
             <objects>
                 <viewController storyboardIdentifier="EditGoldenCardContent" id="HUH-B7-jFq" customClass="EditGoldenCardContent" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
@@ -467,7 +467,7 @@
                             <constraint firstItem="mdr-Am-VPV" firstAttribute="top" secondItem="e8p-XU-N7W" secondAttribute="bottom" constant="25" id="mGn-Rb-60R"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jP4-Rh-4yb"/>
+                    <navigationItem key="navigationItem" title="Edit More" id="jP4-Rh-4yb"/>
                     <connections>
                         <outlet property="contentTextView" destination="mdr-Am-VPV" id="oLC-Ze-btr"/>
                         <outlet property="editButton" destination="pr3-sn-Iig" id="rXI-8h-jdq"/>
@@ -480,7 +480,7 @@
             </objects>
             <point key="canvasLocation" x="4380.9160305343512" y="-77.464788732394368"/>
         </scene>
-        <!--Edit Note View Controller-->
+        <!--Note-->
         <scene sceneID="4Sl-Lg-XYW">
             <objects>
                 <viewController id="X1T-t1-Qsv" customClass="EditNoteViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
@@ -537,7 +537,7 @@
                             <constraint firstItem="whX-Xv-rpT" firstAttribute="top" secondItem="Mnv-Iv-zwA" secondAttribute="top" constant="16" id="sPV-Xa-VJD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fDL-s8-jFx"/>
+                    <navigationItem key="navigationItem" title="Note" id="fDL-s8-jFx"/>
                     <connections>
                         <outlet property="saveButton" destination="idP-D2-sxN" id="9CP-cC-4AZ"/>
                         <outlet property="textView" destination="whX-Xv-rpT" id="xAZ-Lw-SDm"/>
@@ -601,7 +601,7 @@
             </objects>
             <point key="canvasLocation" x="5930.5343511450383" y="-133.09859154929578"/>
         </scene>
-        <!--New Goldence View Controller-->
+        <!--New Goldence-->
         <scene sceneID="ORT-HZ-9Yv">
             <objects>
                 <viewController id="pep-Se-EMo" customClass="NewGoldenceViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
@@ -682,7 +682,7 @@
                             <constraint firstItem="xbd-ie-n7h" firstAttribute="leading" secondItem="okc-kF-Jff" secondAttribute="trailing" constant="20" id="uyb-se-3SS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5fw-yx-dJP"/>
+                    <navigationItem key="navigationItem" title="New Goldence" id="5fw-yx-dJP"/>
                     <connections>
                         <outlet property="cardContentTextView" destination="50e-gg-J1j" id="Hbo-XB-0gN"/>
                         <outlet property="cardTitleTextField" destination="xbd-ie-n7h" id="pSQ-Qs-pPc"/>
