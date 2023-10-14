@@ -1180,11 +1180,11 @@
             </objects>
             <point key="canvasLocation" x="2876" y="1001"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Bookshelf-->
         <scene sceneID="GDk-hv-E8r">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G1p-cG-cdN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="book" catalog="system" selectedImage="book.fill" id="0gE-ex-RJr"/>
+                    <tabBarItem key="tabBarItem" title="Bookshelf" image="book" catalog="system" selectedImage="book.fill" id="0gE-ex-RJr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1PF-tp-9Rm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
@@ -1202,7 +1202,7 @@
         <!--Log In View Controller-->
         <scene sceneID="RZr-en-WBq">
             <objects>
-                <viewController id="hW0-k3-oXE" customClass="LogInViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" id="hW0-k3-oXE" customClass="LogInViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eeI-ra-bDD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1321,11 +1321,11 @@
             </objects>
             <point key="canvasLocation" x="-1202" y="2489"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add-->
         <scene sceneID="dJA-d0-pxF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CAx-h9-dbz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="plus.message" catalog="system" selectedImage="plus.message.fill" id="KjI-ud-zGv"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="plus.message" catalog="system" selectedImage="plus.message.fill" id="KjI-ud-zGv"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="h8S-z9-Y9g"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Af-lc-IBV">
@@ -1518,11 +1518,11 @@
             </objects>
             <point key="canvasLocation" x="4657" y="1274"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Goldence-->
         <scene sceneID="Le8-6N-ZuP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xse-QB-l7Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bookmark" catalog="system" selectedImage="bookmark.fill" id="3eQ-k9-3KX"/>
+                    <tabBarItem key="tabBarItem" title="Goldence" image="bookmark" catalog="system" selectedImage="bookmark.fill" id="3eQ-k9-3KX"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jIc-sk-gWl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jyw-nZ-F36">
@@ -1614,11 +1614,11 @@
             </objects>
             <point key="canvasLocation" x="1962.5954198473282" y="2190.8450704225352"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Schedule-->
         <scene sceneID="ZCq-4x-qIZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6xm-oI-lIA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="calendar" catalog="system" selectedImage="calendar.badge.clock" id="zFf-Gt-Vmv"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" selectedImage="calendar.badge.clock" id="zFf-Gt-Vmv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NKb-qo-vbT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
@@ -1811,11 +1811,11 @@
             </objects>
             <point key="canvasLocation" x="2805" y="1880"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="XdN-cH-fpX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TmS-Ds-KHg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle.fill" id="5gM-0m-0kc"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle.fill" id="5gM-0m-0kc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9K-fl-89b">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>

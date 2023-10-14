@@ -56,6 +56,25 @@ class ProfileViewController: UIViewController {
             }
         }
     @IBAction func deleteButtonTapped(_ sender: Any) {
+        // Create an alert controller
+            let alertController = UIAlertController(
+                title: "Confirm Deletion",
+                message: "Are you sure you want to delete your account? This action cannot be undone.",
+                preferredStyle: .alert
+            )            
+            // Add a cancel action
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(cancelAction)
+            // Add a delete action
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+                // Delete the data when the user confirms
+                self?.deleteUserData()
+            }
+            alertController.addAction(deleteAction)
+            // Present the alert controller
+            present(alertController, animated: true)
+    }
+    func deleteUserData(){
         // Retrieve the userIdentifier from UserDefaults
             if let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") {
                 let db = Firestore.firestore()
@@ -91,7 +110,12 @@ class ProfileViewController: UIViewController {
                         self.deleteDocument(documentReference: userDocRef)
                         // Remove userIdentifier from UserDefaults
                         UserDefaults.standard.removeObject(forKey: "userIdentifier")
-                        self.navigationController?.popViewController(animated: true)
+                        // Transition to the WelcomeViewController
+                        if let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as? LogInViewController {
+                            logInVC.modalPresentationStyle = .fullScreen
+                            self.present(logInVC, animated: true)
+                        }
+
                     }
                 }
             }
