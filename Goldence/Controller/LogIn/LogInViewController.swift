@@ -60,11 +60,26 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
         usersCollection.document(userIdentifier).getDocument { [weak self] (document, error) in
             guard let self = self else { return }
             if let document = document, document.exists {
-                // User already exists in Firebase, navigate to CustomTabBarController
-                if let customTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController {
-                    customTabBarController.modalPresentationStyle = .fullScreen
-                    self.present(customTabBarController, animated: true)
-                }
+                // User already exists in Firebase
+                            if let existingUserIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") {
+                                // UserIdentifier is already in UserDefaults
+                                // You might want to do something here
+                                print("User already exists with UserIdentifier: \(existingUserIdentifier)")
+                                if let customTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController {
+                                    customTabBarController.modalPresentationStyle = .fullScreen
+                                    self.present(customTabBarController, animated: true)
+                                }
+
+                            } else {
+                                // UserIdentifier not in UserDefaults, add it
+                                UserDefaults.standard.set(userIdentifier, forKey: "userIdentifier")
+
+                                // Navigate to the CustomTabBarController
+                                if let customTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController {
+                                    customTabBarController.modalPresentationStyle = .fullScreen
+                                    self.present(customTabBarController, animated: true)
+                                }
+                            }
             } else {
                 // Store user data in Firebase
                 let userData: [String: Any] = [
