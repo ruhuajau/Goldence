@@ -92,8 +92,8 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to Add page in second tab!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-Lz-hxc">
-                                <rect key="frame" x="43.666666666666657" y="415.33333333333331" width="305.66666666666674" height="21.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <rect key="frame" x="57.666666666666657" y="405.33333333333331" width="277.66666666666674" height="41.666666666666686"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -185,10 +185,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go to Add page in second tab!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sak-pu-6gO">
-                                <rect key="frame" x="43" y="415" width="305.66666666666674" height="21.666666666666629"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to Add page in second tab!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sak-pu-6gO">
+                                <rect key="frame" x="57.666666666666657" y="405" width="278" height="42"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -200,6 +199,8 @@
                             <constraint firstItem="vNv-Z8-T5V" firstAttribute="leading" secondItem="KMm-hC-whv" secondAttribute="leading" constant="10" id="gDi-Ly-zWO"/>
                             <constraint firstItem="KMm-hC-whv" firstAttribute="trailing" secondItem="vNv-Z8-T5V" secondAttribute="trailing" constant="10" id="gRm-NW-Tel"/>
                             <constraint firstItem="vNv-Z8-T5V" firstAttribute="top" secondItem="KMm-hC-whv" secondAttribute="top" constant="10" id="gZK-Ra-8TE"/>
+                            <constraint firstItem="Sak-pu-6gO" firstAttribute="centerY" secondItem="10v-fW-lDr" secondAttribute="centerY" id="jw3-LU-5dA"/>
+                            <constraint firstItem="Sak-pu-6gO" firstAttribute="centerX" secondItem="10v-fW-lDr" secondAttribute="centerX" id="qLv-uY-Xcz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Books" id="lCX-Jv-e7f"/>
@@ -676,7 +677,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ji1-Kl-0GI">
-                                <rect key="frame" x="0.0" y="73.666666666666686" width="393" height="719.33333333333326"/>
+                                <rect key="frame" x="0.0" y="87.666666666666686" width="393" height="705.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewShelfTableViewCell" rowHeight="164" id="WCV-vO-0gI">
@@ -697,8 +698,8 @@
                                                             <color key="backgroundColor" red="0.79952656740000005" green="0.80540171890000001" blue="0.81989154419999999" alpha="0.48916080298013243" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Bookshelf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7b-wU-Paa">
-                                                            <rect key="frame" x="91.666666666666686" y="56" width="190" height="22"/>
-                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                            <rect key="frame" x="108" y="49.333333333333329" width="157" height="35.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                                             <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -747,8 +748,8 @@
                                                             <color key="backgroundColor" red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="0.56438845198675491" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookshelf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIg-yd-25l">
-                                                            <rect key="frame" x="30" y="30" width="148" height="33"/>
-                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="26"/>
+                                                            <rect key="frame" x="30.000000000000007" y="29.999999999999996" width="73.666666666666686" height="35.666666666666657"/>
+                                                            <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -789,8 +790,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Bookshelf or Add a New One" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53x-m0-vXn">
-                                <rect key="frame" x="16" y="44" width="365.66666666666669" height="21.666666666666671"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <rect key="frame" x="16" y="44" width="298.33333333333331" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -824,13 +825,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kG-Ld-uDk">
-                                <rect key="frame" x="30.000000000000004" y="149" width="51.333333333333343" height="21.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <rect key="frame" x="29.999999999999996" y="54" width="46.666666666666657" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pIv-jK-lWg">
-                                <rect key="frame" x="66.666666666666686" y="198" width="260" height="218.66666666666669"/>
+                                <rect key="frame" x="66.666666666666686" y="109.99999999999999" width="260" height="218.66666666666669"/>
                                 <color key="tintColor" systemColor="separatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="4RV-fV-FaF"/>
@@ -838,7 +839,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfu-gB-Wx5">
-                                <rect key="frame" x="148.33333333333334" y="443.33333333333331" width="96.333333333333343" height="28"/>
+                                <rect key="frame" x="148.33333333333334" y="355.33333333333331" width="96.333333333333343" height="28"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -856,8 +857,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVw-wR-oqg">
-                                <rect key="frame" x="161.66666666666666" y="601.33333333333337" width="70" height="28"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="161.66666666666666" y="513.33333333333337" width="70" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="7tN-nn-xsV"/>
                                 </constraints>
@@ -878,7 +879,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-eQ-TuH">
-                                <rect key="frame" x="101.33333333333334" y="143" width="271.66666666666663" height="34"/>
+                                <rect key="frame" x="96.666666666666657" y="55" width="276.33333333333337" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -888,7 +889,7 @@
                         <constraints>
                             <constraint firstItem="Jfu-gB-Wx5" firstAttribute="centerX" secondItem="xwY-p1-ygy" secondAttribute="centerX" id="6gD-dY-x1E"/>
                             <constraint firstItem="KVw-wR-oqg" firstAttribute="centerX" secondItem="xwY-p1-ygy" secondAttribute="centerX" id="7X6-hw-5rK"/>
-                            <constraint firstItem="8kG-Ld-uDk" firstAttribute="top" secondItem="1c8-EL-MaS" secondAttribute="top" constant="105" id="8DC-wS-5IO"/>
+                            <constraint firstItem="8kG-Ld-uDk" firstAttribute="top" secondItem="1c8-EL-MaS" secondAttribute="top" constant="10" id="8DC-wS-5IO"/>
                             <constraint firstItem="KVw-wR-oqg" firstAttribute="top" secondItem="Jfu-gB-Wx5" secondAttribute="bottom" constant="130" id="BYG-4m-X7T"/>
                             <constraint firstItem="Jfu-gB-Wx5" firstAttribute="top" secondItem="pIv-jK-lWg" secondAttribute="bottom" constant="26.600000000000001" id="IHN-Ag-JeE"/>
                             <constraint firstItem="pCb-eQ-TuH" firstAttribute="leading" secondItem="8kG-Ld-uDk" secondAttribute="trailing" constant="20" id="Wwc-9I-Nhz"/>
@@ -919,7 +920,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ifT-pJ-wrn">
-                                <rect key="frame" x="0.0" y="104" width="393" height="689"/>
+                                <rect key="frame" x="0.0" y="44" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShareTableViewCell" rowHeight="186" id="uXl-ps-ivo" customClass="ShareTableViewCell" customModule="Goldence" customModuleProvider="target">
@@ -939,12 +940,12 @@
                                                                 <constraint firstAttribute="height" constant="100" id="MVH-H5-sF4"/>
                                                             </constraints>
                                                             <color key="textColor" systemColor="labelColor"/>
-                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="27"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP6-OR-GtM">
-                                                            <rect key="frame" x="20" y="130" width="333" height="21.666666666666657"/>
-                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                            <rect key="frame" x="20" y="130" width="333" height="32.333333333333343"/>
+                                                            <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="27"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -979,7 +980,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ifT-pJ-wrn" firstAttribute="leading" secondItem="CmS-eq-2fq" secondAttribute="leading" id="2mp-4h-2Pp"/>
-                            <constraint firstItem="ifT-pJ-wrn" firstAttribute="top" secondItem="CmS-eq-2fq" secondAttribute="top" constant="60" id="B7n-0f-Bud"/>
+                            <constraint firstItem="ifT-pJ-wrn" firstAttribute="top" secondItem="CmS-eq-2fq" secondAttribute="top" id="B7n-0f-Bud"/>
                             <constraint firstItem="ifT-pJ-wrn" firstAttribute="trailing" secondItem="CmS-eq-2fq" secondAttribute="trailing" id="Zni-Br-7Ro"/>
                             <constraint firstItem="CmS-eq-2fq" firstAttribute="bottom" secondItem="ifT-pJ-wrn" secondAttribute="bottom" constant="10" id="cJr-dP-KgK"/>
                         </constraints>
@@ -1002,25 +1003,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="ISBN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UM-6X-MDe">
-                                <rect key="frame" x="16" y="124" width="50" height="26"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <rect key="frame" x="15.999999999999996" y="54" width="57.666666666666657" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPA-Rh-cCz">
-                                <rect key="frame" x="16" y="209" width="53" height="26"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <rect key="frame" x="16.000000000000004" y="150.66666666666666" width="37.333333333333343" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RF-NN-EH1">
-                                <rect key="frame" x="16" y="255" width="76" height="26"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <rect key="frame" x="15.999999999999996" y="206.33333333333334" width="58.666666666666657" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-Za-BYf">
-                                <rect key="frame" x="76" y="121.66666666666669" width="307" height="31"/>
+                                <rect key="frame" x="83.666666666666657" y="56.333333333333343" width="299.33333333333337" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -1045,8 +1046,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="260-tR-Pqe">
-                                <rect key="frame" x="149" y="660" width="95" height="35"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="149" y="616.33333333333337" width="95" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="gPK-3x-TEc"/>
                                 </constraints>
@@ -1059,7 +1060,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTC-DP-JZ8">
-                                <rect key="frame" x="6.6666666666666572" y="163" width="380" height="1"/>
+                                <rect key="frame" x="6.6666666666666572" y="104.66666666666667" width="380" height="1"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="MFx-mD-I6K"/>
@@ -1067,7 +1068,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NBG-TX-Egw">
-                                <rect key="frame" x="96.666666666666686" y="336" width="200" height="198.66666666666674"/>
+                                <rect key="frame" x="96.666666666666686" y="292.33333333333331" width="200" height="198.66666666666663"/>
                                 <color key="tintColor" systemColor="separatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="F8s-uc-X2x"/>
@@ -1075,7 +1076,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nF3-GN-6F5">
-                                <rect key="frame" x="136.66666666666666" y="580" width="119.66666666666666" height="35"/>
+                                <rect key="frame" x="136.66666666666666" y="536.33333333333337" width="119.66666666666666" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Image...">
                                     <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1086,7 +1087,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="96o-d5-xos">
-                                <rect key="frame" x="103" y="205" width="280" height="34"/>
+                                <rect key="frame" x="103" y="151.66666666666666" width="280" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="1iW-qG-kJf"/>
                                 </constraints>
@@ -1094,7 +1095,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVz-zN-HFb">
-                                <rect key="frame" x="103" y="251" width="280" height="34"/>
+                                <rect key="frame" x="103" y="207.33333333333334" width="280" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Qh0-NN-8iU"/>
                                 </constraints>
@@ -1108,7 +1109,7 @@
                             <constraint firstItem="0RF-NN-EH1" firstAttribute="top" secondItem="cPA-Rh-cCz" secondAttribute="bottom" constant="20" id="1pF-iv-F6a"/>
                             <constraint firstItem="260-tR-Pqe" firstAttribute="top" secondItem="nF3-GN-6F5" secondAttribute="bottom" constant="45" id="1xJ-3t-v29"/>
                             <constraint firstItem="96o-d5-xos" firstAttribute="centerY" secondItem="cPA-Rh-cCz" secondAttribute="centerY" id="76X-eF-pmZ"/>
-                            <constraint firstItem="fTC-DP-JZ8" firstAttribute="top" secondItem="RVe-lo-ais" secondAttribute="top" constant="163" id="7Q1-lz-CDG"/>
+                            <constraint firstItem="fTC-DP-JZ8" firstAttribute="top" secondItem="0UM-6X-MDe" secondAttribute="bottom" constant="15" id="7Q1-lz-CDG"/>
                             <constraint firstItem="fTC-DP-JZ8" firstAttribute="centerX" secondItem="RVe-lo-ais" secondAttribute="centerX" id="9cx-Sq-LjH"/>
                             <constraint firstItem="WKB-s0-9zB" firstAttribute="trailing" secondItem="LVz-zN-HFb" secondAttribute="trailing" constant="10" id="9kb-84-A74"/>
                             <constraint firstItem="MNb-Za-BYf" firstAttribute="centerY" secondItem="0UM-6X-MDe" secondAttribute="centerY" id="C8A-Uv-qAh"/>
@@ -1117,7 +1118,7 @@
                             <constraint firstItem="nF3-GN-6F5" firstAttribute="top" secondItem="NBG-TX-Egw" secondAttribute="bottom" constant="45" id="KQO-Z8-opP"/>
                             <constraint firstItem="LVz-zN-HFb" firstAttribute="centerY" secondItem="0RF-NN-EH1" secondAttribute="centerY" id="Lie-GD-qXg"/>
                             <constraint firstItem="WKB-s0-9zB" firstAttribute="trailing" secondItem="96o-d5-xos" secondAttribute="trailing" constant="10" id="PpG-dL-B9e"/>
-                            <constraint firstItem="0UM-6X-MDe" firstAttribute="top" secondItem="WKB-s0-9zB" secondAttribute="top" constant="80" id="fDL-LP-jQD"/>
+                            <constraint firstItem="0UM-6X-MDe" firstAttribute="top" secondItem="WKB-s0-9zB" secondAttribute="top" constant="10" id="fDL-LP-jQD"/>
                             <constraint firstItem="WKB-s0-9zB" firstAttribute="trailing" secondItem="MNb-Za-BYf" secondAttribute="trailing" constant="10" id="lyc-Bo-F1b"/>
                             <constraint firstItem="cPA-Rh-cCz" firstAttribute="leading" secondItem="WKB-s0-9zB" secondAttribute="leading" constant="16" id="mOS-yG-fdd"/>
                             <constraint firstItem="NBG-TX-Egw" firstAttribute="top" secondItem="LVz-zN-HFb" secondAttribute="bottom" constant="50" id="naR-c5-Krt"/>
@@ -1323,7 +1324,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ose-WQ-Zni">
-                                <rect key="frame" x="110" y="134" width="173" height="32"/>
+                                <rect key="frame" x="110" y="44" width="173" height="32"/>
                                 <segments>
                                     <segment title="Type"/>
                                     <segment title="Scan"/>
@@ -1333,13 +1334,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxi-Xw-GwC">
-                                <rect key="frame" x="15" y="195" width="363" height="572"/>
+                                <rect key="frame" x="15" y="105" width="363" height="662"/>
                                 <connections>
                                     <segue destination="6qh-dF-NMs" kind="embed" identifier="ISBNType" id="oLB-V5-DHz"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfn-m5-Gx5">
-                                <rect key="frame" x="15" y="195" width="365" height="572"/>
+                                <rect key="frame" x="15" y="105" width="365" height="662"/>
                                 <connections>
                                     <segue destination="o5O-tf-R97" kind="embed" identifier="ISBNScan" id="6Er-ca-LWj"/>
                                 </connections>
@@ -1354,7 +1355,7 @@
                             <constraint firstItem="Oe3-NM-Z57" firstAttribute="trailing" secondItem="ose-WQ-Zni" secondAttribute="trailing" constant="110" id="SKk-ac-7N8"/>
                             <constraint firstItem="ose-WQ-Zni" firstAttribute="leading" secondItem="Oe3-NM-Z57" secondAttribute="leading" constant="110" id="Tg8-uH-rPn"/>
                             <constraint firstAttribute="trailing" secondItem="Dxi-Xw-GwC" secondAttribute="trailing" constant="15" id="YmU-le-awh"/>
-                            <constraint firstItem="ose-WQ-Zni" firstAttribute="top" secondItem="Oe3-NM-Z57" secondAttribute="top" constant="90" id="bsX-fR-Kgx"/>
+                            <constraint firstItem="ose-WQ-Zni" firstAttribute="top" secondItem="Oe3-NM-Z57" secondAttribute="top" id="bsX-fR-Kgx"/>
                             <constraint firstAttribute="bottom" secondItem="zfn-m5-Gx5" secondAttribute="bottom" constant="85" id="hSy-rf-SGH"/>
                             <constraint firstAttribute="bottom" secondItem="Dxi-Xw-GwC" secondAttribute="bottom" constant="85" id="kmM-Jg-yyT"/>
                             <constraint firstItem="Dxi-Xw-GwC" firstAttribute="top" secondItem="ose-WQ-Zni" secondAttribute="bottom" constant="30" id="qkJ-XK-Ejl"/>
@@ -1377,7 +1378,7 @@
             <objects>
                 <viewController id="6qh-dF-NMs" customClass="TypeViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3l-nk-YBp">
-                        <rect key="frame" x="0.0" y="0.0" width="363" height="572"/>
+                        <rect key="frame" x="0.0" y="0.0" width="363" height="662"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7c8-Z7-jJp">
@@ -1389,7 +1390,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04z-Ch-w5r">
                                 <rect key="frame" x="116" y="119" width="136" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Search">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1419,7 +1420,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4y-ex-4H0">
                                 <rect key="frame" x="116" y="491" width="136" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1450,7 +1451,7 @@
             <objects>
                 <viewController id="o5O-tf-R97" customClass="ScanViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="03E-I2-C0S">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="572"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="662"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbi-O3-1lH">
@@ -1535,13 +1536,13 @@
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJN-DR-hFO">
-                                <rect key="frame" x="132.66666666666666" y="139" width="127.66666666666666" height="54.333333333333343"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="43"/>
+                                <rect key="frame" x="162" y="139" width="69" height="51.333333333333343"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="43"/>
                                 <color key="textColor" red="0.15294117647058825" green="0.29803921568627451" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LsV-gO-ls5">
-                                <rect key="frame" x="30" y="238.33333333333334" width="333" height="32.000000000000028"/>
+                                <rect key="frame" x="30" y="235.33333333333334" width="333" height="32.000000000000028"/>
                                 <segments>
                                     <segment title="Morning"/>
                                     <segment title="Afternoon"/>
@@ -1644,8 +1645,11 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-8B-CoL">
-                                <rect key="frame" x="169" y="364" width="55" height="32"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="164" y="364" width="65" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="92g-gc-JWU"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="save">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -1692,8 +1696,11 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtQ-jr-8df">
-                                <rect key="frame" x="169" y="364" width="55" height="32"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="164" y="364" width="65" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="bWe-2L-3CY"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="save">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -1741,8 +1748,11 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-21-tBt">
-                                <rect key="frame" x="169" y="364" width="55" height="32"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="164" y="364" width="65" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Gd3-dK-JuB"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="save">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -1800,61 +1810,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ve9-X6-ffI">
-                                <rect key="frame" x="121.66666666666669" y="185" width="150" height="148.66666666666669"/>
-                                <color key="tintColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="121.66666666666669" y="145" width="150" height="148.66666666666669"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Nya-hb-b0Q"/>
                                     <constraint firstAttribute="height" constant="150" id="UQK-gj-XNB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEF-XJ-tBn">
-                                <rect key="frame" x="136.66666666666666" y="359" width="119.99999999999997" height="29.333333333333314"/>
+                                <rect key="frame" x="136.66666666666666" y="319" width="119.99999999999997" height="34.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="TPg-Jr-oIz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvT-A8-UuB">
-                                <rect key="frame" x="119" y="443.33333333333331" width="155" height="36.666666666666686"/>
+                                <rect key="frame" x="119" y="408.66666666666669" width="155" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="AUr-vJ-ojV"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reading Analysis">
-                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
-                                    <color key="baseForegroundColor" red="0.15294117647058825" green="0.29803921568627451" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="titleFontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="26"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="dEJ-cL-EA7" kind="show" id="Sju-es-RqX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blc-m8-9R1">
-                                <rect key="frame" x="119" y="510" width="155" height="34"/>
+                                <rect key="frame" x="119" y="538.66666666666663" width="155" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="K6k-aM-JKb"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Delete Account">
-                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
+                                    <fontDescription key="titleFontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="26"/>
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="deleteButtonTapped:" destination="F2d-DM-ATA" eventType="touchUpInside" id="Mev-iw-rly"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOz-ca-Rrg">
+                                <rect key="frame" x="119" y="473.66666666666669" width="155" height="45.000000000000057"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="fct-Gi-jkK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out">
+                                    <fontDescription key="titleFontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="26"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="F2d-DM-ATA" eventType="touchUpInside" id="6xb-Zb-dLo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y3y-Td-Sf7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ve9-X6-ffI" firstAttribute="top" secondItem="Y3y-Td-Sf7" secondAttribute="top" constant="140" id="4NS-nI-q9r"/>
+                            <constraint firstItem="ve9-X6-ffI" firstAttribute="top" secondItem="Y3y-Td-Sf7" secondAttribute="top" constant="100" id="4NS-nI-q9r"/>
                             <constraint firstItem="TEF-XJ-tBn" firstAttribute="centerX" secondItem="UDL-xX-p7K" secondAttribute="centerX" id="5cv-SH-w4i"/>
                             <constraint firstItem="blc-m8-9R1" firstAttribute="centerX" secondItem="UDL-xX-p7K" secondAttribute="centerX" id="AXs-Km-1Ja"/>
                             <constraint firstItem="VvT-A8-UuB" firstAttribute="top" secondItem="TEF-XJ-tBn" secondAttribute="bottom" constant="55" id="BUf-qE-xlP"/>
                             <constraint firstItem="TEF-XJ-tBn" firstAttribute="top" secondItem="ve9-X6-ffI" secondAttribute="bottom" constant="25" id="NaM-9u-hoG"/>
+                            <constraint firstItem="NOz-ca-Rrg" firstAttribute="centerX" secondItem="UDL-xX-p7K" secondAttribute="centerX" id="WUr-TH-JRu"/>
                             <constraint firstItem="ve9-X6-ffI" firstAttribute="centerX" secondItem="UDL-xX-p7K" secondAttribute="centerX" id="XRc-vs-zZG"/>
-                            <constraint firstItem="blc-m8-9R1" firstAttribute="top" secondItem="VvT-A8-UuB" secondAttribute="bottom" constant="30" id="f8K-2O-Lk8"/>
+                            <constraint firstItem="NOz-ca-Rrg" firstAttribute="top" secondItem="VvT-A8-UuB" secondAttribute="bottom" constant="20" id="dP8-J4-4IO"/>
+                            <constraint firstItem="blc-m8-9R1" firstAttribute="top" secondItem="NOz-ca-Rrg" secondAttribute="bottom" constant="20" id="nk3-Ak-Hng"/>
                             <constraint firstItem="VvT-A8-UuB" firstAttribute="centerX" secondItem="UDL-xX-p7K" secondAttribute="centerX" id="qCK-Y9-VN6"/>
                         </constraints>
                     </view>
@@ -1862,6 +1888,7 @@
                     <connections>
                         <outlet property="analysisButton" destination="VvT-A8-UuB" id="TUV-vo-6Hx"/>
                         <outlet property="deleteButton" destination="blc-m8-9R1" id="WkO-FL-lPL"/>
+                        <outlet property="logOutButton" destination="NOz-ca-Rrg" id="HL5-cL-2jV"/>
                         <outlet property="nameLabel" destination="TEF-XJ-tBn" id="4jl-WX-CmU"/>
                     </connections>
                 </viewController>

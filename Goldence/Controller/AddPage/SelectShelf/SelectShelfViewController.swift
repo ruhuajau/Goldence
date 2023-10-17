@@ -20,7 +20,7 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
         loadBookshelves()
         if let navigationBar = navigationController?.navigationBar {
             // Customize the title color
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, .font: UIFont(name: "Zapfino", size: 15)]
         }
 
     }
