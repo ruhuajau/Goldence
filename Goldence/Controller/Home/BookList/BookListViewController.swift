@@ -18,7 +18,6 @@ class BookListViewController: UIViewController, UICollectionViewDelegate, UIColl
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
         let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
         customBackButton.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
