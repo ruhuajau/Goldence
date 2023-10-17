@@ -12,19 +12,28 @@ import Kingfisher
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var remindLabel: UILabel!
+    
     private var bookshelves: [Bookshelf] = []
     private let db = Firestore.firestore()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
-        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         loadBookshelves()
+        // Set the title text attributes for the navigation bar
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 170
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell") as? HomePageTableViewCell {
@@ -43,31 +52,66 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return bookshelves.count
     }
     func loadBookshelves() {
+        // Retrieve the user's userIdentifier from UserDefaults
+        guard let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+            print("UserIdentifier not found in UserDefaults")
+            return
+        }
+
         let db = Firestore.firestore()
-        let bookshelvesCollection = db.collection("bookshelves")
-        bookshelvesCollection.addSnapshotListener { (querySnapshot, error) in
+        let usersCollection = db.collection("users")
+
+        // Get the user's document
+        usersCollection.document(userIdentifier).addSnapshotListener { (document, error) in
             if let error = error {
-                print("Error fetching bookshelves: \(error.localizedDescription)")
+                print("Error fetching user document: \(error.localizedDescription)")
                 return
             }
-            self.bookshelves.removeAll()
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                if let title = data["name"] as? String, let imageURL = data["imageURL"] as? String {
-                    let bookshelf = Bookshelf(title: title, imageURL: imageURL)
-                    self.bookshelves.append(bookshelf)
+
+            if let document = document, document.exists {
+                if let bookshelfIDs = document["bookshelfIDs"] as? [String] {
+                    // Fetch bookshelves associated with bookshelfIDs
+                    let bookshelvesCollection = db.collection("bookshelves")
+                    self.bookshelves.removeAll() // Clear existing bookshelves
+
+                    // Iterate through each bookshelfID and fetch the corresponding bookshelf document
+                    for bookshelfID in bookshelfIDs {
+                        bookshelvesCollection.document(bookshelfID).addSnapshotListener { (bookshelfDocument, error) in
+                            if let error = error {
+                                print("Error fetching bookshelf document: \(error.localizedDescription)")
+                            } else if let bookshelfDocument = bookshelfDocument, bookshelfDocument.exists {
+                                // Extract data from the bookshelf document
+                                if let title = bookshelfDocument["name"] as? String, let imageURL = bookshelfDocument["imageURL"] as? String {
+                                    let bookshelf = Bookshelf(bookshelfID: bookshelfID, title: title, imageURL: imageURL)
+                                    self.bookshelves.append(bookshelf)
+                                    self.tableView.reloadData() // Reload the table view
+                                    
+                                    // Check the count of bookshelves and show/hide the remindLabel accordingly
+                                    if self.bookshelves.isEmpty {
+                                        self.remindLabel.isHidden = false
+                                    } else {
+                                        self.remindLabel.isHidden = true
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
+            } else {
+                // If the user document doesn't exist, show the remindLabel
+                self.remindLabel.isHidden = false
             }
-            // Reload the table view with the updated data
-            self.tableView.reloadData()
         }
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "booksInShelf" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let bookshelfName = bookshelves[indexPath.row].title
+                let bookshelfID = bookshelves[indexPath.row].bookshelfID
                 if let destinationVC = segue.destination as? BookListViewController {
-                    destinationVC.bookshelfName = bookshelfName
+                    //destinationVC.bookshelfName = bookshelfName
+                    destinationVC.bookshelfID = bookshelfID
                 }
             }
         }

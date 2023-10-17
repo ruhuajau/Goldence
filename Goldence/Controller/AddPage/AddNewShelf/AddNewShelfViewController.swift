@@ -28,6 +28,11 @@ class AddNewShelfViewController: UIViewController {
         // Set the custom back button as the left bar button item
         navigationItem.leftBarButtonItem = customBackButton
         titleTextField.delegate = self
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+
     }
     @IBAction func updateImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -35,19 +40,19 @@ class AddNewShelfViewController: UIViewController {
             // Create an action sheet with options
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             // Add the "Take Photo" option
-            actionSheet.addAction(UIAlertAction(title: "拍照", style: .default, handler: { _ in
+            actionSheet.addAction(UIAlertAction(title: "Take a Photo", style: .default, handler: { _ in
                 imagePicker.sourceType = .camera
                 imagePicker.allowsEditing = true
                 self.present(imagePicker, animated: true)
             }))
             // Add the "Choose Photo" option
-            actionSheet.addAction(UIAlertAction(title: "上傳圖片", style: .default, handler: { _ in
+            actionSheet.addAction(UIAlertAction(title: "Upload a Photo", style: .default, handler: { _ in
                 imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = true
                 self.present(imagePicker, animated: true)
             }))
             // Add a cancel option
-            actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             // Present the action sheet
             present(actionSheet, animated: true)
     }
@@ -62,16 +67,16 @@ class AddNewShelfViewController: UIViewController {
     }
     func addData() {
         guard let bookShelfName = titleTextField.text,
-              let bookShelfImage = newBookImage else {
+              let bookShelfImage = newBookImage,
+              let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
             showAlert(message: "資訊有誤")
             return
         }
-
+        
         // Generate a unique ID for the document
-        let documentID = UUID().uuidString
-        // Reference to Firestore collection
         let bookshelvesCollection = db.collection("bookshelves")
         // Create a document with the unique ID
+        let documentID = bookshelvesCollection.document().documentID
         let documentRef = bookshelvesCollection.document(documentID)
         // Upload the image to Firebase Storage
         let imageRef = storage.reference().child("bookshelfImages/\(documentID).jpg")
@@ -89,6 +94,7 @@ class AddNewShelfViewController: UIViewController {
                     }
                     // Save the bookshelf data to Firestore
                     let data: [String: Any] = [
+                        "bookshelf_id": documentID,
                         "name": bookShelfName,
                         "imageURL": url?.absoluteString ?? ""
                     ]
@@ -97,13 +103,21 @@ class AddNewShelfViewController: UIViewController {
                             self.showAlert(message: "Error saving data: \(error.localizedDescription)")
                         } else {
                             self.showAlert(message: "Data saved successfully!")
+                            // Update the user's document to include the bookshelfID in the array
+                            let usersCollection = self.db.collection("users")
+                            let userDocRef = usersCollection.document(userIdentifier)
+                            
+                            userDocRef.updateData(["bookshelfIDs": FieldValue.arrayUnion([documentID])]) { error in
+                                if let error = error {
+                                    self.showAlert(message: "Error updating user data: \(error.localizedDescription)")
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
-
     func showAlert(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

@@ -19,7 +19,9 @@ class GoldenCardTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         shareButton.layer.cornerRadius = 15
-        contentView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
+        shareButton.layer.borderWidth = 1
+        shareButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "3A6EA5").cgColor
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

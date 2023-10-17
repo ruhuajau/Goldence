@@ -10,7 +10,6 @@ import Firebase
 import FirebaseStorage
 
 class AddBookViewController: UIViewController {
-    var bookshelfName: String?
     var bookshelfID: String?
     @IBOutlet weak var ISBNButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
@@ -35,16 +34,11 @@ class AddBookViewController: UIViewController {
         // Do any additional setup after loading the view.
         titleTextField.delegate = self
         authorTextField.delegate = self
-        // Retrieve the bookshelfID in viewDidLoad
-            if let bookshelfName = self.bookshelfName {
-                findBookshelfID(byName: bookshelfName) { (bookshelfID) in
-                    if let bookshelfID = bookshelfID {
-                        self.bookshelfID = bookshelfID
-                    } else {
-                        print("Bookshelf not found.")
-                    }
-                }
-            }
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+
     }
 
     @IBAction func updateImage(_ sender: Any) {
@@ -85,9 +79,10 @@ class AddBookViewController: UIViewController {
 
             // Reference to the parent bookshelf document
             let bookshelfRef = db.collection("bookshelves").document(bookshelfId)
-
-            let bookRef = bookshelfRef.collection("books").document()
-
+ 
+            let bookRefCollection = bookshelfRef.collection("books")
+            let bookID = bookRefCollection.document().documentID
+            let bookRef = bookRefCollection.document(bookID)
             // Upload the image to Firebase Storage
             let imageRef = storage.reference().child("bookImages/\(bookRef.documentID).jpg")
             if let imageData = bookImage.jpegData(compressionQuality: 0.5) {
@@ -104,6 +99,7 @@ class AddBookViewController: UIViewController {
                         }
                         // Save the book data to Firestore
                         let data: [String: Any] = [
+                            "book_id": bookID,
                             "title": bookName,
                             "author": bookAuthor,
                             "imageURL": url?.absoluteString ?? ""
@@ -124,29 +120,6 @@ class AddBookViewController: UIViewController {
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
-    }
-    func findBookshelfID(byName bookshelfName: String, completion: @escaping (String?) -> Void) {
-        let bookshelvesCollection = db.collection("bookshelves")
-        
-        // Create a query to find the bookshelf with the specified name
-        let query = bookshelvesCollection.whereField("name", isEqualTo: bookshelfName)
-        
-        query.getDocuments { (querySnapshot, error) in
-            if let error = error {
-                print("Error querying bookshelves: \(error.localizedDescription)")
-                completion(nil)
-                return
-            }
-            // Check if any documents were found
-            if let document = querySnapshot?.documents.first {
-                // Retrieve the documentID of the found bookshelf
-                let bookshelfID = document.documentID
-                completion(bookshelfID)
-            } else {
-                // No matching document found
-                completion(nil)
-            }
-        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "byISBN" {

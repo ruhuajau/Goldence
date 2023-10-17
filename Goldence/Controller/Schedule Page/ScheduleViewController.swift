@@ -20,6 +20,31 @@ class ScheduleViewController: UIViewController {
         var documentID: String = ""
         override func viewDidLoad() {
             super.viewDidLoad()
+            if let navigationBar = navigationController?.navigationBar {
+                // Customize the title color
+                navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            }
+
+            // Define the font you want to use
+                    let font = UIFont(name: "Chalkduster", size: 13) // Replace "YourFontName" with the name of your custom font
+
+                    // Define text attributes
+                    let normalTextAttributes = [
+                        NSAttributedString.Key.font: font!,
+                        NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "274c77") // Change text color if needed
+                    ]
+
+                    // Apply the text attributes to the normal state
+            segmentOutlet.setTitleTextAttributes(normalTextAttributes, for: .normal)
+
+                    // You can also set attributes for the selected state if needed
+                    let selectedTextAttributes = [
+                        NSAttributedString.Key.font: font!,
+                        NSAttributedString.Key.foregroundColor: UIColor.white // Change text color if needed
+                    ]
+
+            //segmentOutlet.setTitleTextAttributes(selectedTextAttributes, for: .selected)
+
             dateFormatter.dateFormat = "MMM d, yyyy"
             dateLabel.text = dateFormatter.string(from: currentDate)
             // Generate a document ID for the current date
@@ -50,7 +75,7 @@ class ScheduleViewController: UIViewController {
         let db = Firestore.firestore()
         let schedulesRef = db.collection("schedules").document(documentID)
 
-        schedulesRef.getDocument { (document, error) in
+        schedulesRef.addSnapshotListener { (document, error) in
             if let error = error {
                 print("Error fetching document: \(error.localizedDescription)")
                 return
@@ -103,7 +128,7 @@ class ScheduleViewController: UIViewController {
         let db = Firestore.firestore()
         let schedulesRef = db.collection("schedules").document(documentID)
 
-        schedulesRef.getDocument { (document, error) in
+        schedulesRef.addSnapshotListener { (document, error) in
             if let error = error {
                 print("Error fetching document: \(error.localizedDescription)")
                 return

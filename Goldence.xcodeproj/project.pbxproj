@@ -12,9 +12,13 @@
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
 		0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */; };
 		0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */; };
+		0E7E37862ACFFC5F001A2741 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E37852ACFFC5F001A2741 /* ShadowView.swift */; };
+		0E7E378E2AD4F780001A2741 /* AddNewCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */; };
+		0E7E37902AD59372001A2741 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E378F2AD59372001A2741 /* ProfileViewController.swift */; };
+		0E7E37922AD7D23E001A2741 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E37912AD7D23E001A2741 /* UserStruct.swift */; };
 		0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */; };
 		0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */; };
-		0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */; };
+		0E82970E2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */; };
 		0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */; };
 		0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */; };
 		0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */; };
@@ -31,14 +35,15 @@
 		0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */; };
 		0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */; };
 		0E82978F2AC2E34E001B5EA0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */; };
-
-
 		0E8297E12ACBE612001B5EA0 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */; };
 		0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */; };
 		0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */; };
 		0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */; };
-
-
+		0EDECDF12ACD679E0011D4BB /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDEE2ACD679E0011D4BB /* EditNoteViewController.swift */; };
+		0EDECDF22ACD679E0011D4BB /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDEF2ACD679E0011D4BB /* ImageViewController.swift */; };
+		0EDECDF32ACD679E0011D4BB /* EditGoldenCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDF02ACD679E0011D4BB /* EditGoldenCardContent.swift */; };
+		0EDECDF72ACE93500011D4BB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDF62ACE93500011D4BB /* LogInViewController.swift */; };
+		0EDECDF92ACEA09E0011D4BB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDECDF82ACEA09E0011D4BB /* WelcomeViewController.swift */; };
 		0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0702AB1B518003B205C /* AppDelegate.swift */; };
 		0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0722AB1B518003B205C /* SceneDelegate.swift */; };
 		0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0742AB1B518003B205C /* HomeViewController.swift */; };
@@ -47,7 +52,6 @@
 		0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE8C07B2AB1B51A003B205C /* LaunchScreen.storyboard */; };
 		0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */; };
 		0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */; };
-		0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */; };
 		0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */; };
 		0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0992AB2F313003B205C /* APIManager.swift */; };
 		0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09B2AB2F32E003B205C /* BookStruct.swift */; };
@@ -64,9 +68,13 @@
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		0E7155772ABC188800982A6C /* AddNewShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewShelfViewController.swift; sourceTree = "<group>"; };
 		0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfStruct.swift; sourceTree = "<group>"; };
+		0E7E37852ACFFC5F001A2741 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardTableViewCell.swift; sourceTree = "<group>"; };
+		0E7E378F2AD59372001A2741 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0E7E37912AD7D23E001A2741 /* UserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
 		0E8297082ABD193B001B5EA0 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
-		0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
+		0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenCardListViewController.swift; sourceTree = "<group>"; };
 		0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoldenceViewController.swift; sourceTree = "<group>"; };
 		0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStruct.swift; sourceTree = "<group>"; };
@@ -83,14 +91,16 @@
 		0E82978A2AC2C9E2001B5EA0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		0E82978C2AC2CA47001B5EA0 /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
 		0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-
-
 		0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStruct.swift; sourceTree = "<group>"; };
 		0E8297E52ACBF3F6001B5EA0 /* ScheduleRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRectangle.swift; sourceTree = "<group>"; };
 		0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLabels.swift; sourceTree = "<group>"; };
-
-
+		0EDECDEE2ACD679E0011D4BB /* EditNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		0EDECDEF2ACD679E0011D4BB /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		0EDECDF02ACD679E0011D4BB /* EditGoldenCardContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoldenCardContent.swift; sourceTree = "<group>"; };
+		0EDECDF42ACE930F0011D4BB /* GoldenceDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoldenceDebug.entitlements; sourceTree = "<group>"; };
+		0EDECDF62ACE93500011D4BB /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		0EDECDF82ACEA09E0011D4BB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +111,6 @@
 		0EE8C07E2AB1B51A003B205C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfViewController.swift; sourceTree = "<group>"; };
 		0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfTableViewCell.swift; sourceTree = "<group>"; };
-		0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		0EE8C0992AB2F313003B205C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0EE8C09B2AB2F32E003B205C /* BookStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStruct.swift; sourceTree = "<group>"; };
@@ -147,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0E82970B2ABD80D3001B5EA0 /* BookListViewController.swift */,
-				0E82970D2ABD81AC001B5EA0 /* BookListTableViewCell.swift */,
+				0E82970D2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -157,8 +166,9 @@
 			children = (
 				0E8297152ABEE918001B5EA0 /* GoldenCardListViewController.swift */,
 				0E82973D2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift */,
+				0E7E378D2AD4F780001A2741 /* AddNewCardTableViewCell.swift */,
 				0E8297172ABF1432001B5EA0 /* NewGoldenceViewController.swift */,
-				0E8297D82ACABC29001B5EA0 /* EditGoldenCard */,
+				0EDECDED2ACD679E0011D4BB /* EditGoldenCard */,
 			);
 			path = GoldenCardList;
 			sourceTree = "<group>";
@@ -194,10 +204,10 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
-
 		0E8297DF2ACBE5E6001B5EA0 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				0E7E378F2AD59372001A2741 /* ProfileViewController.swift */,
 				0E8297E02ACBE612001B5EA0 /* AnalysisViewController.swift */,
 			);
 			path = Analysis;
@@ -210,7 +220,26 @@
 				0E8297E72ACBF47F001B5EA0 /* ScheduleLabels.swift */,
 			);
 			path = Schedule;
-
+			sourceTree = "<group>";
+		};
+		0EDECDED2ACD679E0011D4BB /* EditGoldenCard */ = {
+			isa = PBXGroup;
+			children = (
+				0EDECDEE2ACD679E0011D4BB /* EditNoteViewController.swift */,
+				0EDECDEF2ACD679E0011D4BB /* ImageViewController.swift */,
+				0EDECDF02ACD679E0011D4BB /* EditGoldenCardContent.swift */,
+			);
+			name = EditGoldenCard;
+			path = "../../../../../../../../Downloads/Goldence-feature-note/Goldence/Controller/Home/GoldenCardList/EditGoldenCard";
+			sourceTree = "<group>";
+		};
+		0EDECDF52ACE933F0011D4BB /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				0EDECDF62ACE93500011D4BB /* LogInViewController.swift */,
+				0EDECDF82ACEA09E0011D4BB /* WelcomeViewController.swift */,
+			);
+			path = LogIn;
 			sourceTree = "<group>";
 		};
 		0EE8C0642AB1B518003B205C = {
@@ -234,6 +263,7 @@
 		0EE8C06F2AB1B518003B205C /* Goldence */ = {
 			isa = PBXGroup;
 			children = (
+				0EDECDF42ACE930F0011D4BB /* GoldenceDebug.entitlements */,
 				0EE8C0872AB2D7C6003B205C /* Ｍodel */,
 				0EE8C0892AB2D7F4003B205C /* View */,
 				0EE8C08A2AB2D7FA003B205C /* Controller */,
@@ -257,6 +287,7 @@
 				0E7155792ABC2E4C00982A6C /* BookShelfStruct.swift */,
 				0E82971B2ABF1A77001B5EA0 /* NoteStruct.swift */,
 				0E8297E22ACBF334001B5EA0 /* ScheduleStruct.swift */,
+				0E7E37912AD7D23E001A2741 /* UserStruct.swift */,
 			);
 			path = "Ｍodel";
 			sourceTree = "<group>";
@@ -267,6 +298,7 @@
 				0E8297E42ACBF3D9001B5EA0 /* Schedule */,
 				0E82976C2AC178F1001B5EA0 /* New Goldence Scan Note */,
 				0EE8C0762AB1B518003B205C /* Main.storyboard */,
+				0E7E37852ACFFC5F001A2741 /* ShadowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +306,7 @@
 		0EE8C08A2AB2D7FA003B205C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0EDECDF52ACE933F0011D4BB /* LogIn */,
 				0E82978E2AC2E34E001B5EA0 /* CustomTabBarController.swift */,
 				0E82970A2ABD1944001B5EA0 /* Home */,
 				0EE8C08F2AB2D98D003B205C /* AddPage */,
@@ -289,18 +322,9 @@
 			children = (
 				0EE8C0912AB2DDC0003B205C /* SelectShelf */,
 				0E7155762ABC186C00982A6C /* AddNewShelf */,
-				0EE8C0902AB2DD95003B205C /* AddCategory */,
 				0EE8C0962AB2E5FA003B205C /* AddBook */,
 			);
 			path = AddPage;
-			sourceTree = "<group>";
-		};
-		0EE8C0902AB2DD95003B205C /* AddCategory */ = {
-			isa = PBXGroup;
-			children = (
-				0EE8C0922AB2DDE7003B205C /* AddCategoryViewController.swift */,
-			);
-			path = AddCategory;
 			sourceTree = "<group>";
 		};
 		0EE8C0912AB2DDC0003B205C /* SelectShelf */ = {
@@ -491,37 +515,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EDECDF32ACD679E0011D4BB /* EditGoldenCardContent.swift in Sources */,
 				0E8297832AC284F1001B5EA0 /* AfternoonViewController.swift in Sources */,
 				0E8297092ABD193B001B5EA0 /* HomePageTableViewCell.swift in Sources */,
 				0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */,
 				0EE8C0752AB1B518003B205C /* HomeViewController.swift in Sources */,
 				0E8297162ABEE918001B5EA0 /* GoldenCardListViewController.swift in Sources */,
 				0E82970C2ABD80D3001B5EA0 /* BookListViewController.swift in Sources */,
-				0E8297DA2ACABC5B001B5EA0 /* EditGoldenCardContent.swift in Sources */,
 				0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */,
+				0E7E37902AD59372001A2741 /* ProfileViewController.swift in Sources */,
 				0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */,
+				0E7E37862ACFFC5F001A2741 /* ShadowView.swift in Sources */,
 				0E7155782ABC188800982A6C /* AddNewShelfViewController.swift in Sources */,
 				0E8297872AC29D4E001B5EA0 /* ScheduleViewController.swift in Sources */,
 				0E8297182ABF1432001B5EA0 /* NewGoldenceViewController.swift in Sources */,
+				0EDECDF22ACD679E0011D4BB /* ImageViewController.swift in Sources */,
+				0E7E37922AD7D23E001A2741 /* UserStruct.swift in Sources */,
+				0EDECDF92ACEA09E0011D4BB /* WelcomeViewController.swift in Sources */,
 				0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */,
 				0E8297702AC17925001B5EA0 /* ScanButton.swift in Sources */,
 				0E8297E32ACBF334001B5EA0 /* ScheduleStruct.swift in Sources */,
 				0E82971C2ABF1A77001B5EA0 /* NoteStruct.swift in Sources */,
 				0E8297852AC284FF001B5EA0 /* NightViewController.swift in Sources */,
-				0E8297DE2ACABCBD001B5EA0 /* ImageViewController.swift in Sources */,
-				0E82970E2ABD81AC001B5EA0 /* BookListTableViewCell.swift in Sources */,
+				0E82970E2ABD81AC001B5EA0 /* BookListCollectionViewCell.swift in Sources */,
 				0E82978B2AC2C9E2001B5EA0 /* ShareViewController.swift in Sources */,
+				0EDECDF12ACD679E0011D4BB /* EditNoteViewController.swift in Sources */,
 				0E8297722AC17933001B5EA0 /* ScanImageView.swift in Sources */,
 				0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */,
 				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,
 				0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */,
 				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
+				0E7E378E2AD4F780001A2741 /* AddNewCardTableViewCell.swift in Sources */,
 				0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */,
-				0EE8C0932AB2DDE7003B205C /* AddCategoryViewController.swift in Sources */,
 				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,
 				0E82978D2AC2CA47001B5EA0 /* ShareTableViewCell.swift in Sources */,
 				0E82978F2AC2E34E001B5EA0 /* CustomTabBarController.swift in Sources */,
-				0E8297DC2ACABC92001B5EA0 /* EditNoteViewController.swift in Sources */,
 				0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */,
 				0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */,
 				0E7155752ABC12C800982A6C /* Protocol.swift in Sources */,
@@ -531,6 +559,7 @@
 				0E82973E2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift in Sources */,
 				0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */,
 				0E82976E2AC17916001B5EA0 /* ScanTextView.swift in Sources */,
+				0EDECDF72ACE93500011D4BB /* LogInViewController.swift in Sources */,
 				0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */,
 				0E8297742AC17A8B001B5EA0 /* SaveButton.swift in Sources */,
 			);
@@ -678,6 +707,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Goldence/GoldenceDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZN536HML37;
@@ -689,16 +719,21 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.ruhuajau.Goldence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -719,16 +754,21 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.ruhuajau.Goldence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
