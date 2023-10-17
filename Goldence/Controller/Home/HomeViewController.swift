@@ -13,12 +13,34 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var remindLabel: UILabel!
-    
     private var bookshelves: [Bookshelf] = []
     private let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Create a custom view for the navigation bar background
+                let customNavBarBackgroundView = UIView()
+                customNavBarBackgroundView.backgroundColor = UIColor.clear
+                // Add an image view to this custom background view
+                let imageView = UIImageView(image: UIImage(named: "titleView"))
+                imageView.contentMode = .scaleAspectFill
+                imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 10) // Adjust the height as needed
+                customNavBarBackgroundView.addSubview(imageView)
+                // Create a label for the navigation item's title
+                let titleLabel = UILabel()
+                titleLabel.text = "Your Title"
+                titleLabel.textColor = UIColor.white // Set the text color as needed
+                titleLabel.font = UIFont.systemFont(ofSize: 30) // Adjust the font and size as needed
+                titleLabel.sizeToFit()
+                titleLabel.center = customNavBarBackgroundView.center
+                // Add the title label to the custom background view
+                customNavBarBackgroundView.addSubview(titleLabel)
+                // Set the custom background view as the navigation bar's background
+        
+                navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+                navigationController?.navigationBar.shadowImage = UIImage()
+                navigationController?.navigationBar.isTranslucent = true
+                navigationController?.navigationBar.addSubview(customNavBarBackgroundView)
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
