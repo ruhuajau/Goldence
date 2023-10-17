@@ -141,6 +141,14 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOutButtonTapped(_ sender: Any) {
+        // Remove userIdentifier from UserDefaults
+        UserDefaults.standard.removeObject(forKey: "userIdentifier")
+        // Transition to the WelcomeViewController
+        if let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as? LogInViewController {
+            logInVC.modalPresentationStyle = .fullScreen
+            self.present(logInVC, animated: true)
+        }
+
     }
     
 }

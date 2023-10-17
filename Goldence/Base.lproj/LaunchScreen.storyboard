@@ -19,10 +19,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICF-a5-eEI">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" red="0.94283848999999997" green="0.9290662408" blue="0.86198186870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldence" translatesAutoresizingMaskIntoConstraints="NO" id="MKe-Ar-9Le">
-                                <rect key="frame" x="73" y="329" width="247" height="204"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldenceTitleView" translatesAutoresizingMaskIntoConstraints="NO" id="MKe-Ar-9Le">
+                                <rect key="frame" x="21.666666666666657" y="329" width="350" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="sCo-u0-3ql"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -43,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="goldence" width="247" height="204"/>
+        <image name="GoldenceTitleView" width="650" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
