@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
         deleteButton.layer.borderColor = UIColor.red.cgColor
         deleteButton.layer.borderWidth = 1        
         analysisButton.layer.cornerRadius = 8
-        analysisButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "6096ba").cgColor
+        analysisButton.layer.borderColor = UIColor.black.cgColor
         analysisButton.layer.borderWidth = 1
         logOutButton.layer.cornerRadius = 8
         logOutButton.layer.borderColor = UIColor.black.cgColor
