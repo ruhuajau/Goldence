@@ -1508,35 +1508,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IPn-8m-fRX">
-                                <rect key="frame" x="0.0" y="299" width="393" height="470"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPn-8m-fRX">
+                                <rect key="frame" x="0.0" y="211.33333333333331" width="393" height="556.66666666666674"/>
                                 <connections>
                                     <segue destination="oXO-JC-jiJ" kind="embed" identifier="AfternoonSegue" id="wqs-RD-uop"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0YL-x8-Hdo">
-                                <rect key="frame" x="0.0" y="299" width="393" height="470"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YL-x8-Hdo">
+                                <rect key="frame" x="0.0" y="211.33333333333331" width="393" height="556.66666666666674"/>
                                 <connections>
                                     <segue destination="oGI-ER-uWj" kind="embed" identifier="NightSegue" id="JqY-bt-yS8"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PfK-Kn-aXj">
-                                <rect key="frame" x="0.0" y="299" width="393" height="470"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfK-Kn-aXj">
+                                <rect key="frame" x="0.0" y="211.33333333333331" width="393" height="556.66666666666674"/>
                                 <connections>
                                     <segue destination="cNB-PW-beW" kind="embed" identifier="MorningSegue" id="hrb-87-Xka"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJN-DR-hFO">
-                                <rect key="frame" x="162" y="139" width="69" height="51.333333333333343"/>
+                                <rect key="frame" x="162" y="64" width="69" height="51.333333333333343"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="43"/>
-                                <color key="textColor" red="0.15294117647058825" green="0.29803921568627451" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LsV-gO-ls5">
-                                <rect key="frame" x="30" y="235.33333333333334" width="333" height="32.000000000000028"/>
+                                <rect key="frame" x="30" y="160.33333333333334" width="333" height="32"/>
                                 <segments>
                                     <segment title="Morning"/>
                                     <segment title="Afternoon"/>
@@ -1550,11 +1547,23 @@
                         <viewLayoutGuide key="safeArea" id="zhr-B7-nG4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IPn-8m-fRX" firstAttribute="trailing" secondItem="zhr-B7-nG4" secondAttribute="trailing" id="40o-j3-0Z3"/>
                             <constraint firstItem="tJN-DR-hFO" firstAttribute="centerX" secondItem="r1P-cr-YKW" secondAttribute="centerX" id="6WU-5Y-9qQ"/>
                             <constraint firstItem="zhr-B7-nG4" firstAttribute="trailing" secondItem="LsV-gO-ls5" secondAttribute="trailing" constant="30" id="AEn-fx-U2n"/>
+                            <constraint firstItem="zhr-B7-nG4" firstAttribute="bottom" secondItem="0YL-x8-Hdo" secondAttribute="bottom" constant="35" id="DMg-l4-VXK"/>
+                            <constraint firstItem="IPn-8m-fRX" firstAttribute="leading" secondItem="zhr-B7-nG4" secondAttribute="leading" id="Iro-Ek-FPU"/>
+                            <constraint firstItem="zhr-B7-nG4" firstAttribute="bottom" secondItem="PfK-Kn-aXj" secondAttribute="bottom" constant="35" id="KbT-dY-UDI"/>
+                            <constraint firstItem="IPn-8m-fRX" firstAttribute="top" secondItem="LsV-gO-ls5" secondAttribute="bottom" constant="20" id="cGg-VP-NKw"/>
+                            <constraint firstItem="PfK-Kn-aXj" firstAttribute="trailing" secondItem="zhr-B7-nG4" secondAttribute="trailing" id="cZH-Sj-ahf"/>
+                            <constraint firstItem="0YL-x8-Hdo" firstAttribute="leading" secondItem="zhr-B7-nG4" secondAttribute="leading" id="clb-pP-bac"/>
                             <constraint firstItem="LsV-gO-ls5" firstAttribute="leading" secondItem="zhr-B7-nG4" secondAttribute="leading" constant="30" id="e4h-UF-BEc"/>
+                            <constraint firstItem="0YL-x8-Hdo" firstAttribute="trailing" secondItem="zhr-B7-nG4" secondAttribute="trailing" id="e5e-Kr-K3z"/>
+                            <constraint firstItem="PfK-Kn-aXj" firstAttribute="top" secondItem="LsV-gO-ls5" secondAttribute="bottom" constant="20" id="ivp-Q5-VmL"/>
+                            <constraint firstItem="zhr-B7-nG4" firstAttribute="bottom" secondItem="IPn-8m-fRX" secondAttribute="bottom" constant="35" id="pYZ-SD-Yd0"/>
+                            <constraint firstItem="PfK-Kn-aXj" firstAttribute="leading" secondItem="zhr-B7-nG4" secondAttribute="leading" id="r6t-Jd-gKv"/>
                             <constraint firstItem="LsV-gO-ls5" firstAttribute="top" secondItem="tJN-DR-hFO" secondAttribute="bottom" constant="45" id="ww8-hm-rwc"/>
-                            <constraint firstItem="tJN-DR-hFO" firstAttribute="top" secondItem="zhr-B7-nG4" secondAttribute="top" constant="95" id="yHB-gX-QlK"/>
+                            <constraint firstItem="tJN-DR-hFO" firstAttribute="top" secondItem="zhr-B7-nG4" secondAttribute="top" constant="20" id="yHB-gX-QlK"/>
+                            <constraint firstItem="0YL-x8-Hdo" firstAttribute="top" secondItem="LsV-gO-ls5" secondAttribute="bottom" constant="20" id="zbt-my-5QH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reading Schedule" id="f0f-8K-5Un"/>
@@ -1626,11 +1635,11 @@
             <objects>
                 <viewController id="cNB-PW-beW" customClass="MorningViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5VC-b3-HEF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-C9-m3p">
-                                <rect key="frame" x="169" y="364" width="55" height="32"/>
+                                <rect key="frame" x="169" y="451" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1639,7 +1648,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-8B-CoL">
-                                <rect key="frame" x="164" y="364" width="65" height="32"/>
+                                <rect key="frame" x="164" y="451" width="65" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="92g-gc-JWU"/>
@@ -1677,11 +1686,11 @@
             <objects>
                 <viewController id="oXO-JC-jiJ" customClass="AfternoonViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sxo-Fn-BfW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4t-ce-dsh">
-                                <rect key="frame" x="169" y="364" width="55" height="32"/>
+                                <rect key="frame" x="169" y="451" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1690,7 +1699,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtQ-jr-8df">
-                                <rect key="frame" x="164" y="364" width="65" height="32"/>
+                                <rect key="frame" x="164" y="451" width="65" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="bWe-2L-3CY"/>
@@ -1729,11 +1738,11 @@
             <objects>
                 <viewController id="oGI-ER-uWj" customClass="NightViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3LF-X1-39n">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBN-HX-kfs">
-                                <rect key="frame" x="169" y="364" width="55" height="32"/>
+                                <rect key="frame" x="169" y="451" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1742,7 +1751,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-21-tBt">
-                                <rect key="frame" x="164" y="364" width="65" height="32"/>
+                                <rect key="frame" x="164" y="451" width="65" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="Gd3-dK-JuB"/>

@@ -129,7 +129,7 @@ class MorningViewController: UIViewController {
                 print("Error uploading document: \(error.localizedDescription)")
             } else {
                 print("Document uploaded successfully!")
-                self.showAlert(title: "成功", message: "已順利加入！")
+                self.showAlert(title: "Success", message: "Add Successfully!")
             }
         }
     }

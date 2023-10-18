@@ -27,7 +27,7 @@ class TimeLabelView3: UIView {
             let label = UILabel(frame: labelFrame)
             label.text = labelText
             label.textColor = UIColor.hexStringToUIColor(hex: "274c77")
-            label.font = UIFont(name: "Chalkduster", size: 18)
+            label.font = UIFont(name: "Savoye LET", size: 30)
             label.textAlignment = .right
             addSubview(label)
         }
