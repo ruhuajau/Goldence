@@ -35,8 +35,16 @@ class AnalysisViewController: UIViewController {
     }
 
     func fetchDataForLineChart() {
+        
+        // Step 1: Retrieve the identifier from UserDefaults
+        guard let identifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+            print("Identifier not found in UserDefaults.")
+            return
+        }
+
         let db = Firestore.firestore()
-        let collectionRef = db.collection("schedules")
+        let usersRef = db.collection("users").document(identifier)
+        let collectionRef = usersRef.collection("schedules")
 
         var dateCountMap: [String: Int] = [:]
 

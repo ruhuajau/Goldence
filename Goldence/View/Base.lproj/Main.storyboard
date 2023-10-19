@@ -398,18 +398,21 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr3-sn-Iig">
-                                <rect key="frame" x="174" y="380.33333333333331" width="45" height="35"/>
+                                <rect key="frame" x="166.66666666666666" y="380.33333333333331" width="60" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="HUQ-6P-ycf"/>
-                                    <constraint firstAttribute="width" constant="45" id="kiV-so-9HO"/>
+                                    <constraint firstAttribute="width" constant="60" id="kiV-so-9HO"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit">
+                                <buttonConfiguration key="configuration" style="plain" title="Update">
                                     <fontDescription key="titleFontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="23"/>
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateButtonTapped:" destination="HUH-B7-jFq" eventType="touchUpInside" id="mYH-gU-dSt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDZ-y1-TUh">
                                 <rect key="frame" x="146.66666666666666" y="490.33333333333326" width="100" height="44"/>
@@ -1635,11 +1638,11 @@
             <objects>
                 <viewController id="cNB-PW-beW" customClass="MorningViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5VC-b3-HEF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="556.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-C9-m3p">
-                                <rect key="frame" x="169" y="451" width="55" height="32"/>
+                                <rect key="frame" x="169" y="450.66666666666669" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1648,7 +1651,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-8B-CoL">
-                                <rect key="frame" x="164" y="451" width="65" height="32"/>
+                                <rect key="frame" x="164" y="450.66666666666669" width="65" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="92g-gc-JWU"/>
@@ -1686,11 +1689,11 @@
             <objects>
                 <viewController id="oXO-JC-jiJ" customClass="AfternoonViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sxo-Fn-BfW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="556.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4t-ce-dsh">
-                                <rect key="frame" x="169" y="451" width="55" height="32"/>
+                                <rect key="frame" x="169" y="450.66666666666669" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1699,7 +1702,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtQ-jr-8df">
-                                <rect key="frame" x="164" y="451" width="65" height="32"/>
+                                <rect key="frame" x="164" y="450.66666666666669" width="65" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="bWe-2L-3CY"/>
@@ -1738,11 +1741,11 @@
             <objects>
                 <viewController id="oGI-ER-uWj" customClass="NightViewController" customModule="Goldence" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3LF-X1-39n">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="557"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="556.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBN-HX-kfs">
-                                <rect key="frame" x="169" y="451" width="55" height="32"/>
+                                <rect key="frame" x="169" y="450.66666666666669" width="55" height="32"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.43137254899999999" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編輯">
@@ -1751,7 +1754,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8Q-21-tBt">
-                                <rect key="frame" x="164" y="451" width="65" height="32"/>
+                                <rect key="frame" x="164" y="450.66666666666669" width="65" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="Gd3-dK-JuB"/>

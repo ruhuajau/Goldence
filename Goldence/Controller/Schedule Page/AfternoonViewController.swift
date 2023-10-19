@@ -99,13 +99,22 @@ class AfternoonViewController: UIViewController {
 
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let documentID = documentID, !documentID.isEmpty else {
-            print("Invalid or empty documentID.")
-            return
-        }
+                print("Invalid or empty documentID.")
+                return
+            }
 
-            let schedulesRef = db.collection("schedules").document(documentID)
+            // Step 1: Retrieve the identifier from UserDefaults
+            guard let identifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+                print("Identifier not found in UserDefaults.")
+                return
+            }
 
-            schedulesRef.addSnapshotListener { (document, error) in
+            let db = Firestore.firestore()
+            let usersRef = db.collection("users").document(identifier)
+            let schedulesRef = usersRef.collection("schedules").document(documentID)
+
+            // Step 2: Update the "morning" data in the user's "schedules" document
+            schedulesRef.getDocument { (document, error) in
                 if let error = error {
                     print("Error fetching document: \(error.localizedDescription)")
                     return
@@ -117,16 +126,16 @@ class AfternoonViewController: UIViewController {
                     var updatedData = document.data() ?? [:]
                     updatedData["afternoon"] = self.orangeSquareNumbers // Add the morning data here
 
-                    // Update the document with the modified data
+                    // Step 3: Update the document with the modified data
                     schedulesRef.setData(updatedData, merge: true) { error in
                         if let error = error {
                             print("Error updating document: \(error.localizedDescription)")
                         } else {
-                            print("Morning data updated successfully!")
+                            self.showAlert(title: "Success!", message: "Upload successfully!")
+                            print("Afternoon data updated successfully!")
                         }
                     }
                 } else {
-                    self.showAlert(title: "成功", message: "已順利加入！")
                     print("Document with ID \(documentID) does not exist.")
                 }
             }

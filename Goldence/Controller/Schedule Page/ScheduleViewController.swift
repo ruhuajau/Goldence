@@ -67,42 +67,51 @@ class ScheduleViewController: UIViewController {
             return dateFormatter.string(from: date)
         }
     func checkAndCreateDocumentIfNeeded(documentID: String, currentDate: Date) {
-        let db = Firestore.firestore()
-        let schedulesRef = db.collection("schedules").document(documentID)
+        // Step 1: Retrieve the identifier from UserDefaults
+        guard let identifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+            print("Identifier not found in UserDefaults.")
+            return
+        }
 
-        schedulesRef.addSnapshotListener { (document, error) in
-            if let error = error {
-                print("Error fetching document: \(error.localizedDescription)")
+        let db = Firestore.firestore()
+        let usersRef = db.collection("users").document(identifier)
+        let schedulesRef = usersRef.collection("schedules").document(documentID)
+
+        // Step 2: Check if the schedules document with the specified documentID exists
+        schedulesRef.getDocument { (schedulesDocument, schedulesError) in
+            if let schedulesError = schedulesError {
+                print("Error fetching schedules document: \(schedulesError.localizedDescription)")
                 return
             }
 
-            // Check if the document exists
-            if let document = document, document.exists {
-                // Document already exists, do nothing
-                print("Document already exists.")
+            if let schedulesDocument = schedulesDocument, schedulesDocument.exists {
+                // Schedules document already exists, do nothing
+                print("Schedules document already exists.")
             } else {
-                // Document doesn't exist, create a new one
+                // Schedules document doesn't exist, create a new one
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MM/dd"
                 let formattedDate = dateFormatter.string(from: currentDate)
 
-                let data: [String: Any] = [
+                let schedulesData: [String: Any] = [
                     "date": formattedDate,
-                    "morning": [], // Initialize the "morning" field with an empty array
-                    "afternoon": [], // Add other fields as needed
+                    "morning": [],
+                    "afternoon": [],
                     "night": []
                 ]
 
-                schedulesRef.setData(data) { error in
+                // Step 3: Add schedules data to the user document with the provided documentID
+                schedulesRef.setData(schedulesData) { error in
                     if let error = error {
-                        print("Error creating document: \(error.localizedDescription)")
+                        print("Error creating schedules document: \(error.localizedDescription)")
                     } else {
-                        print("Document created successfully!")
+                        print("Schedules document created successfully with documentID: \(documentID)")
                     }
                 }
             }
         }
     }
+
     func scheduleNotification(hour: Int) {
         let content = UNMutableNotificationContent()
         content.title = "該來看書囉！"

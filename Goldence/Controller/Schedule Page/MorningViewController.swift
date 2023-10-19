@@ -68,15 +68,23 @@ class MorningViewController: UIViewController {
         }
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
-        uploadDocument()
         guard let documentID = documentID, !documentID.isEmpty else {
-            print("Invalid or empty documentID.")
-            return
-        }
+                print("Invalid or empty documentID.")
+                return
+            }
 
-            let schedulesRef = db.collection("schedules").document(documentID)
+            // Step 1: Retrieve the identifier from UserDefaults
+            guard let identifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+                print("Identifier not found in UserDefaults.")
+                return
+            }
 
-            schedulesRef.addSnapshotListener { (document, error) in
+            let db = Firestore.firestore()
+            let usersRef = db.collection("users").document(identifier)
+            let schedulesRef = usersRef.collection("schedules").document(documentID)
+
+            // Step 2: Update the "morning" data in the user's "schedules" document
+            schedulesRef.getDocument { (document, error) in
                 if let error = error {
                     print("Error fetching document: \(error.localizedDescription)")
                     return
@@ -88,11 +96,12 @@ class MorningViewController: UIViewController {
                     var updatedData = document.data() ?? [:]
                     updatedData["morning"] = self.orangeSquareNumbers // Add the morning data here
 
-                    // Update the document with the modified data
+                    // Step 3: Update the document with the modified data
                     schedulesRef.setData(updatedData, merge: true) { error in
                         if let error = error {
                             print("Error updating document: \(error.localizedDescription)")
                         } else {
+                            self.showAlert(title: "Success!", message: "Upload successfully!")
                             print("Morning data updated successfully!")
                         }
                     }
@@ -100,39 +109,13 @@ class MorningViewController: UIViewController {
                     print("Document with ID \(documentID) does not exist.")
                 }
             }
-        }
+    }
     func generateDocumentID(for date: Date) -> String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyyMMdd"
             return dateFormatter.string(from: date)
         }
 
-    // Function to upload a document
-    func uploadDocument() {
-        let db = Firestore.firestore()
-        
-        // Document data to be uploaded
-        let documentData: [String: Any] = [
-            "date": "10/02",
-            "morning": [7, 8],
-            "afternoon": [14, 15],
-            "night": [21, 22]
-        ]
-        
-        // Reference to the "schedules" collection with the specified document ID
-        let documentID = "20231002"
-        let schedulesRef = db.collection("schedules").document(documentID)
-        
-        // Upload the document data to Firestore
-        schedulesRef.setData(documentData) { error in
-            if let error = error {
-                print("Error uploading document: \(error.localizedDescription)")
-            } else {
-                print("Document uploaded successfully!")
-                self.showAlert(title: "Success", message: "Add Successfully!")
-            }
-        }
-    }
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
