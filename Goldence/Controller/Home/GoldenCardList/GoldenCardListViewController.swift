@@ -63,7 +63,6 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
                 cell = UITableViewCell() // Assign a default cell if the cast fails
             }
         }
-        
         return cell // Return the assigned cell
     }
 
@@ -91,7 +90,6 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
             }
         // Reference to the Firestore collection "users"
             let usersCollection = Firestore.firestore().collection("users")
-            
             // Get the user's document
             usersCollection.document(userIdentifier).addSnapshotListener { [weak self] (userDocument, error) in
                 guard let self = self, let userDocument = userDocument, userDocument.exists else {

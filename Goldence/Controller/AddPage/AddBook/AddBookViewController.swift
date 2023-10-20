@@ -34,10 +34,6 @@ class AddBookViewController: UIViewController {
         // Do any additional setup after loading the view.
         titleTextField.delegate = self
         authorTextField.delegate = self
-        if let navigationBar = navigationController?.navigationBar {
-            // Customize the title color
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        }
 
     }
 

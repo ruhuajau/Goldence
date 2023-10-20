@@ -17,7 +17,6 @@ class AnalysisViewController: UIViewController {
 
         override func viewDidLoad() {
             super.viewDidLoad()
-            
             view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
             let backButtonImage = UIImage(named: "Icons_24px_Back02") // Replace "Icons_24px_Back02" with your image's name
             let customBackButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(customBackAction))
@@ -35,8 +34,16 @@ class AnalysisViewController: UIViewController {
     }
 
     func fetchDataForLineChart() {
+        
+        // Step 1: Retrieve the identifier from UserDefaults
+        guard let identifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+            print("Identifier not found in UserDefaults.")
+            return
+        }
+
         let db = Firestore.firestore()
-        let collectionRef = db.collection("schedules")
+        let usersRef = db.collection("users").document(identifier)
+        let collectionRef = usersRef.collection("schedules")
 
         var dateCountMap: [String: Int] = [:]
 
@@ -59,12 +66,12 @@ class AnalysisViewController: UIViewController {
                     dateCountMap[date] = (dateCountMap[date] ?? 0) + total
                 }
             }
-
             // Extract the dates and counts from the dateCountMap
             let sortedDates = Array(dateCountMap.keys).sorted()
             self.chartData = sortedDates.enumerated().map { index, date in
                 ChartDataEntry(x: Double(index), y: Double(dateCountMap[date] ?? 0))
             }
+            print(self.chartData)
             // Convert dates to abbreviated format and set up the line chart
             self.dates = self.abbreviateDates(sortedDates)
             print(self.dates)

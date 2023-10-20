@@ -11,6 +11,7 @@ import Firebase
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var analysisButton: UIButton!
+    @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
@@ -27,13 +28,11 @@ class ProfileViewController: UIViewController {
         deleteButton.layer.borderColor = UIColor.red.cgColor
         deleteButton.layer.borderWidth = 1        
         analysisButton.layer.cornerRadius = 8
-        analysisButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "6096ba").cgColor
+        analysisButton.layer.borderColor = UIColor.black.cgColor
         analysisButton.layer.borderWidth = 1
-        // Do any additional setup after loading the view.
-        if let navigationBar = navigationController?.navigationBar {
-            // Customize the title color
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        }
+        logOutButton.layer.cornerRadius = 8
+        logOutButton.layer.borderColor = UIColor.black.cgColor
+        logOutButton.layer.borderWidth = 1
     }
     func fetchUserNameFromFirebase(userIdentifier: String) {
             let usersCollection = Firestore.firestore().collection("users")
@@ -140,5 +139,16 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func logOutButtonTapped(_ sender: Any) {
+        // Remove userIdentifier from UserDefaults
+        UserDefaults.standard.removeObject(forKey: "userIdentifier")
+        // Transition to the WelcomeViewController
+        if let logInVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController") as? LogInViewController {
+            logInVC.modalPresentationStyle = .fullScreen
+            self.present(logInVC, animated: true)
+        }
 
+    }
+    
 }

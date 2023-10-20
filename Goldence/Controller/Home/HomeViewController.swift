@@ -13,12 +13,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var remindLabel: UILabel!
-    
     private var bookshelves: [Bookshelf] = []
     private let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.titleView = UIImageView(image: UIImage(named: "GoldenceTitleView"))
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Set the title text attributes for the navigation bar
         if let navigationBar = navigationController?.navigationBar {
             // Customize the title color
-            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, .font: UIFont(name: "Zapfino", size: 15)]
         }
 
     }
