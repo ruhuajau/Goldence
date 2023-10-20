@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 
 class TimeLabelView: UIView {
-    let labels = ["6:00", "7:00", "8:00", "9:00", "10:00", "11:00"]
+    var labels = [String]()
     let squareSize: CGFloat
-    init(frame: CGRect, squareSize: CGFloat) {
+    init(frame: CGRect, squareSize: CGFloat, labels: [String]) {
+        self.labels = labels
         self.squareSize = squareSize
         super.init(frame: frame)
         setupLabels()
