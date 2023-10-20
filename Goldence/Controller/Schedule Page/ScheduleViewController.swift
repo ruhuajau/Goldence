@@ -37,9 +37,6 @@ class ScheduleViewController: UIViewController {
                         NSAttributedString.Key.font: font!,
                         NSAttributedString.Key.foregroundColor: UIColor.white // Change text color if needed
                     ]
-
-            //segmentOutlet.setTitleTextAttributes(selectedTextAttributes, for: .selected)
-
             dateFormatter.dateFormat = "MMM d, yyyy"
             dateLabel.text = dateFormatter.string(from: currentDate)
             // Generate a document ID for the current date

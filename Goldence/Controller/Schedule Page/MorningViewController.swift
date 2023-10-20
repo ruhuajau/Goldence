@@ -22,38 +22,33 @@ class MorningViewController: UIViewController {
         saveButton.layer.cornerRadius = 8
         checkMorningArray()
         self.documentID = generateDocumentID(for: currentDate)
-            let rectangleWidth: CGFloat = 110
-            let rectangleHeight: CGFloat = 45
-            let numRows = 6
-            let numCols = 1
-            let padding: CGFloat = 7
-            var squareNumber = 6
-            for row in 0..<numRows {
-                for col in 0..<numCols {
-                    let x = CGFloat(col) * (rectangleWidth + padding)
-                    let y = CGFloat(row) * (rectangleHeight + padding)
-                    let squareFrame = CGRect(x: x + 200, y: y + 50, width: rectangleWidth, height: rectangleHeight)
-                    let squareView = SquareView(frame: squareFrame)
-                    squareView.squareNumber = squareNumber
-                    squareNumber += 1
-                    view.addSubview(squareView)
-                    squareView.orangeSquareHandler = { [weak self] number, isOrange in
-                        if isOrange {
-                            self?.orangeSquareNumbers.append(number)
-                        } else if let index = self?.orangeSquareNumbers.firstIndex(of: number) {
-                            self?.orangeSquareNumbers.remove(at: index)
-                        }
-                        self?.orangeSquareNumbers.sort()
-                        print("Orange squares: \(self?.orangeSquareNumbers ?? [])")
+        let numRows = 6
+        let numCols = 1
+        var squareNumber = 6
+        for row in 0..<numRows {
+            for col in 0..<numCols {
+                let x = CGFloat(col) * (SquareView.rectangleWidth + SquareView.padding)
+                let y = CGFloat(row) * (SquareView.rectangleHeight + SquareView.padding)
+                let squareFrame = CGRect(x: x + 200, y: y + 50, width: SquareView.rectangleWidth, height: SquareView.rectangleHeight)
+                let squareView = SquareView(frame: squareFrame)
+                squareView.squareNumber = squareNumber
+                squareNumber += 1
+                view.addSubview(squareView)
+                squareView.orangeSquareHandler = { [weak self] number, isOrange in
+                    if isOrange {
+                        self?.orangeSquareNumbers.append(number)
+                    } else if let index = self?.orangeSquareNumbers.firstIndex(of: number) {
+                        self?.orangeSquareNumbers.remove(at: index)
                     }
+                    self?.orangeSquareNumbers.sort()
+                    print("Orange squares: \(self?.orangeSquareNumbers ?? [])")
                 }
             }
-
+        }
             // Calculate the width of the time label view based on the rectangle size
-        let morningLabels = ["6:00", "7:00", "8:00", "9:00", "10:00", "11:00"]
-        let timeLabelViewWidth = rectangleWidth
-        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: rectangleHeight, labels: morningLabels).labels.count) * (rectangleHeight + padding))
-        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: rectangleHeight, labels: morningLabels)
+        let timeLabelViewWidth = SquareView.rectangleWidth
+        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: SquareView.rectangleHeight,startHour: 6, endHour: 11).labels.count) * (SquareView.rectangleHeight + SquareView.padding))
+        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: SquareView.rectangleHeight, startHour: 6, endHour: 11)
             view.addSubview(timeLabelView)
         }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

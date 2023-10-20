@@ -47,10 +47,9 @@ class NightViewController: UIViewController {
                 }
             }
         // Calculate the width of the time label view based on the square size
-        let nightLabels = ["18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
         let timeLabelViewWidth = rectangleWidth
-        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: rectangleHeight, labels: nightLabels).labels.count) * (rectangleHeight + padding))
-        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: rectangleHeight, labels: nightLabels)
+        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: rectangleHeight, startHour: 18, endHour: 23).labels.count) * (rectangleHeight + padding))
+        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: rectangleHeight, startHour: 18, endHour: 23)
         view.addSubview(timeLabelView)
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

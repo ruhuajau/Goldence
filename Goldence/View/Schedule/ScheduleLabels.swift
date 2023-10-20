@@ -9,20 +9,31 @@ import Foundation
 import UIKit
 
 class TimeLabelView: UIView {
-    var labels = [String]()
     let squareSize: CGFloat
-    init(frame: CGRect, squareSize: CGFloat, labels: [String]) {
-        self.labels = labels
+    var labels: [String] = []
+
+    init(frame: CGRect, squareSize: CGFloat, startHour: Int, endHour: Int) {
         self.squareSize = squareSize
         super.init(frame: frame)
+        generateLabels(startHour: startHour, endHour: endHour)
         setupLabels()
     }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    private func generateLabels(startHour: Int, endHour: Int) {
+        for hour in startHour...endHour {
+            let time = hour < 10 ? "0\(hour):00" : "\(hour):00"
+            labels.append(time)
+        }
+    }
+
     private func setupLabels() {
         let labelHeight: CGFloat = 20
         let spacing: CGFloat = 7
+
         for (index, labelText) in labels.enumerated() {
             let labelFrame = CGRect(x: 15, y: CGFloat(index) * (squareSize + spacing) - 25, width: squareSize + 15, height: labelHeight)
             let label = UILabel(frame: labelFrame)
@@ -34,3 +45,4 @@ class TimeLabelView: UIView {
         }
     }
 }
+

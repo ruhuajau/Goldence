@@ -48,10 +48,9 @@ class AfternoonViewController: UIViewController {
                 }
             }
         // Calculate the width of the time label view based on the square size
-        let afternoonLabels = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
         let timeLabelViewWidth = rectangleWidth
-        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: rectangleHeight, labels: afternoonLabels).labels.count) * (rectangleHeight + padding))
-        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: rectangleHeight, labels: afternoonLabels)
+        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: rectangleHeight, startHour: 12, endHour: 17).labels.count) * (rectangleHeight + padding))
+        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: rectangleHeight, startHour: 12, endHour: 17)
         view.addSubview(timeLabelView)
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
