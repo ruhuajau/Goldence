@@ -49,6 +49,7 @@ class MorningViewController: UIViewController {
         let timeLabelViewWidth = SquareView.rectangleWidth
         let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: SquareView.rectangleHeight,startHour: 6, endHour: 11).labels.count) * (SquareView.rectangleHeight + SquareView.padding))
         let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: SquareView.rectangleHeight, startHour: 6, endHour: 11)
+        print(timeLabelView.labels)
             view.addSubview(timeLabelView)
         }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

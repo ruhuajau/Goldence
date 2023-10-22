@@ -23,12 +23,22 @@ class TimeLabelView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func generateLabels(startHour: Int, endHour: Int) {
+    func generateLabels(startHour: Int, endHour: Int) {
         for hour in startHour...endHour {
             let time = hour < 10 ? "0\(hour):00" : "\(hour):00"
             labels.append(time)
         }
     }
+    
+    func generateLabelsString(startHour: Int, endHour: Int) -> [String] {
+        var labels: [String] = []
+        for hour in startHour...endHour {
+            let time = hour < 10 ? "0\(hour):00" : "\(hour):00"
+            labels.append(time)
+        }
+        return labels
+    }
+
 
     private func setupLabels() {
         let labelHeight: CGFloat = 20

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E5F8A4D2AE5650D000E3CD8 /* GoldenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */; };
 		0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */; };
 		0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556E2ABBEBEE00982A6C /* UIColor.swift */; };
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
@@ -58,11 +59,22 @@
 		0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */; };
 		0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A12AB30264003B205C /* TypeViewController.swift */; };
 		0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A32AB3026D003B205C /* ScanViewController.swift */; };
-		5E810ABDE14966EFA2269261 /* Pods_Goldence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E5F8A4E2AE5650D000E3CD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EE8C0652AB1B518003B205C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EE8C06C2AB1B518003B205C;
+			remoteInfo = Goldence;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
+		0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenceTests.swift; sourceTree = "<group>"; };
+		0E5F8A532AE56E75000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GoldenceTests.xctest; path = "/Users/rubyjau/Work/AppWorksSchool/SideProject/Goldence/build/Debug-iphoneos/GoldenceTests.xctest"; sourceTree = "<absolute>"; };
 		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
 		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -101,7 +113,7 @@
 		0EDECDF42ACE930F0011D4BB /* GoldenceDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoldenceDebug.entitlements; sourceTree = "<group>"; };
 		0EDECDF62ACE93500011D4BB /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0EDECDF82ACEA09E0011D4BB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Goldence.app; path = "/Users/rubyjau/Work/AppWorksSchool/SideProject/Goldence/build/Debug-iphoneos/Goldence.app"; sourceTree = "<absolute>"; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0742AB1B518003B205C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -117,22 +129,35 @@
 		0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddByISBNViewController.swift; sourceTree = "<group>"; };
 		0EE8C0A12AB30264003B205C /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		0EE8C0A32AB3026D003B205C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goldence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6CF90D0CD60947FAA68381 /* Pods-Goldence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.debug.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E5F8A472AE5650D000E3CD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EE8C06A2AB1B518003B205C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E810ABDE14966EFA2269261 /* Pods_Goldence.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */,
+			);
+			path = GoldenceTests;
+			sourceTree = "<group>";
+		};
 		0E7155762ABC186C00982A6C /* AddNewShelf */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,18 +271,9 @@
 			isa = PBXGroup;
 			children = (
 				0EE8C06F2AB1B518003B205C /* Goldence */,
-				0EE8C06E2AB1B518003B205C /* Products */,
+				0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */,
 				4B127E2088DD9FE2203111B4 /* Pods */,
-				2F05EB3B05F09F340EB59188 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		0EE8C06E2AB1B518003B205C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0EE8C06D2AB1B518003B205C /* Goldence.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0EE8C06F2AB1B518003B205C /* Goldence */ = {
@@ -364,14 +380,6 @@
 			path = Segments;
 			sourceTree = "<group>";
 		};
-		2F05EB3B05F09F340EB59188 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4B127E2088DD9FE2203111B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +392,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E5F8A492AE5650D000E3CD8 /* GoldenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E5F8A522AE5650D000E3CD8 /* Build configuration list for PBXNativeTarget "GoldenceTests" */;
+			buildPhases = (
+				0E5F8A462AE5650D000E3CD8 /* Sources */,
+				0E5F8A472AE5650D000E3CD8 /* Frameworks */,
+				0E5F8A482AE5650D000E3CD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E5F8A4F2AE5650D000E3CD8 /* PBXTargetDependency */,
+			);
+			name = GoldenceTests;
+			productName = GoldenceTests;
+			productReference = 0E5F8A532AE56E75000E3CD8 /* GoldenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0EE8C06C2AB1B518003B205C /* Goldence */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EE8C0812AB1B51A003B205C /* Build configuration list for PBXNativeTarget "Goldence" */;
@@ -411,9 +437,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					0E5F8A492AE5650D000E3CD8 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 0EE8C06C2AB1B518003B205C;
+					};
 					0EE8C06C2AB1B518003B205C = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -428,16 +458,24 @@
 				Base,
 			);
 			mainGroup = 0EE8C0642AB1B518003B205C;
-			productRefGroup = 0EE8C06E2AB1B518003B205C /* Products */;
+			productRefGroup = 0EE8C0642AB1B518003B205C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0EE8C06C2AB1B518003B205C /* Goldence */,
+				0E5F8A492AE5650D000E3CD8 /* GoldenceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E5F8A482AE5650D000E3CD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EE8C06B2AB1B518003B205C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,6 +549,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E5F8A462AE5650D000E3CD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E5F8A4D2AE5650D000E3CD8 /* GoldenceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EE8C0692AB1B518003B205C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,6 +613,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0E5F8A4F2AE5650D000E3CD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EE8C06C2AB1B518003B205C /* Goldence */;
+			targetProxy = 0E5F8A4E2AE5650D000E3CD8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0EE8C0762AB1B518003B205C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -587,6 +641,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E5F8A502AE5650D000E3CD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZN536HML37;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.GoldenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Goldence";
+			};
+			name = Debug;
+		};
+		0E5F8A512AE5650D000E3CD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZN536HML37;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.GoldenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Goldence";
+			};
+			name = Release;
+		};
 		0EE8C07F2AB1B51A003B205C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -775,6 +869,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E5F8A522AE5650D000E3CD8 /* Build configuration list for PBXNativeTarget "GoldenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E5F8A502AE5650D000E3CD8 /* Debug */,
+				0E5F8A512AE5650D000E3CD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0EE8C0682AB1B518003B205C /* Build configuration list for PBXProject "Goldence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
