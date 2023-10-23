@@ -74,7 +74,8 @@
 /* Begin PBXFileReference section */
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
 		0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenceTests.swift; sourceTree = "<group>"; };
-		0E5F8A532AE56E75000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GoldenceTests.xctest; path = "/Users/rubyjau/Work/AppWorksSchool/SideProject/Goldence/build/Debug-iphoneos/GoldenceTests.xctest"; sourceTree = "<absolute>"; };
+		0E5F8A542AE63787000E3CD8 /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
 		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		0EDECDF42ACE930F0011D4BB /* GoldenceDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoldenceDebug.entitlements; sourceTree = "<group>"; };
 		0EDECDF62ACE93500011D4BB /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0EDECDF82ACEA09E0011D4BB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Goldence.app; path = "/Users/rubyjau/Work/AppWorksSchool/SideProject/Goldence/build/Debug-iphoneos/Goldence.app"; sourceTree = "<absolute>"; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0742AB1B518003B205C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +273,8 @@
 				0EE8C06F2AB1B518003B205C /* Goldence */,
 				0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */,
 				4B127E2088DD9FE2203111B4 /* Pods */,
+				0E5F8A542AE63787000E3CD8 /* Goldence.app */,
+				0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -407,7 +409,7 @@
 			);
 			name = GoldenceTests;
 			productName = GoldenceTests;
-			productReference = 0E5F8A532AE56E75000E3CD8 /* GoldenceTests.xctest */;
+			productReference = 0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		0EE8C06C2AB1B518003B205C /* Goldence */ = {
@@ -427,7 +429,7 @@
 			);
 			name = Goldence;
 			productName = Goldence;
-			productReference = 0EE8C06D2AB1B518003B205C /* Goldence.app */;
+			productReference = 0E5F8A542AE63787000E3CD8 /* Goldence.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -654,9 +656,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.GoldenceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Goldence";
 			};
 			name = Debug;
@@ -674,9 +679,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.GoldenceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Goldence";
 			};
 			name = Release;
