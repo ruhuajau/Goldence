@@ -15,6 +15,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var remindLabel: UILabel!
     private var bookshelves: [Bookshelf] = []
     private let db = Firestore.firestore()
+    private let apiManager = FirebaseAPIManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,54 +53,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return bookshelves.count
     }
     func loadBookshelves() {
-        // Retrieve the user's userIdentifier from UserDefaults
-        guard let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
-            print("UserIdentifier not found in UserDefaults")
-            return
-        }
+        apiManager.loadBookshelves { [weak self] bookshelves in
+            guard let self = self else { return }
 
-        let db = Firestore.firestore()
-        let usersCollection = db.collection("users")
+            self.bookshelves = bookshelves
+            self.tableView.reloadData()
 
-        // Get the user's document
-        usersCollection.document(userIdentifier).addSnapshotListener { (document, error) in
-            if let error = error {
-                print("Error fetching user document: \(error.localizedDescription)")
-                return
-            }
-
-            if let document = document, document.exists {
-                if let bookshelfIDs = document["bookshelfIDs"] as? [String] {
-                    // Fetch bookshelves associated with bookshelfIDs
-                    let bookshelvesCollection = db.collection("bookshelves")
-                    self.bookshelves.removeAll() // Clear existing bookshelves
-
-                    // Iterate through each bookshelfID and fetch the corresponding bookshelf document
-                    for bookshelfID in bookshelfIDs {
-                        bookshelvesCollection.document(bookshelfID).addSnapshotListener { (bookshelfDocument, error) in
-                            if let error = error {
-                                print("Error fetching bookshelf document: \(error.localizedDescription)")
-                            } else if let bookshelfDocument = bookshelfDocument, bookshelfDocument.exists {
-                                // Extract data from the bookshelf document
-                                if let title = bookshelfDocument["name"] as? String, let imageURL = bookshelfDocument["imageURL"] as? String {
-                                    let bookshelf = Bookshelf(bookshelfID: bookshelfID, title: title, imageURL: imageURL)
-                                    self.bookshelves.append(bookshelf)
-                                    self.tableView.reloadData() // Reload the table view
-                                    
-                                    // Check the count of bookshelves and show/hide the remindLabel accordingly
-                                    if self.bookshelves.isEmpty {
-                                        self.remindLabel.isHidden = false
-                                    } else {
-                                        self.remindLabel.isHidden = true
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                // If the user document doesn't exist, show the remindLabel
+            // Check the count of bookshelves and show/hide the remindLabel accordingly
+            if self.bookshelves.isEmpty {
                 self.remindLabel.isHidden = false
+            } else {
+                self.remindLabel.isHidden = true
             }
         }
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E5F8A4D2AE5650D000E3CD8 /* GoldenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */; };
+		0E5F8A582AE6480A000E3CD8 /* FirebaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */; };
 		0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */; };
 		0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556E2ABBEBEE00982A6C /* UIColor.swift */; };
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
@@ -54,7 +55,7 @@
 		0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */; };
 		0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */; };
 		0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */; };
-		0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0992AB2F313003B205C /* APIManager.swift */; };
+		0EE8C09A2AB2F313003B205C /* GoogleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0992AB2F313003B205C /* GoogleAPIManager.swift */; };
 		0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09B2AB2F32E003B205C /* BookStruct.swift */; };
 		0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */; };
 		0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A12AB30264003B205C /* TypeViewController.swift */; };
@@ -75,7 +76,8 @@
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
 		0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenceTests.swift; sourceTree = "<group>"; };
 		0E5F8A542AE63787000E3CD8 /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GoldenceTests.xctest; path = "/Users/rubyjau/Work/AppWorksSchool/SideProject/Goldence/build/Debug-iphoneos/GoldenceTests.xctest"; sourceTree = "<absolute>"; };
+		0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIManager.swift; sourceTree = "<group>"; };
 		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
 		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -124,7 +126,7 @@
 		0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfViewController.swift; sourceTree = "<group>"; };
 		0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfTableViewCell.swift; sourceTree = "<group>"; };
 		0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
-		0EE8C0992AB2F313003B205C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0EE8C0992AB2F313003B205C /* GoogleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIManager.swift; sourceTree = "<group>"; };
 		0EE8C09B2AB2F32E003B205C /* BookStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStruct.swift; sourceTree = "<group>"; };
 		0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddByISBNViewController.swift; sourceTree = "<group>"; };
 		0EE8C0A12AB30264003B205C /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,15 @@
 				0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */,
 			);
 			path = GoldenceTests;
+			sourceTree = "<group>";
+		};
+		0E5F8A562AE647E2000E3CD8 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0992AB2F313003B205C /* GoogleAPIManager.swift */,
+				0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 		0E7155762ABC186C00982A6C /* AddNewShelf */ = {
@@ -274,7 +285,6 @@
 				0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */,
 				4B127E2088DD9FE2203111B4 /* Pods */,
 				0E5F8A542AE63787000E3CD8 /* Goldence.app */,
-				0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,7 +308,7 @@
 		0EE8C0872AB2D7C6003B205C /* Ｍodel */ = {
 			isa = PBXGroup;
 			children = (
-				0EE8C0992AB2F313003B205C /* APIManager.swift */,
+				0E5F8A562AE647E2000E3CD8 /* APIManager */,
 				0EE8C09B2AB2F32E003B205C /* BookStruct.swift */,
 				0E71556E2ABBEBEE00982A6C /* UIColor.swift */,
 				0E7155742ABC12C800982A6C /* Protocol.swift */,
@@ -592,7 +602,7 @@
 				0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */,
 				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,
 				0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */,
-				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
+				0EE8C09A2AB2F313003B205C /* GoogleAPIManager.swift in Sources */,
 				0E7E378E2AD4F780001A2741 /* AddNewCardTableViewCell.swift in Sources */,
 				0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */,
 				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,
@@ -604,6 +614,7 @@
 				0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */,
 				0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */,
 				0E8297E12ACBE612001B5EA0 /* AnalysisViewController.swift in Sources */,
+				0E5F8A582AE6480A000E3CD8 /* FirebaseAPIManager.swift in Sources */,
 				0E82973E2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift in Sources */,
 				0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */,
 				0E82976E2AC17916001B5EA0 /* ScanTextView.swift in Sources */,

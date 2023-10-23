@@ -7,8 +7,6 @@
 
 import XCTest
 @testable import Goldence
-import Firebase
-import FirebaseCore
 
 final class GoldenceTests: XCTestCase {
 
