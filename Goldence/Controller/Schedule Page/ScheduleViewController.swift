@@ -43,7 +43,7 @@ class ScheduleViewController: UIViewController {
             self.documentID = generateDocumentID(for: currentDate)
             // Check if a document with the same ID exists and create one if not
             checkAndCreateDocumentIfNeeded(documentID: documentID, currentDate: currentDate)
-            findFirstNumbersAndScheduleNotification(documentID: documentID)
+            findFirstNumbersAndScheduleNotification()
             self.view.bringSubviewToFront(morningSegmentView)
         }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
@@ -114,8 +114,6 @@ class ScheduleViewController: UIViewController {
         content.title = "該來看書囉！"
         //content.subtitle = "子標題"
         content.body = "快打開書，記點筆記吧"
-        content.badge = 1
-
         let dateComponents = DateComponents(hour: hour) // 1
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true) // 2
         let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
@@ -125,29 +123,40 @@ class ScheduleViewController: UIViewController {
 
     }
     
-    func findFirstNumbersAndScheduleNotification(documentID: String) {
+    func findFirstNumbersAndScheduleNotification() {
+        // Retrieve the user identifier from UserDefaults
+        guard let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") else {
+            print("User identifier not found in UserDefaults")
+            return
+        }
+        
+        // Get the current date in the format "yyyyMMdd"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let currentDate = dateFormatter.string(from: Date())
+        
         let db = Firestore.firestore()
-        let schedulesRef = db.collection("schedules").document(documentID)
-
-        schedulesRef.addSnapshotListener { (document, error) in
+        let userRef = db.collection("users").document(userIdentifier)
+        let schedulesRef = userRef.collection("schedules").document(currentDate)  // Use currentDate as the document ID
+        
+        schedulesRef.getDocument { (document, error) in
             if let error = error {
-                print("Error fetching document: \(error.localizedDescription)")
+                print("Error fetching schedule for today: \(error.localizedDescription)")
                 return
             }
-
-            // Check if the document exists
+            
             if let document = document, document.exists {
                 // Document exists, extract data
                 if let data = document.data(),
                    let morning = data["morning"] as? [Int],
                    let afternoon = data["afternoon"] as? [Int],
                    let night = data["night"] as? [Int] {
-
+                    
                     // Get the first number from each array, if available
                     let firstMorningNumber = morning.first
                     let firstAfternoonNumber = afternoon.first
                     let firstNightNumber = night.first
-
+                    
                     // Schedule notifications for the specified hours
                     if let morningNumber = firstMorningNumber {
                         self.scheduleNotification(hour: morningNumber)
@@ -160,9 +169,11 @@ class ScheduleViewController: UIViewController {
                     }
                 }
             } else {
-                // Document doesn't exist
-                print("Document with ID \(documentID) does not exist.")
+                // Document doesn't exist for today
+                print("No schedule found for the user with ID: \(userIdentifier) on \(currentDate)")
             }
         }
     }
+
+
 }

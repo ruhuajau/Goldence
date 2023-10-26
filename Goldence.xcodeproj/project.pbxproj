@@ -76,8 +76,9 @@
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
 		0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenceTests.swift; sourceTree = "<group>"; };
 		0E5F8A542AE63787000E3CD8 /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GoldenceTests.xctest; path = "/Users/rubyjau/Work/AppWorksSchool/SideProject/Goldence/build/Debug-iphoneos/GoldenceTests.xctest"; sourceTree = "<absolute>"; };
 		0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIManager.swift; sourceTree = "<group>"; };
+		0E5F8A5D2AE7A539000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E5F8A5E2AE7BA9D000E3CD8 /* Goldence.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Goldence.entitlements; sourceTree = "<group>"; };
 		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
 		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -285,12 +286,14 @@
 				0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */,
 				4B127E2088DD9FE2203111B4 /* Pods */,
 				0E5F8A542AE63787000E3CD8 /* Goldence.app */,
+				0E5F8A5D2AE7A539000E3CD8 /* GoldenceTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
 		0EE8C06F2AB1B518003B205C /* Goldence */ = {
 			isa = PBXGroup;
 			children = (
+				0E5F8A5E2AE7BA9D000E3CD8 /* Goldence.entitlements */,
 				0EDECDF42ACE930F0011D4BB /* GoldenceDebug.entitlements */,
 				0EE8C0872AB2D7C6003B205C /* Ｍodel */,
 				0EE8C0892AB2D7F4003B205C /* View */,
@@ -419,7 +422,7 @@
 			);
 			name = GoldenceTests;
 			productName = GoldenceTests;
-			productReference = 0E5F8A552AE63787000E3CD8 /* GoldenceTests.xctest */;
+			productReference = 0E5F8A5D2AE7A539000E3CD8 /* GoldenceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		0EE8C06C2AB1B518003B205C /* Goldence */ = {
@@ -822,11 +825,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Goldence/GoldenceDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ZN536HML37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goldence/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Requires camera to scan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera access to scan isbn barcode";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow photo library access to customize your cover and we don't collect your data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -839,7 +843,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.Goldence;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ruhuajau.Goldence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -856,12 +860,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Goldence/Goldence.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ZN536HML37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goldence/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Requires camera to scan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera access to scan isbn barcode";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow photo library access to customize your cover and we don't collect your data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

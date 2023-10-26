@@ -53,7 +53,7 @@ class FirebaseAPIManager {
         for bookshelfID in bookshelfIDs {
             dispatchGroup.enter()
 
-            bookshelvesCollection.document(bookshelfID).getDocument { (bookshelfDocument, error) in
+            bookshelvesCollection.document(bookshelfID).addSnapshotListener { (bookshelfDocument, error) in
                 defer {
                     dispatchGroup.leave()
                 }
