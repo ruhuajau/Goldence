@@ -20,15 +20,16 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         fetchPublicNotes()
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 200
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ShareTableViewCell", for: indexPath) as? ShareTableViewCell {
             let note = publicNotes[indexPath.row]
             // Configure your cell with the note's data (e.g., title, content)
-            cell.shareTitle.text = note.title
+            cell.shareTitle.text = "——\(note.title)"
             cell.shareTextView.text = note.cardContent
             return cell
         } else {
@@ -41,7 +42,7 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func fetchPublicNotes() {
-        let notesCollection = db.collection("note")
+        let notesCollection = db.collection("notes")
         
         // Query notes where isPublic is true
         notesCollection.whereField("is_public", isEqualTo: true).addSnapshotListener { [weak self] (querySnapshot, error) in
@@ -60,10 +61,11 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
                 let data = document.data()
                 let title = data["title"] as? String ?? ""
                 let cardContent = data["cardContent"] as? String ?? ""
-                let id = data["id"] as? String ?? ""
+                let id = data["note_id"] as? String ?? ""
                 let isPublic = data["is_public"] as? Bool ?? false
+                let bookID = data["book_id"] as? String ?? ""
                 
-                let note = GoldenNote(id: id, bookTitle: "", type: "", title: title, cardContent: cardContent, isPublic: isPublic)
+                let note = GoldenNote(noteID: id, bookTitle: "", bookID: bookID, type: "", title: title, cardContent: cardContent, isPublic: isPublic)
                 
                 self.publicNotes.append(note)
             }

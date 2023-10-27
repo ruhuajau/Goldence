@@ -16,6 +16,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        // Check if userIdentifier exists in UserDefaults
+            if let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier") {
+                // UserIdentifier exists, set the initial view controller to HomeViewController
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let homeViewController = storyboard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController {
+                    if let windowScene = scene as? UIWindowScene {
+                        let window = UIWindow(windowScene: windowScene)
+                        window.rootViewController = homeViewController
+                        self.window = window
+                        window.makeKeyAndVisible()
+                    }
+                } else {
+                    // Handle the case where the cast fails
+                    print("Failed to instantiate HomeViewController")
+                }
+            } else {
+                // UserIdentifier doesn't exist, set the initial view controller to LogInViewController
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let logInViewController = storyboard.instantiateViewController(withIdentifier: "LogInViewController") as? LogInViewController {
+                    if let windowScene = scene as? UIWindowScene {
+                        let window = UIWindow(windowScene: windowScene)
+                        window.rootViewController = logInViewController
+                        self.window = window
+                        window.makeKeyAndVisible()
+                    }
+                } else {
+                    // Handle the case where the cast fails
+                    print("Failed to instantiate LogInViewController")
+                }
+            }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -28,6 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

@@ -15,11 +15,14 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedBookshelfName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
-        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
         tableView.delegate = self
         tableView.dataSource = self
         loadBookshelves()
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, .font: UIFont(name: "Zapfino", size: 15)]
+        }
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -60,32 +63,19 @@ class SelectShelfViewController: UIViewController, UITableViewDelegate, UITableV
         }
         return cell // Return the default cell outside of the if conditions
     }
+    
     func loadBookshelves() {
-        let db = Firestore.firestore()
-        let bookshelvesCollection = db.collection("bookshelves")
-        bookshelvesCollection.addSnapshotListener { (querySnapshot, error) in
-            if let error = error {
-                print("Error fetching bookshelves: \(error.localizedDescription)")
-                return
-            }
-            self.bookshelves.removeAll()
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                if let title = data["name"] as? String, let imageURL = data["imageURL"] as? String {
-                    let bookshelf = Bookshelf(title: title, imageURL: imageURL)
-                    self.bookshelves.append(bookshelf)
-                }
-            }
-            // Reload the table view with the updated data
-            self.tableView.reloadData()
+        FirebaseAPIManager.shared.loadBookshelves { [weak self] bookshelves in
+            self?.bookshelves = bookshelves
+            self?.tableView.reloadData()
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "chooseCategory" {
+        if segue.identifier == "addBook" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let bookshelfName = bookshelves[indexPath.row].title
-                if let destinationVC = segue.destination as? AddCategoryViewController {
-                    destinationVC.bookshelfName = bookshelfName
+                let bookshelfID = bookshelves[indexPath.row].bookshelfID
+                if let destinationVC = segue.destination as? AddBookViewController {
+                    destinationVC.bookshelfID = bookshelfID
                 }
             }
         }

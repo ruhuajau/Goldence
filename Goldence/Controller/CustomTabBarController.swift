@@ -11,6 +11,6 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        tabBar.tintColor = UIColor.hexStringToUIColor(hex: "1f7a8c")
+        tabBar.tintColor = .black
     }
 }

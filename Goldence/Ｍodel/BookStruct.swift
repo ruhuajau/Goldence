@@ -8,12 +8,14 @@
 import Foundation
 
 struct Books {
+    let bookID: String
     let title: String
     let author: String
     let imageURL: URL?
 
     var dictionaryRepresentation: [String: Any] {
         var dictionary: [String: Any] = [
+            "book_id": bookID,
             "title": title,
             "author": author
         ]

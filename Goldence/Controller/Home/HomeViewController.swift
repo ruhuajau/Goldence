@@ -12,19 +12,29 @@ import Kingfisher
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var remindLabel: UILabel!
     private var bookshelves: [Bookshelf] = []
     private let db = Firestore.firestore()
-    
+    private let apiManager = FirebaseAPIManager.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "f8f9fa")
-        tableView.backgroundColor = UIColor.hexStringToUIColor(hex: "eaf4f4")
+        navigationItem.titleView = UIImageView(image: UIImage(named: "GoldenceTitleView"))
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         loadBookshelves()
+        // Set the title text attributes for the navigation bar
+        if let navigationBar = navigationController?.navigationBar {
+            // Customize the title color
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, .font: UIFont(name: "Zapfino", size: 15)]
+        }
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 170
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell") as? HomePageTableViewCell {
@@ -43,31 +53,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return bookshelves.count
     }
     func loadBookshelves() {
-        let db = Firestore.firestore()
-        let bookshelvesCollection = db.collection("bookshelves")
-        bookshelvesCollection.addSnapshotListener { (querySnapshot, error) in
-            if let error = error {
-                print("Error fetching bookshelves: \(error.localizedDescription)")
-                return
-            }
-            self.bookshelves.removeAll()
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                if let title = data["name"] as? String, let imageURL = data["imageURL"] as? String {
-                    let bookshelf = Bookshelf(title: title, imageURL: imageURL)
-                    self.bookshelves.append(bookshelf)
-                }
-            }
-            // Reload the table view with the updated data
+        apiManager.loadBookshelves { [weak self] bookshelves in
+            guard let self = self else { return }
+
+            self.bookshelves = bookshelves
             self.tableView.reloadData()
+
+            // Check the count of bookshelves and show/hide the remindLabel accordingly
+            self.remindLabel.isHidden = !self.bookshelves.isEmpty
         }
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "booksInShelf" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let bookshelfName = bookshelves[indexPath.row].title
+                let bookshelfID = bookshelves[indexPath.row].bookshelfID
                 if let destinationVC = segue.destination as? BookListViewController {
-                    destinationVC.bookshelfName = bookshelfName
+                    //destinationVC.bookshelfName = bookshelfName
+                    destinationVC.bookshelfID = bookshelfID
                 }
             }
         }

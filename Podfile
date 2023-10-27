@@ -12,4 +12,5 @@ target 'Goldence' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'IQKeyboardManager'
+  pod 'Charts', '4.1.0'
 end
