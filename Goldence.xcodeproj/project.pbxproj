@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E5F8A4D2AE5650D000E3CD8 /* GoldenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */; };
 		0E5F8A582AE6480A000E3CD8 /* FirebaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */; };
+		0E5F8A632AEBA314000E3CD8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F8A622AEB8009000E3CD8 /* Readme.md */; };
 		0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */; };
 		0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556E2ABBEBEE00982A6C /* UIColor.swift */; };
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
@@ -79,6 +80,9 @@
 		0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIManager.swift; sourceTree = "<group>"; };
 		0E5F8A5D2AE7A539000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5F8A5E2AE7BA9D000E3CD8 /* Goldence.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Goldence.entitlements; sourceTree = "<group>"; };
+		0E5F8A622AEB8009000E3CD8 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		0E5F8A642AEBA737000E3CD8 /* Simulator Screenshot - Notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - Notes.png"; sourceTree = "<group>"; };
+		0E5F8A652AEBA737000E3CD8 /* Simulator Screenshot - Goldence.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - Goldence.png"; sourceTree = "<group>"; };
 		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
 		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -282,6 +286,9 @@
 		0EE8C0642AB1B518003B205C = {
 			isa = PBXGroup;
 			children = (
+				0E5F8A652AEBA737000E3CD8 /* Simulator Screenshot - Goldence.png */,
+				0E5F8A642AEBA737000E3CD8 /* Simulator Screenshot - Notes.png */,
+				0E5F8A622AEB8009000E3CD8 /* Readme.md */,
 				0EE8C06F2AB1B518003B205C /* Goldence */,
 				0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */,
 				4B127E2088DD9FE2203111B4 /* Pods */,
@@ -495,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5F8A632AEBA314000E3CD8 /* Readme.md in Resources */,
 				0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */,
 				0E82977A2AC18630001B5EA0 /* GoogleService-Info.plist in Resources */,
 				0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */,
