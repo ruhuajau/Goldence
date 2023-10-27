@@ -60,11 +60,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.tableView.reloadData()
 
             // Check the count of bookshelves and show/hide the remindLabel accordingly
-            if self.bookshelves.isEmpty {
-                self.remindLabel.isHidden = false
-            } else {
-                self.remindLabel.isHidden = true
-            }
+            self.remindLabel.isHidden = !self.bookshelves.isEmpty
         }
     }
 

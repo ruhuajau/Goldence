@@ -21,8 +21,7 @@ class FirebaseAPIManager {
             return
         }
 
-        let usersCollection = db.collection("users")
-        
+        let usersCollection = db.collection("users")        
         // Get the user's document
         usersCollection.document(userIdentifier).getDocument { (document, error) in
             if let error = error {
@@ -74,4 +73,29 @@ class FirebaseAPIManager {
             completion(fetchedBookshelves)
         }
     }
+    func getBooksFromBookshelf(bookshelfID: String, completion: @escaping ([Books]) -> Void) {
+            let bookshelvesCollection = db.collection("bookshelves")
+            let bookshelfRef = bookshelvesCollection.document(bookshelfID)
+            let booksCollection = bookshelfRef.collection("books")
+            booksCollection.getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    print("Error fetching books: \(error.localizedDescription)")
+                    completion([])
+                    return
+                }
+                var books: [Books] = []
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if let title = data["title"] as? String,
+                       let author = data["author"] as? String,
+                       let imageURLString = data["imageURL"] as? String,
+                       let bookID = data["book_id"] as? String,
+                       let imageURL = URL(string: imageURLString) {
+                        let book = Books(bookID: bookID, title: title, author: author, imageURL: imageURL)
+                        books.append(book)
+                    }
+                }
+                completion(books)
+            }
+        }
 }

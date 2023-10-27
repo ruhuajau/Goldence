@@ -168,5 +168,3 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
     }
 
 }
-
-
