@@ -27,7 +27,7 @@ Goldence is the ultimate app for book enthusiasts, designed to help you capture 
 ## Screenshots
 
 ![Goldence Image](ReadMe%20Images/Simulator%20Screenshot%20-%20Goldence.png)
-![Goldence Note Image](ReadMe%20Images/Simulator%20Screenshot-%20Notes.png)
+![Goldence Note Image](ReadMe%20Images/Simulator%20Screenshot%20-%20Notes.png)
 
 ## Get it on the App Store
 
