@@ -14,6 +14,7 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
     var bookTitle: String?
     var noteId: String?
     var notes: [GoldenNote] = []
+    private let apiManager = FirebaseAPIManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         // Create a custom back button with the image
@@ -86,55 +87,15 @@ class GoldenCardListViewController: UIViewController, UITableViewDelegate, UITab
 
     func loadNotesForBook() {
         guard let userIdentifier = UserDefaults.standard.string(forKey: "userIdentifier"), let bookID = bookID else {
-                return
-            }
-        // Reference to the Firestore collection "users"
-            let usersCollection = Firestore.firestore().collection("users")
-            // Get the user's document
-            usersCollection.document(userIdentifier).addSnapshotListener { [weak self] (userDocument, error) in
-                guard let self = self, let userDocument = userDocument, userDocument.exists else {
-                    return
-                }
-                
-                // Retrieve the noteIDs array from the user's document
-                if let noteIDs = userDocument["noteIDs"] as? [String] {
-                    // Reference to the Firestore collection "notes"
-                    let notesCollection = Firestore.firestore().collection("notes")
-                    
-                    // Clear the existing notes array
-                    self.notes.removeAll()
-                    
-                    // Iterate through the noteIDs and fetch the corresponding notes
-                    for noteID in noteIDs {
-                        // Create a query to filter notes by noteID and bookID
-                        let query = notesCollection.whereField("note_id", isEqualTo: noteID).whereField("book_id", isEqualTo: bookID)
-                        query.getDocuments { (querySnapshot, error) in
-                            if let error = error {
-                                print("Error fetching notes: \(error.localizedDescription)")
-                                return
-                            }
-                            
-                            if let document = querySnapshot?.documents.first {
-                                let data = document.data()
-                                let title = data["title"] as? String ?? ""
-                                let cardContent = data["cardContent"] as? String ?? ""
-                                let note = GoldenNote(
-                                    noteID: noteID,
-                                    bookTitle: self.bookTitle ?? "",
-                                    bookID: self.bookID ?? "",
-                                    type: "book",
-                                    title: title,
-                                    cardContent: cardContent,
-                                    isPublic: false
-                                )
-                                self.notes.append(note)
-                                self.tableView.reloadData() // Reload the table view to display the notes
-                            }
-                        }
-                    }
-                }
-            }
+            return
+        }
+
+        apiManager.loadNotesForBook(userIdentifier: userIdentifier, bookID: bookID, bookTitle: bookTitle) { [weak self] (notes) in
+            self?.notes = notes
+            self?.tableView.reloadData() // Reload the table view to display the notes
+        }
     }
+
     func shareButtonTapped(noteId: String) {
         if let noteIndex = notes.firstIndex(where: { $0.noteID == noteId }) {
             var updatedNote = notes[noteIndex]

@@ -98,4 +98,64 @@ class FirebaseAPIManager {
                 completion(books)
             }
         }
+    func loadNotesForBook(userIdentifier: String, bookID: String, bookTitle: String?, completion: @escaping ([GoldenNote]) -> Void) {
+            // Reference to the Firestore collection "users"
+            let usersCollection = db.collection("users")
+
+            // Get the user's document
+            usersCollection.document(userIdentifier).addSnapshotListener { (userDocument, error) in
+                guard let userDocument = userDocument, userDocument.exists else {
+                    completion([])
+                    return
+                }
+
+                // Retrieve the noteIDs array from the user's document
+                if let noteIDs = userDocument["noteIDs"] as? [String] {
+                    // Reference to the Firestore collection "notes"
+                    let notesCollection = self.db.collection("notes")
+                    var fetchedNotes: [GoldenNote] = []
+
+                    // Iterate through the noteIDs and fetch the corresponding notes
+                    let dispatchGroup = DispatchGroup()
+                    for noteID in noteIDs {
+                        dispatchGroup.enter()
+
+                        // Create a query to filter notes by noteID and bookID
+                        let query = notesCollection.whereField("note_id", isEqualTo: noteID).whereField("book_id", isEqualTo: bookID)
+                        query.getDocuments { (querySnapshot, error) in
+                            defer {
+                                dispatchGroup.leave()
+                            }
+
+                            if let error = error {
+                                print("Error fetching notes: \(error.localizedDescription)")
+                                return
+                            }
+
+                            if let document = querySnapshot?.documents.first {
+                                let data = document.data()
+                                let title = data["title"] as? String ?? ""
+                                let cardContent = data["cardContent"] as? String ?? ""
+                                let note = GoldenNote(
+                                    noteID: noteID,
+                                    bookTitle: bookTitle ?? "",
+                                    bookID: bookID,
+                                    type: "book",
+                                    title: title,
+                                    cardContent: cardContent,
+                                    isPublic: false
+                                )
+                                fetchedNotes.append(note)
+                            }
+                        }
+                    }
+
+                    dispatchGroup.notify(queue: .main) {
+                        completion(fetchedNotes)
+                    }
+                } else {
+                    completion([])
+                }
+            }
+        }
 }
