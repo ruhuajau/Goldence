@@ -8,32 +8,6 @@
 import UIKit
 import Firebase
 
-class TimeLabelView3: UIView {
-    let labels = ["18:00", "19:00", "20:00", "21:00", "22:00", "23:00"]
-    let squareSize: CGFloat
-    init(frame: CGRect, squareSize: CGFloat) {
-        self.squareSize = squareSize
-        super.init(frame: frame)
-        setupLabels()
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    private func setupLabels() {
-        let labelHeight: CGFloat = 20
-        let spacing: CGFloat = 7
-        for (index, labelText) in labels.enumerated() {
-            let labelFrame = CGRect(x: 15, y: CGFloat(index) * (squareSize + spacing) - 25, width: squareSize + 15, height: labelHeight)
-            let label = UILabel(frame: labelFrame)
-            label.text = labelText
-            label.textColor = UIColor.hexStringToUIColor(hex: "274c77")
-            label.font = UIFont(name: "Savoye LET", size: 30)
-            label.textAlignment = .right
-            addSubview(label)
-        }
-    }
-}
-
 class NightViewController: UIViewController {
     var orangeSquareNumbers: [Int] = [] // Array to store numbers of orange square
     var documentID: String?
@@ -74,8 +48,8 @@ class NightViewController: UIViewController {
             }
         // Calculate the width of the time label view based on the square size
         let timeLabelViewWidth = rectangleWidth
-        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView3(frame: .zero, squareSize: rectangleHeight).labels.count) * (rectangleHeight + padding))
-        let timeLabelView = TimeLabelView3(frame: timeLabelViewFrame, squareSize: rectangleHeight)
+        let timeLabelViewFrame = CGRect(x: 200 - timeLabelViewWidth, y: 80, width: timeLabelViewWidth, height: CGFloat(TimeLabelView(frame: .zero, squareSize: rectangleHeight, startHour: 18, endHour: 23).labels.count) * (rectangleHeight + padding))
+        let timeLabelView = TimeLabelView(frame: timeLabelViewFrame, squareSize: rectangleHeight, startHour: 18, endHour: 23)
         view.addSubview(timeLabelView)
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

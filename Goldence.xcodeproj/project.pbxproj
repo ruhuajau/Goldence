@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E5F8A4D2AE5650D000E3CD8 /* GoldenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */; };
+		0E5F8A582AE6480A000E3CD8 /* FirebaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */; };
+		0E5F8A632AEBA314000E3CD8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F8A622AEB8009000E3CD8 /* Readme.md */; };
 		0E71556D2ABBCB0F00982A6C /* ScanBookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */; };
 		0E71556F2ABBEBEE00982A6C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71556E2ABBEBEE00982A6C /* UIColor.swift */; };
 		0E7155752ABC12C800982A6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7155742ABC12C800982A6C /* Protocol.swift */; };
@@ -53,16 +56,33 @@
 		0EE8C08C2AB2D883003B205C /* SelectShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */; };
 		0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */; };
 		0EE8C0982AB2E7B2003B205C /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */; };
-		0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0992AB2F313003B205C /* APIManager.swift */; };
+		0EE8C09A2AB2F313003B205C /* GoogleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0992AB2F313003B205C /* GoogleAPIManager.swift */; };
 		0EE8C09C2AB2F32E003B205C /* BookStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09B2AB2F32E003B205C /* BookStruct.swift */; };
 		0EE8C09E2AB2FE0A003B205C /* AddByISBNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */; };
 		0EE8C0A22AB30264003B205C /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A12AB30264003B205C /* TypeViewController.swift */; };
 		0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8C0A32AB3026D003B205C /* ScanViewController.swift */; };
-		5E810ABDE14966EFA2269261 /* Pods_Goldence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E5F8A4E2AE5650D000E3CD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EE8C0652AB1B518003B205C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EE8C06C2AB1B518003B205C;
+			remoteInfo = Goldence;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0259716D4068F9196EBEEC57 /* Pods-Goldence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.release.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.release.xcconfig"; sourceTree = "<group>"; };
+		0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenceTests.swift; sourceTree = "<group>"; };
+		0E5F8A542AE63787000E3CD8 /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIManager.swift; sourceTree = "<group>"; };
+		0E5F8A5D2AE7A539000E3CD8 /* GoldenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E5F8A5E2AE7BA9D000E3CD8 /* Goldence.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Goldence.entitlements; sourceTree = "<group>"; };
+		0E5F8A622AEB8009000E3CD8 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		0E5F8A642AEBA737000E3CD8 /* Simulator Screenshot - Notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - Notes.png"; sourceTree = "<group>"; };
+		0E5F8A652AEBA737000E3CD8 /* Simulator Screenshot - Goldence.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screenshot - Goldence.png"; sourceTree = "<group>"; };
 		0E71556C2ABBCB0F00982A6C /* ScanBookResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBookResult.swift; sourceTree = "<group>"; };
 		0E71556E2ABBEBEE00982A6C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0E7155742ABC12C800982A6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -101,7 +121,6 @@
 		0EDECDF42ACE930F0011D4BB /* GoldenceDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoldenceDebug.entitlements; sourceTree = "<group>"; };
 		0EDECDF62ACE93500011D4BB /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0EDECDF82ACEA09E0011D4BB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		0EE8C06D2AB1B518003B205C /* Goldence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goldence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE8C0702AB1B518003B205C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0722AB1B518003B205C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0EE8C0742AB1B518003B205C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -112,27 +131,49 @@
 		0EE8C08B2AB2D883003B205C /* SelectShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfViewController.swift; sourceTree = "<group>"; };
 		0EE8C08D2AB2D981003B205C /* SelectShelfTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShelfTableViewCell.swift; sourceTree = "<group>"; };
 		0EE8C0972AB2E7B2003B205C /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
-		0EE8C0992AB2F313003B205C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0EE8C0992AB2F313003B205C /* GoogleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIManager.swift; sourceTree = "<group>"; };
 		0EE8C09B2AB2F32E003B205C /* BookStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStruct.swift; sourceTree = "<group>"; };
 		0EE8C09D2AB2FE0A003B205C /* AddByISBNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddByISBNViewController.swift; sourceTree = "<group>"; };
 		0EE8C0A12AB30264003B205C /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		0EE8C0A32AB3026D003B205C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Goldence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6CF90D0CD60947FAA68381 /* Pods-Goldence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goldence.debug.xcconfig"; path = "Target Support Files/Pods-Goldence/Pods-Goldence.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E5F8A472AE5650D000E3CD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EE8C06A2AB1B518003B205C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E810ABDE14966EFA2269261 /* Pods_Goldence.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E5F8A4C2AE5650D000E3CD8 /* GoldenceTests.swift */,
+			);
+			path = GoldenceTests;
+			sourceTree = "<group>";
+		};
+		0E5F8A562AE647E2000E3CD8 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8C0992AB2F313003B205C /* GoogleAPIManager.swift */,
+				0E5F8A572AE6480A000E3CD8 /* FirebaseAPIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		0E7155762ABC186C00982A6C /* AddNewShelf */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,24 +286,21 @@
 		0EE8C0642AB1B518003B205C = {
 			isa = PBXGroup;
 			children = (
+				0E5F8A652AEBA737000E3CD8 /* Simulator Screenshot - Goldence.png */,
+				0E5F8A642AEBA737000E3CD8 /* Simulator Screenshot - Notes.png */,
+				0E5F8A622AEB8009000E3CD8 /* Readme.md */,
 				0EE8C06F2AB1B518003B205C /* Goldence */,
-				0EE8C06E2AB1B518003B205C /* Products */,
+				0E5F8A4B2AE5650D000E3CD8 /* GoldenceTests */,
 				4B127E2088DD9FE2203111B4 /* Pods */,
-				2F05EB3B05F09F340EB59188 /* Frameworks */,
+				0E5F8A542AE63787000E3CD8 /* Goldence.app */,
+				0E5F8A5D2AE7A539000E3CD8 /* GoldenceTests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		0EE8C06E2AB1B518003B205C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0EE8C06D2AB1B518003B205C /* Goldence.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0EE8C06F2AB1B518003B205C /* Goldence */ = {
 			isa = PBXGroup;
 			children = (
+				0E5F8A5E2AE7BA9D000E3CD8 /* Goldence.entitlements */,
 				0EDECDF42ACE930F0011D4BB /* GoldenceDebug.entitlements */,
 				0EE8C0872AB2D7C6003B205C /* Ｍodel */,
 				0EE8C0892AB2D7F4003B205C /* View */,
@@ -280,7 +318,7 @@
 		0EE8C0872AB2D7C6003B205C /* Ｍodel */ = {
 			isa = PBXGroup;
 			children = (
-				0EE8C0992AB2F313003B205C /* APIManager.swift */,
+				0E5F8A562AE647E2000E3CD8 /* APIManager */,
 				0EE8C09B2AB2F32E003B205C /* BookStruct.swift */,
 				0E71556E2ABBEBEE00982A6C /* UIColor.swift */,
 				0E7155742ABC12C800982A6C /* Protocol.swift */,
@@ -364,14 +402,6 @@
 			path = Segments;
 			sourceTree = "<group>";
 		};
-		2F05EB3B05F09F340EB59188 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				20F42C893B0F4F6DC7C5D65C /* Pods_Goldence.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4B127E2088DD9FE2203111B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +414,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E5F8A492AE5650D000E3CD8 /* GoldenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E5F8A522AE5650D000E3CD8 /* Build configuration list for PBXNativeTarget "GoldenceTests" */;
+			buildPhases = (
+				0E5F8A462AE5650D000E3CD8 /* Sources */,
+				0E5F8A472AE5650D000E3CD8 /* Frameworks */,
+				0E5F8A482AE5650D000E3CD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E5F8A4F2AE5650D000E3CD8 /* PBXTargetDependency */,
+			);
+			name = GoldenceTests;
+			productName = GoldenceTests;
+			productReference = 0E5F8A5D2AE7A539000E3CD8 /* GoldenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0EE8C06C2AB1B518003B205C /* Goldence */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EE8C0812AB1B51A003B205C /* Build configuration list for PBXNativeTarget "Goldence" */;
@@ -401,7 +449,7 @@
 			);
 			name = Goldence;
 			productName = Goldence;
-			productReference = 0EE8C06D2AB1B518003B205C /* Goldence.app */;
+			productReference = 0E5F8A542AE63787000E3CD8 /* Goldence.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -411,9 +459,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					0E5F8A492AE5650D000E3CD8 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 0EE8C06C2AB1B518003B205C;
+					};
 					0EE8C06C2AB1B518003B205C = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -428,20 +480,29 @@
 				Base,
 			);
 			mainGroup = 0EE8C0642AB1B518003B205C;
-			productRefGroup = 0EE8C06E2AB1B518003B205C /* Products */;
+			productRefGroup = 0EE8C0642AB1B518003B205C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0EE8C06C2AB1B518003B205C /* Goldence */,
+				0E5F8A492AE5650D000E3CD8 /* GoldenceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E5F8A482AE5650D000E3CD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EE8C06B2AB1B518003B205C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5F8A632AEBA314000E3CD8 /* Readme.md in Resources */,
 				0EE8C07D2AB1B51A003B205C /* LaunchScreen.storyboard in Resources */,
 				0E82977A2AC18630001B5EA0 /* GoogleService-Info.plist in Resources */,
 				0EE8C07A2AB1B51A003B205C /* Assets.xcassets in Resources */,
@@ -511,6 +572,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E5F8A462AE5650D000E3CD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E5F8A4D2AE5650D000E3CD8 /* GoldenceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EE8C0692AB1B518003B205C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -544,7 +613,7 @@
 				0E71557A2ABC2E4C00982A6C /* BookShelfStruct.swift in Sources */,
 				0EE8C08E2AB2D981003B205C /* SelectShelfTableViewCell.swift in Sources */,
 				0EE8C0A42AB3026D003B205C /* ScanViewController.swift in Sources */,
-				0EE8C09A2AB2F313003B205C /* APIManager.swift in Sources */,
+				0EE8C09A2AB2F313003B205C /* GoogleAPIManager.swift in Sources */,
 				0E7E378E2AD4F780001A2741 /* AddNewCardTableViewCell.swift in Sources */,
 				0E8297E82ACBF47F001B5EA0 /* ScheduleLabels.swift in Sources */,
 				0E8297812AC284D5001B5EA0 /* MorningViewController.swift in Sources */,
@@ -556,6 +625,7 @@
 				0EE8C0712AB1B518003B205C /* AppDelegate.swift in Sources */,
 				0EE8C0732AB1B518003B205C /* SceneDelegate.swift in Sources */,
 				0E8297E12ACBE612001B5EA0 /* AnalysisViewController.swift in Sources */,
+				0E5F8A582AE6480A000E3CD8 /* FirebaseAPIManager.swift in Sources */,
 				0E82973E2ABFE0AD001B5EA0 /* GoldenCardTableViewCell.swift in Sources */,
 				0E8297E62ACBF3F6001B5EA0 /* ScheduleRectangle.swift in Sources */,
 				0E82976E2AC17916001B5EA0 /* ScanTextView.swift in Sources */,
@@ -566,6 +636,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E5F8A4F2AE5650D000E3CD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EE8C06C2AB1B518003B205C /* Goldence */;
+			targetProxy = 0E5F8A4E2AE5650D000E3CD8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0EE8C0762AB1B518003B205C /* Main.storyboard */ = {
@@ -587,6 +665,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E5F8A502AE5650D000E3CD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZN536HML37;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.GoldenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Goldence";
+			};
+			name = Debug;
+		};
+		0E5F8A512AE5650D000E3CD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZN536HML37;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.GoldenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goldence.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Goldence";
+			};
+			name = Release;
+		};
 		0EE8C07F2AB1B51A003B205C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -709,11 +833,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Goldence/GoldenceDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ZN536HML37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goldence/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Requires camera to scan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera access to scan isbn barcode";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow photo library access to customize your cover and we don't collect your data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -726,7 +851,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruhuajau.Goldence;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ruhuajau.Goldence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -743,12 +868,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Goldence/Goldence.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ZN536HML37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goldence/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Requires camera to scan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera access to scan isbn barcode";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow photo library access to customize your cover and we don't collect your data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -775,6 +902,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E5F8A522AE5650D000E3CD8 /* Build configuration list for PBXNativeTarget "GoldenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E5F8A502AE5650D000E3CD8 /* Debug */,
+				0E5F8A512AE5650D000E3CD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0EE8C0682AB1B518003B205C /* Build configuration list for PBXProject "Goldence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
