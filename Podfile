@@ -8,6 +8,8 @@ target 'Goldence' do
   # Pods for Goldence
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   pod 'SwiftLint'
   pod 'Alamofire'
   pod 'Kingfisher'

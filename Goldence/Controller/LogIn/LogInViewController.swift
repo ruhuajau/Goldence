@@ -108,6 +108,9 @@ extension LogInViewController: ASAuthorizationControllerDelegate {
             }
         }
     }
+    @IBAction func crashButtonTapped() {
+        fatalError()
+    }
 }
 
 extension LogInViewController: ASAuthorizationControllerPresentationContextProviding {
