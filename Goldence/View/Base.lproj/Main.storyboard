@@ -1179,15 +1179,6 @@
                                     <constraint firstAttribute="width" constant="300" id="dVr-jC-1fa"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbX-uw-gzI">
-                                <rect key="frame" x="163" y="573" width="67" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="crash"/>
-                                <connections>
-                                    <action selector="crashButtonTapped" destination="hW0-k3-oXE" eventType="touchUpInside" id="7Zy-61-rDn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tN2-tK-jXM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
